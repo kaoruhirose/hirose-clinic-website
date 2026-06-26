@@ -25,26 +25,26 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/hero.png" 
-            alt="逗子の自然と調和する廣瀬診療所" 
+          <Image
+            src="/images/hero.jpg"
+            alt="逗子の海岸から望む富士山と江ノ島の夕景"
             fill
-            className="object-cover"
+            className="object-cover object-[center_88%]"
             priority
           />
-          <div className="absolute inset-0 bg-clinic-base/30 mix-blend-multiply" />
-          <div className="absolute inset-0 bg-gradient-to-t from-clinic-base via-transparent to-transparent" />
+          <div className="absolute inset-0 bg-clinic-base/20 mix-blend-multiply" />
+          <div className="absolute inset-0 bg-gradient-to-t from-clinic-base/70 via-transparent to-transparent" />
         </div>
         
         <motion.div 
-          className="relative z-10 text-center px-4 max-w-4xl mx-auto"
+          className="relative z-10 text-center px-4 max-w-4xl mx-auto translate-y-12"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
           <motion.h1 
             variants={fadeUp}
-            className="font-serif text-4xl md:text-6xl text-clinic-blue font-medium leading-tight mb-6"
+            className="font-serif text-4xl md:text-5xl text-white font-medium leading-tight mb-12"
           >
             健やかな巡りを、<br className="md:hidden" />ここ逗子から。
           </motion.h1>
