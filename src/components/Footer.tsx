@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { MapPin } from "lucide-react";
+import { site } from "@/lib/site";
 
 export default function Footer() {
   return (
@@ -37,11 +38,19 @@ export default function Footer() {
               <li><Link href="/access" className="hover:text-clinic-green transition-colors">アクセス</Link></li>
               <li><Link href="/news" className="hover:text-clinic-green transition-colors">お知らせ</Link></li>
             </ul>
-            <div className="flex gap-4">
-              <a href="#" className="flex items-center justify-center px-4 py-2 bg-white rounded-full text-clinic-blue hover:text-white hover:bg-clinic-blue transition-colors shadow-sm text-sm font-medium">
-                Instagram
-              </a>
-            </div>
+            {/* InstagramのURLが確定するまでは表示しない（site.ts で設定） */}
+            {site.instagramUrl && (
+              <div className="flex gap-4">
+                <a
+                  href={site.instagramUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center px-4 py-2 bg-white rounded-full text-clinic-blue hover:text-white hover:bg-clinic-blue transition-colors shadow-sm text-sm font-medium"
+                >
+                  Instagram
+                </a>
+              </div>
+            )}
           </div>
         </div>
         

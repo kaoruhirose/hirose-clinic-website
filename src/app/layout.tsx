@@ -20,6 +20,22 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://hiroseshinryojo.jp"),
   title: "廣瀬診療所 | 西洋医学×東洋医学 逗子の自然と調和する診療所",
   description: "神奈川県逗子市にある廣瀬診療所。救急専門医と漢方専門医の視点から、未病を防ぎ、自然と調和するライフスタイルを提案します。",
+  openGraph: {
+    title: "廣瀬診療所 | 西洋医学×東洋医学 逗子の自然と調和する診療所",
+    description: "神奈川県逗子市にある廣瀬診療所。救急専門医と漢方専門医の視点から、未病を防ぎ、自然と調和するライフスタイルを提案します。",
+    url: "/",
+    siteName: "廣瀬診療所",
+    locale: "ja_JP",
+    type: "website",
+    images: [
+      {
+        url: "/images/hero.jpg",
+        width: 1440,
+        height: 1548,
+        alt: "逗子の海岸から望む富士山と江ノ島の夕景",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({

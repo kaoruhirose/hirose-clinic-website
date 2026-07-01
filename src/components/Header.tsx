@@ -4,6 +4,8 @@ import { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, Phone, Calendar } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReservationLink from "@/components/ReservationLink";
+import { site, phoneDisplay } from "@/lib/site";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,11 +23,11 @@ export default function Header() {
 
   // Prevent scroll when menu is open
   useEffect(() => {
-    if (isOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    document.body.style.overflow = isOpen ? "hidden" : "unset";
+    // アンマウント時にスクロールを必ず復元する
+    return () => {
       document.body.style.overflow = "unset";
-    }
+    };
   }, [isOpen]);
 
   const navLinks = [
@@ -57,9 +59,9 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
-          <a href="#" className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium text-white bg-clinic-blue hover:bg-clinic-blue/90 shadow-sm transition-all hover:shadow-md">
+          <ReservationLink className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium text-white bg-clinic-blue hover:bg-clinic-blue/90 shadow-sm transition-all hover:shadow-md">
             診察予約
-          </a>
+          </ReservationLink>
         </nav>
 
         {/* Mobile menu button */}
@@ -109,20 +111,23 @@ export default function Header() {
                 transition={{ delay: 0.4 }}
                 className="pt-4 flex flex-col gap-4 mt-auto"
               >
-                <a 
-                  href="tel:046-123-4567"
-                  className="flex items-center justify-center gap-3 py-4 rounded-2xl bg-white border border-clinic-subtle text-clinic-blue font-medium shadow-sm active:bg-clinic-subtle transition-colors"
-                >
-                  <Phone className="w-5 h-5 text-clinic-green" />
-                  046-123-4567
-                </a>
-                <a 
-                  href="#"
+                {/* 電話番号が確定するまでは誤発信防止のため tel: リンクを表示しない */}
+                {site.phone && (
+                  <a
+                    href={`tel:${site.phone}`}
+                    className="flex items-center justify-center gap-3 py-4 rounded-2xl bg-white border border-clinic-subtle text-clinic-blue font-medium shadow-sm active:bg-clinic-subtle transition-colors"
+                  >
+                    <Phone className="w-5 h-5 text-clinic-green" />
+                    {phoneDisplay}
+                  </a>
+                )}
+                <ReservationLink
+                  onClick={() => setIsOpen(false)}
                   className="flex items-center justify-center gap-3 py-4 rounded-2xl bg-clinic-blue text-white font-medium shadow-lg hover:bg-clinic-blue/90 active:scale-95 transition-all"
                 >
                   <Calendar className="w-5 h-5" />
                   今すぐ診察予約
-                </a>
+                </ReservationLink>
               </motion.div>
             </nav>
           </motion.div>
