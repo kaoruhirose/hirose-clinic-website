@@ -1,54 +1,74 @@
-import type { Metadata } from "next";
+"use client";
 
-export const metadata: Metadata = {
-  title: "プライバシーポリシー | 廣瀬診療所",
-  description: "廣瀬診療所における個人情報の取り扱いについてご案内します。",
+import { motion } from "framer-motion";
+import { ShieldCheck } from "lucide-react";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 30 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
 };
 
-// 各条項。見出しと本文（段落の配列）で構成する。
+const staggerContainer = {
+  hidden: { opacity: 0 },
+  visible: {
+    opacity: 1,
+    transition: { staggerChildren: 0.15 }
+  }
+};
+
 const sections = [
   {
-    heading: "1. 基本方針",
-    paragraphs: [
-      "廣瀬診療所（以下「当院」）は、患者さまの個人情報を適切に保護することが医療機関の重要な責務であると考え、個人情報の保護に関する法律および関連法令・ガイドラインを遵守し、個人情報を適正に取り扱います。",
+    title: "1. 個人情報の定義",
+    body: [
+      "本プライバシーポリシーにおける「個人情報」とは、個人情報の保護に関する法律に定める個人情報を指し、氏名、生年月日、住所、電話番号、メールアドレス、診療に関する情報など、特定の個人を識別できる情報をいいます。",
     ],
   },
   {
-    heading: "2. 取得する個人情報",
-    paragraphs: [
-      "当院は、診療のご予約・診察・お問い合わせの際に、氏名、連絡先、症状・既往歴などの診療に必要な情報を取得することがあります。",
-      "なお、当ウェブサイト自体には入力フォームを設置しておらず、ウェブサイトの閲覧のみによって個人情報を取得することはありません。また、現在アクセス解析ツール等による閲覧情報の収集も行っておりません。",
+    title: "2. 個人情報の取得と利用目的",
+    body: [
+      "当院は、適正な手段により個人情報を取得し、以下の目的の範囲内で利用いたします。",
+    ],
+    list: [
+      "診療・医療サービスの提供および予約管理のため",
+      "診療費の請求・会計処理のため",
+      "ご予約内容の確認やお問い合わせへの対応のため",
+      "医療の質の向上を目的とした院内での検討のため",
+      "法令に基づく対応および行政機関への報告のため",
     ],
   },
   {
-    heading: "3. 利用目的",
-    paragraphs: [
-      "取得した個人情報は、次の目的の範囲内で利用します。（1）診療・保健指導などの医療の提供、（2）ご予約の確認・変更などのご連絡、（3）医療保険事務、（4）医療の質の向上を目的とした院内での症例検討。",
+    title: "3. 第三者への提供",
+    body: [
+      "当院は、次のいずれかに該当する場合を除き、ご本人の同意なく個人情報を第三者へ提供することはありません。",
+    ],
+    list: [
+      "法令に基づく場合",
+      "人の生命、身体または財産の保護のために必要があり、ご本人の同意を得ることが困難な場合",
+      "他の医療機関との連携など、適切な診療の継続のために必要な場合",
     ],
   },
   {
-    heading: "4. 第三者への提供",
-    paragraphs: [
-      "法令に基づく場合、人の生命・身体・財産の保護のために必要がある場合、その他法令で認められる場合を除き、ご本人の同意なく個人情報を第三者に提供することはありません。",
-      "他の医療機関への紹介や検査の委託など、診療上必要な範囲での情報提供を行う場合があります。ご希望されない場合はお申し出ください。",
+    title: "4. 個人情報の安全管理",
+    body: [
+      "当院は、取得した個人情報の漏えい、滅失またはき損の防止その他の安全管理のために、必要かつ適切な措置を講じます。個人情報を取り扱う従業者に対しても、適切な監督を行います。",
     ],
   },
   {
-    heading: "5. 安全管理",
-    paragraphs: [
-      "個人情報への不正アクセス、紛失、漏えい等を防止するため、適切な安全管理措置を講じます。",
+    title: "5. 開示・訂正・利用停止の請求",
+    body: [
+      "ご本人から個人情報の開示、訂正、追加、削除、利用停止または消去のご請求があった場合は、ご本人であることを確認のうえ、法令に従い速やかに対応いたします。",
     ],
   },
   {
-    heading: "6. 開示・訂正・利用停止",
-    paragraphs: [
-      "ご本人からの個人情報の開示・訂正・利用停止等のお申し出には、法令に基づき適切に対応いたします。ご来院時、またはお電話にてお申し出ください。",
+    title: "6. お問い合わせ窓口",
+    body: [
+      "個人情報の取り扱いに関するお問い合わせは、ご予約時にご案内する連絡先、または当院窓口までご連絡ください。",
     ],
   },
   {
-    heading: "7. 本ポリシーの改定",
-    paragraphs: [
-      "本ポリシーの内容は、法令の改正や運用の見直しに応じて変更することがあります。変更後の内容は当ページに掲載した時点から適用されます。",
+    title: "7. 本ポリシーの変更",
+    body: [
+      "当院は、法令の改正や運用の見直しに応じて、本プライバシーポリシーを予告なく変更することがあります。変更後の内容は、本ページに掲載した時点から効力を生じるものとします。",
     ],
   },
 ];
@@ -56,43 +76,69 @@ const sections = [
 export default function Privacy() {
   return (
     <div className="flex flex-col w-full pb-24">
-      {/* Page Header */}
       <section className="bg-clinic-subtle/50 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="font-serif text-4xl md:text-5xl text-clinic-blue mb-4">
+          <motion.h1
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="font-serif text-4xl md:text-5xl text-clinic-blue mb-4"
+          >
             プライバシーポリシー
-          </h1>
-          <p className="text-clinic-green font-medium tracking-widest text-sm">
+          </motion.h1>
+          <motion.p
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.2 }}
+            className="text-clinic-green font-medium tracking-widest text-sm"
+          >
             PRIVACY POLICY
-          </p>
+          </motion.p>
         </div>
       </section>
 
-      <div className="max-w-3xl mx-auto w-full px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border border-clinic-subtle/50 space-y-10">
-          {sections.map((section) => (
-            <section key={section.heading}>
-              <h2 className="font-serif text-xl text-clinic-blue mb-3">
-                {section.heading}
-              </h2>
-              <div className="space-y-3">
-                {section.paragraphs.map((text, idx) => (
-                  <p
-                    key={idx}
-                    className="text-clinic-text/80 text-sm leading-relaxed"
-                  >
-                    {text}
-                  </p>
-                ))}
-              </div>
-            </section>
-          ))}
-
-          <p className="text-clinic-text/60 text-xs pt-4 border-t border-clinic-subtle/50">
-            制定日：2026年4月1日<br />
-            廣瀬診療所
+      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 w-full">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          className="flex items-start gap-4 mb-12"
+        >
+          <ShieldCheck className="w-7 h-7 text-clinic-green flex-shrink-0 mt-1" />
+          <p className="text-clinic-text/80 leading-relaxed">
+            廣瀬診療所（以下「当院」といいます）は、患者さまの個人情報を適切に保護することが社会的責務であると考え、個人情報の保護に関する法律および関連法令を遵守し、以下の方針に基づいて個人情報を取り扱います。
           </p>
-        </div>
+        </motion.div>
+
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-50px" }}
+          variants={staggerContainer}
+          className="space-y-10"
+        >
+          {sections.map((section) => (
+            <motion.section key={section.title} variants={fadeUp}>
+              <h2 className="font-serif text-xl md:text-2xl text-clinic-blue mb-4 border-b border-clinic-subtle pb-3">
+                {section.title}
+              </h2>
+              {section.body.map((paragraph, idx) => (
+                <p key={idx} className="text-clinic-text/80 leading-relaxed mb-3">
+                  {paragraph}
+                </p>
+              ))}
+              {section.list && (
+                <ul className="text-clinic-text/80 space-y-2 list-disc list-inside leading-relaxed">
+                  {section.list.map((item, idx) => (
+                    <li key={idx}>{item}</li>
+                  ))}
+                </ul>
+              )}
+            </motion.section>
+          ))}
+        </motion.div>
+
+        <p className="text-sm text-clinic-text/50 mt-16 text-right">
+          制定日：2026年6月1日
+        </p>
       </div>
     </div>
   );
