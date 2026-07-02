@@ -91,7 +91,7 @@ export default function Home() {
               {
                 title: "西洋医学 (救急)",
                 desc: "急な体調不良や怪我に対して、救急専門医としての経験を活かした的確な初期対応を行います。",
-                icon: "🩺"
+                icon: "⚕️"
               },
               {
                 title: "東洋医学 (漢方)",
