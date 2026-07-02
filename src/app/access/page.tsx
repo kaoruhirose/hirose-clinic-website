@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, CalendarDays } from "lucide-react";
+import { MapPin, Phone, Bus, CalendarDays } from "lucide-react";
 import { site, phoneDisplay } from "@/lib/site";
 
 const staggerContainer = {
@@ -156,12 +156,15 @@ export default function Access() {
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <Clock className="w-6 h-6 text-clinic-green flex-shrink-0 mt-1" />
+                  <Bus className="w-6 h-6 text-clinic-green flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-medium mb-1">最寄りのバス停</h3>
+                    <h3 className="font-medium mb-1">電車・バスでお越しの方</h3>
+                    <p className="text-clinic-text/80 text-sm leading-relaxed mb-3">
+                      JR横須賀線「逗子駅」または京急逗子線「逗子・葉山駅」が最寄りです。両駅から京急バス（葉山方面行き）が便利です。
+                    </p>
                     <ul className="text-clinic-text/80 space-y-2 text-sm">
-                      <li>・逗子方面より：京急バス「切り通し下」下車</li>
-                      <li>・葉山方面より：京急バス「鐙摺（あぶずり）」下車</li>
+                      <li>・逗子駅／逗子・葉山駅方面から：「切り通し下」バス停で下車</li>
+                      <li>・葉山方面から：「鐙摺（あぶずり）」バス停で下車</li>
                     </ul>
                   </div>
                 </div>
