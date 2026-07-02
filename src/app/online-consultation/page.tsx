@@ -1,9 +1,10 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
 import { motion } from "framer-motion";
 import { Phone, Calendar, Video, CreditCard, Pill, CheckCircle2, AlertCircle } from "lucide-react";
+import ReservationLink from "@/components/ReservationLink";
+import { site, phoneDisplay } from "@/lib/site";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -186,13 +187,14 @@ export default function OnlineConsultation() {
             </div>
 
             <div className="mt-12 text-center">
-              <a 
-                href="#" 
-                className="inline-flex items-center justify-center px-10 py-4 bg-clinic-blue text-white rounded-full font-medium shadow-lg hover:bg-clinic-blue/90 hover:-translate-y-0.5 transition-all outline-none ring-2 ring-clinic-blue/20 ring-offset-2"
-              >
+              <ReservationLink className="inline-flex items-center justify-center px-10 py-4 bg-clinic-blue text-white rounded-full font-medium shadow-lg hover:bg-clinic-blue/90 hover:-translate-y-0.5 transition-all outline-none ring-2 ring-clinic-blue/20 ring-offset-2">
                 オンライン診療を予約する
-              </a>
-              <p className="mt-4 text-xs text-clinic-text/50">※外部の予約システムへ移動します</p>
+              </ReservationLink>
+              <p className="mt-4 text-xs text-clinic-text/50">
+                {site.reservationUrl
+                  ? "※外部の予約システムへ移動します"
+                  : "※ご予約方法のご案内ページへ移動します"}
+              </p>
             </div>
           </div>
         </div>
@@ -206,10 +208,18 @@ export default function OnlineConsultation() {
             操作方法や、ご自身の症状がオンライン診療に適しているかなど、不明な点がございましたらお気軽にお電話ください。
           </p>
           <div className="bg-white p-6 rounded-3xl shadow-sm border border-clinic-subtle inline-block">
-            <a href="tel:046-123-4567" className="text-3xl font-serif text-clinic-blue flex items-center justify-center gap-3">
-              <Phone className="w-6 h-6 text-clinic-green" />
-              046-123-4567
-            </a>
+            {/* 電話番号が確定するまでは誤発信防止のため tel: リンクにしない */}
+            {site.phone ? (
+              <a href={`tel:${site.phone}`} className="text-3xl font-serif text-clinic-blue flex items-center justify-center gap-3">
+                <Phone className="w-6 h-6 text-clinic-green" />
+                {phoneDisplay}
+              </a>
+            ) : (
+              <p className="text-3xl font-serif text-clinic-blue flex items-center justify-center gap-3">
+                <Phone className="w-6 h-6 text-clinic-green" />
+                {phoneDisplay}
+              </p>
+            )}
             <p className="text-[10px] text-clinic-text/50 mt-2 tracking-widest uppercase">Reception Hours: 9:00 - 18:00</p>
           </div>
         </div>

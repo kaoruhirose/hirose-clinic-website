@@ -2,11 +2,7 @@
 
 import { motion } from "framer-motion";
 import { MapPin, Phone, Clock, CalendarDays } from "lucide-react";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-};
+import { site, phoneDisplay } from "@/lib/site";
 
 const staggerContainer = {
   hidden: { opacity: 0 },
@@ -59,15 +55,28 @@ export default function Access() {
                 他の方と顔を合わせることなく、ゆったりとした時間の中で診療をお受けいただけます。<br />
                 ご予約は下記の外部予約システム（STORES予約）より承っております。
               </p>
-              <a 
-                href="#"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex w-full sm:w-auto items-center justify-center px-10 py-4 text-white bg-clinic-blue hover:bg-clinic-blue/90 rounded-full font-medium transition-all shadow-md hover:shadow-lg text-lg"
-              >
-                <CalendarDays className="mr-2 w-5 h-5" />
-                WEB予約はこちらへ
-              </a>
+              {site.reservationUrl ? (
+                <a
+                  href={site.reservationUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto items-center justify-center px-10 py-4 text-white bg-clinic-blue hover:bg-clinic-blue/90 rounded-full font-medium transition-all shadow-md hover:shadow-lg text-lg"
+                >
+                  <CalendarDays className="mr-2 w-5 h-5" />
+                  WEB予約はこちらへ
+                </a>
+              ) : (
+                <div>
+                  {/* 予約システムのURLが確定するまでの準備中表示（site.ts で設定） */}
+                  <div className="inline-flex w-full sm:w-auto items-center justify-center px-10 py-4 text-white bg-clinic-blue/50 rounded-full font-medium shadow-md text-lg cursor-default select-none">
+                    <CalendarDays className="mr-2 w-5 h-5" />
+                    WEB予約（準備中）
+                  </div>
+                  <p className="mt-3 text-sm text-clinic-text/60">
+                    WEB予約の受付開始まで今しばらくお待ちください。
+                  </p>
+                </div>
+              )}
             </div>
 
             <div>
@@ -162,7 +171,14 @@ export default function Access() {
                   <div>
                     <h3 className="font-medium mb-1">お電話</h3>
                     <p className="text-clinic-text/80">
-                      046-XXX-XXXX<br />
+                      {site.phone ? (
+                        <a href={`tel:${site.phone}`} className="hover:text-clinic-green transition-colors">
+                          {phoneDisplay}
+                        </a>
+                      ) : (
+                        phoneDisplay
+                      )}
+                      <br />
                       <span className="text-xs text-gray-500">（お急ぎのご用件のみ。基本はWEBからお申込ください）</span>
                     </p>
                   </div>
@@ -170,12 +186,13 @@ export default function Access() {
               </div>
             </div>
 
-            {/* Google Map Mock */}
-            <div className="w-full h-64 bg-gray-200 rounded-3xl overflow-hidden relative shadow-inner">
-              <div className="absolute inset-0 flex items-center justify-center text-gray-500 text-sm p-6 text-center bg-[url('https://maps.googleapis.com/maps/api/staticmap?center=Zushi,Kanagawa&zoom=14&size=600x300&sensor=false')] bg-cover bg-center opacity-80 mix-blend-multiply">
-                 <div className="bg-white/90 p-4 rounded-lg shadow-md backdrop-blur-sm">
-                   実際の運用時はここに<br/>Google Mapsのiframeを埋め込みます
-                 </div>
+            {/* 地図: 防犯・近隣配慮のため詳細住所は予約確定後に案内する方針に合わせ、
+                地図の埋め込みは行わずご案内文のみ表示する */}
+            <div className="w-full h-64 bg-clinic-subtle/40 rounded-3xl flex items-center justify-center shadow-inner">
+              <div className="text-center text-clinic-text/70 text-sm p-6 leading-relaxed">
+                <MapPin className="w-8 h-8 mx-auto mb-3 text-clinic-green" />
+                詳しい地図は、ご予約確定後に<br />
+                詳細住所とあわせてメールでご案内いたします。
               </div>
             </div>
           </motion.div>
