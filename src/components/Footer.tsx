@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-lg font-medium mb-4 text-clinic-blue">クリニック情報</h3>
             <ul className="space-y-3 text-sm mb-6">
-              <li><Link href="/about" className="hover:text-clinic-green transition-colors">院長紹介</Link></li>
+              <li><Link href="/about" className="hover:text-clinic-green transition-colors">代表紹介</Link></li>
               <li><Link href="/access" className="hover:text-clinic-green transition-colors">アクセス</Link></li>
               <li><Link href="/news" className="hover:text-clinic-green transition-colors">お知らせ</Link></li>
             </ul>

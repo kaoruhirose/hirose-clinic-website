@@ -89,7 +89,7 @@ export default function About() {
               <span className="text-clinic-text/40 text-sm">ポートレート画像が入ります</span>
             </div>
             <h3 className="font-serif text-2xl text-clinic-blue font-medium mb-1">廣瀬 薫</h3>
-            <p className="text-clinic-green text-sm mb-4">院長 / 医師</p>
+            <p className="text-clinic-green text-sm mb-4">代表 / 医師</p>
           </motion.div>
           <motion.div variants={fadeUp} className="w-full md:w-2/3">
             <h4 className="font-serif text-xl text-clinic-blue mb-4">略歴・資格</h4>
@@ -131,7 +131,7 @@ export default function About() {
                 当クリニックでは、治療という枠を超えて「予防医学」の一環として、ヨガやメディテーションの指導・ワークショップも行っています。
               </p>
               <p>
-                RYT200（全米ヨガアライアンス）の資格を持つ院長自らが、心身の緊張を解きほぐす呼吸法や、逗子の自然を感じるフィールドワークをご案内します。薬に頼りすぎるのではなく、自分自身の力で「巡り」を良くする体験を始めてみませんか？
+                RYT200（全米ヨガアライアンス）の資格を持つ代表自らが、心身の緊張を解きほぐす呼吸法や、逗子の自然を感じるフィールドワークをご案内します。薬に頼りすぎるのではなく、自分自身の力で「巡り」を良くする体験を始めてみませんか？
               </p>
             </div>
           </motion.div>
