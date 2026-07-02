@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
             <div className="flex items-start gap-2 text-sm">
               <MapPin className="w-5 h-5 text-clinic-green shrink-0" />
-              <p>神奈川県逗子市〇〇 1-2-3<br /><span className="text-xs text-gray-500">※詳細な住所はご予約時にお伝えします</span></p>
+              <p>{site.address}<br /><span className="text-xs text-gray-500">※詳細な番地はご予約時にお伝えします</span></p>
             </div>
           </div>
           
@@ -34,7 +34,7 @@ export default function Footer() {
           <div>
             <h3 className="font-serif text-lg font-medium mb-4 text-clinic-blue">クリニック情報</h3>
             <ul className="space-y-3 text-sm mb-6">
-              <li><Link href="/about" className="hover:text-clinic-green transition-colors">院長紹介</Link></li>
+              <li><Link href="/about" className="hover:text-clinic-green transition-colors">代表紹介</Link></li>
               <li><Link href="/access" className="hover:text-clinic-green transition-colors">アクセス</Link></li>
               <li><Link href="/news" className="hover:text-clinic-green transition-colors">お知らせ</Link></li>
             </ul>
