@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { MapPin, Phone, Clock, CalendarDays } from "lucide-react";
+import { MapPin, Phone, Bus, CalendarDays } from "lucide-react";
 import { site, phoneDisplay } from "@/lib/site";
 
 const staggerContainer = {
@@ -103,7 +103,7 @@ export default function Access() {
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
+                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-red-400 font-bold">休</td>
@@ -113,7 +113,7 @@ export default function Access() {
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
+                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-clinic-green font-medium">△※</td>
                       <td className="py-4 px-2 text-red-400 font-bold">休</td>
@@ -122,7 +122,7 @@ export default function Access() {
                 </table>
               </div>
               <ul className="text-sm text-clinic-text/60 space-y-1 list-disc list-inside">
-                <li>休診日：水曜・日曜・祝日</li>
+                <li>休診日：水曜・木曜・日曜・祝日</li>
                 <li>△※ 土曜午後は予約診療（自費診療のみ）となります。</li>
               </ul>
             </div>
@@ -146,22 +146,25 @@ export default function Access() {
                   <div>
                     <h3 className="font-medium mb-1">所在地</h3>
                     <p className="text-clinic-text/80 leading-relaxed">
-                      〒249-0000<br />
-                      神奈川県逗子市〇〇 1-2-3<br />
+                      〒{site.postalCode}<br />
+                      {site.address}<br />
                       <span className="text-xs text-red-500 mt-2 block">
-                        ※当院は住宅街にある自宅兼用診療所です。防犯および近隣への配慮のため、詳細な場所や番地はご予約確定後にメールにてご案内しております。
+                        ※当院は住宅街にある自宅兼用診療所です。防犯および近隣への配慮のため、詳細な番地はご予約確定後にメールにてご案内しております。
                       </span>
                     </p>
                   </div>
                 </div>
                 
                 <div className="flex items-start gap-4">
-                  <Clock className="w-6 h-6 text-clinic-green flex-shrink-0 mt-1" />
+                  <Bus className="w-6 h-6 text-clinic-green flex-shrink-0 mt-1" />
                   <div>
-                    <h3 className="font-medium mb-1">最寄り駅からのアクセス</h3>
+                    <h3 className="font-medium mb-1">電車・バスでお越しの方</h3>
+                    <p className="text-clinic-text/80 text-sm leading-relaxed mb-3">
+                      JR横須賀線「逗子駅」または京急逗子線「逗子・葉山駅」が最寄りです。両駅から京急バス（葉山方面行き）が便利です。
+                    </p>
                     <ul className="text-clinic-text/80 space-y-2 text-sm">
-                      <li>・JR横須賀線「逗子駅」より徒歩約15分、またはバスで約5分</li>
-                      <li>・京急逗子線「逗子・葉山駅」より徒歩約12分</li>
+                      <li>・逗子駅／逗子・葉山駅方面から：「切り通し下」バス停で下車</li>
+                      <li>・葉山方面から：「鐙摺（あぶずり）」バス停で下車</li>
                     </ul>
                   </div>
                 </div>
@@ -170,17 +173,27 @@ export default function Access() {
                   <Phone className="w-6 h-6 text-clinic-green flex-shrink-0 mt-1" />
                   <div>
                     <h3 className="font-medium mb-1">お電話</h3>
-                    <p className="text-clinic-text/80">
-                      {site.phone ? (
-                        <a href={`tel:${site.phone}`} className="hover:text-clinic-green transition-colors">
-                          {phoneDisplay}
-                        </a>
-                      ) : (
-                        phoneDisplay
+                    <div className="text-clinic-text/80 space-y-2">
+                      <p>
+                        <span className="text-xs text-gray-500 block">代表</span>
+                        {site.phone ? (
+                          <a href={`tel:${site.phone}`} className="hover:text-clinic-green transition-colors">
+                            {phoneDisplay}
+                          </a>
+                        ) : (
+                          phoneDisplay
+                        )}
+                      </p>
+                      {site.urgentPhone && (
+                        <p>
+                          <span className="text-xs text-gray-500 block">お急ぎの方</span>
+                          <a href={`tel:${site.urgentPhone}`} className="hover:text-clinic-green transition-colors">
+                            {site.urgentPhone}
+                          </a>
+                        </p>
                       )}
-                      <br />
-                      <span className="text-xs text-gray-500">（お急ぎのご用件のみ。基本はWEBからお申込ください）</span>
-                    </p>
+                      <span className="text-xs text-gray-500 block">（基本はWEBからお申込ください）</span>
+                    </div>
                   </div>
                 </div>
               </div>

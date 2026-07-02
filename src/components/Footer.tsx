@@ -16,7 +16,7 @@ export default function Footer() {
             </p>
             <div className="flex items-start gap-2 text-sm">
               <MapPin className="w-5 h-5 text-clinic-green shrink-0" />
-              <p>神奈川県逗子市〇〇 1-2-3<br /><span className="text-xs text-gray-500">※詳細な住所はご予約時にお伝えします</span></p>
+              <p>{site.address}<br /><span className="text-xs text-gray-500">※詳細な番地はご予約時にお伝えします</span></p>
             </div>
           </div>
           

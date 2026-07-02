@@ -9,8 +9,15 @@
 export const site = {
   name: "廣瀬診療所",
 
-  /** TODO: 開業時に実際の電話番号を設定する（例: "046-123-4567"） */
-  phone: null as string | null,
+  /** 代表電話（基本のご連絡先） */
+  phone: "046-827-7399" as string | null,
+
+  /** お急ぎのご用件のための連絡先（携帯） */
+  urgentPhone: "090-4212-4600" as string | null,
+
+  /** 所在地 */
+  postalCode: "249-0005",
+  address: "神奈川県逗子市桜山9丁目",
 
   /** TODO: STORES予約など外部予約システムのURLが確定したら設定する */
   reservationUrl: null as string | null,
