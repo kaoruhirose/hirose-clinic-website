@@ -15,8 +15,8 @@ export const site = {
   /** TODO: STORES予約など外部予約システムのURLが確定したら設定する */
   reservationUrl: null as string | null,
 
-  /** TODO: InstagramのURLが確定したら設定する（設定するとフッターに表示される） */
-  instagramUrl: null as string | null,
+  /** InstagramのプロフィールURL（フッターに表示される） */
+  instagramUrl: "https://www.instagram.com/hiroseshinryojo/" as string | null,
 };
 
 /** 電話番号の画面表示用文字列（未確定の間はプレースホルダー） */
