@@ -103,7 +103,7 @@ export default function Access() {
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
+                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-red-400 font-bold">休</td>
@@ -113,7 +113,7 @@ export default function Access() {
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
+                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
                       <td className="py-4 px-2 text-clinic-blue">●</td>
                       <td className="py-4 px-2 text-clinic-green font-medium">△※</td>
                       <td className="py-4 px-2 text-red-400 font-bold">休</td>
@@ -122,7 +122,7 @@ export default function Access() {
                 </table>
               </div>
               <ul className="text-sm text-clinic-text/60 space-y-1 list-disc list-inside">
-                <li>休診日：水曜・日曜・祝日</li>
+                <li>休診日：水曜・木曜・日曜・祝日</li>
                 <li>△※ 土曜午後は予約診療（自費診療のみ）となります。</li>
               </ul>
             </div>
