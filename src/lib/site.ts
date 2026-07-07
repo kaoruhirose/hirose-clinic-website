@@ -28,3 +28,36 @@ export const site = {
 
 /** 電話番号の画面表示用文字列（未確定の間はプレースホルダー） */
 export const phoneDisplay = site.phone ?? "046-XXX-XXXX";
+
+/**
+ * 裸足ハイクなどイベントの参加申込に使う「使い回し用」Googleフォームの設定。
+ *
+ * 【セットアップ手順】
+ *  1. Googleフォームを1つ作成し、「参加希望日」をプルダウン設問にする
+ *  2. そのフォームの「◁ プレビュー」ではなく編集画面URLの
+ *     「.../viewform」までを baseUrl に貼る
+ *  3. 「回答を事前入力したURLを取得」で希望日に適当な値を入れてリンクを生成し、
+ *     URL内の「entry.XXXXXXXXX」部分を dateEntryId に設定する
+ *  4. events.ts の各日付と、フォームのプルダウン選択肢の文言を一致させる
+ *
+ * baseUrl が null の間は、各イベントの申込ボタンが自動的に
+ * 「申込フォーム準備中」表示になる（デッドリンクにならない）。
+ */
+export const eventForm = {
+  /** GoogleフォームのベースURL（「.../viewform」まで）。未設定なら null */
+  baseUrl: null as string | null,
+  /** 「参加希望日」プルダウン設問の entry ID（例: "entry.123456789"） */
+  dateEntryId: "entry.0000000000",
+};
+
+/**
+ * 指定した開催日を「参加希望日」に事前入力したGoogleフォームのURLを組み立てる。
+ * baseUrl 未設定の場合は null を返す（呼び出し側で「準備中」表示にする）。
+ */
+export function buildEventFormUrl(dateValue: string): string | null {
+  if (!eventForm.baseUrl) return null;
+  const url = new URL(eventForm.baseUrl);
+  url.searchParams.set("usp", "pp_url");
+  url.searchParams.set(eventForm.dateEntryId, dateValue);
+  return url.toString();
+}

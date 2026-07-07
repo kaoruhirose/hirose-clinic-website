@@ -36,6 +36,7 @@ export default function Footer() {
             <ul className="space-y-3 text-sm mb-6">
               <li><Link href="/about" className="hover:text-clinic-green transition-colors">代表紹介</Link></li>
               <li><Link href="/access" className="hover:text-clinic-green transition-colors">アクセス</Link></li>
+              <li><Link href="/events" className="hover:text-clinic-green transition-colors">イベント</Link></li>
               <li><Link href="/news" className="hover:text-clinic-green transition-colors">お知らせ</Link></li>
             </ul>
             {/* InstagramのURLが確定するまでは表示しない（site.ts で設定） */}
