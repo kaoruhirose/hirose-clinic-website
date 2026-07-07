@@ -12,7 +12,7 @@ export default function Footer() {
               廣瀬診療所
             </Link>
             <p className="text-sm leading-relaxed mb-6 max-w-sm">
-              「救急専門医の確かな技術」×「漢方専門医の全体観」。逗子の自然と調和する、あなたのための総合診療窓口です。
+              富士山と江ノ島を望む逗子・桜山の高台で、救急医療で培った西洋医学の確かさと、漢方が導く東洋医学の深さから心とからだを整える、完全予約制のプライベート診療所です。
             </p>
             <div className="flex items-start gap-2 text-sm">
               <MapPin className="w-5 h-5 text-clinic-green shrink-0" />
