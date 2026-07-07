@@ -45,9 +45,12 @@ export const phoneDisplay = site.phone ?? "046-XXX-XXXX";
  */
 export const eventForm = {
   /** GoogleフォームのベースURL（「.../viewform」まで）。未設定なら null */
-  baseUrl: null as string | null,
-  /** 「参加希望日」プルダウン設問の entry ID（例: "entry.123456789"） */
-  dateEntryId: "entry.0000000000",
+  baseUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSfGSxfca0c_myWvSRCsC14JnR6W91FPWqjyx8j4QGImo7K7Hw/viewform" as
+      | string
+      | null,
+  /** 「参加希望日」プルダウン設問の entry ID */
+  dateEntryId: "entry.1828901912",
 };
 
 /**
