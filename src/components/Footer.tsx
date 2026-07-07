@@ -33,30 +33,42 @@ export default function Footer() {
 
           <div>
             <h3 className="font-serif text-lg font-medium mb-4 text-clinic-blue">クリニック情報</h3>
-            <ul className="space-y-3 text-sm mb-6">
+            <ul className="space-y-3 text-sm">
               <li><Link href="/about" className="hover:text-clinic-green transition-colors">代表紹介</Link></li>
               <li><Link href="/access" className="hover:text-clinic-green transition-colors">アクセス</Link></li>
               <li><Link href="/news" className="hover:text-clinic-green transition-colors">お知らせ</Link></li>
             </ul>
-            {/* InstagramのURLが確定するまでは表示しない（site.ts で設定） */}
-            {site.instagramUrl && (
-              <div className="flex gap-4">
-                <a
-                  href={site.instagramUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center px-4 py-2 bg-white rounded-full text-clinic-blue hover:text-white hover:bg-clinic-blue transition-colors shadow-sm text-sm font-medium"
-                >
-                  Instagram
-                </a>
-              </div>
-            )}
           </div>
         </div>
         
-        <div className="mt-12 pt-8 border-t border-clinic-subtle/50 text-center md:text-left md:flex md:justify-between items-center text-sm text-gray-500">
-          <p>&copy; {new Date().getFullYear()} Hirose Clinic. All rights reserved.</p>
-          <div className="mt-4 md:mt-0 space-x-4">
+        <div className="mt-12 pt-8 border-t border-clinic-subtle/50 flex flex-col items-center gap-6 text-sm text-gray-500">
+          {/* Instagram（シンボルマークを最下段中央に配置。URLは site.ts で管理） */}
+          {site.instagramUrl && (
+            <a
+              href={site.instagramUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Instagram（@hiroseshinryojo）"
+              className="flex items-center justify-center w-11 h-11 rounded-full bg-white text-clinic-blue shadow-sm hover:text-white hover:bg-clinic-blue transition-colors"
+            >
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.75"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="w-5 h-5"
+                aria-hidden="true"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+              </svg>
+            </a>
+          )}
+          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-6">
+            <p>&copy; {new Date().getFullYear()} Hirose Shinryojo. All rights reserved.</p>
             <Link href="/privacy" className="hover:text-clinic-blue transition-colors">プライバシーポリシー</Link>
           </div>
         </div>

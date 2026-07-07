@@ -79,7 +79,7 @@ export default function Home() {
             variants={fadeUp}
             className="text-white/85 tracking-[0.35em] text-xs md:text-sm mb-6 uppercase"
           >
-            Hirose Clinic — Zushi, Kanagawa
+            Hirose Shinryojo — Zushi, Kanagawa
           </motion.p>
           <motion.h1
             variants={fadeUp}
