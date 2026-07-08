@@ -26,10 +26,10 @@ export default function Home() {
       <section className="relative w-full h-[85vh] min-h-[600px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
-            src="/images/hero.jpg"
-            alt="逗子の海岸から望む富士山と江ノ島の夕景"
+            src="/images/hero-wide.jpg"
+            alt="夕陽に染まる空の下、富士山と江ノ島を一望する逗子の海の風景"
             fill
-            className="object-cover object-[center_88%]"
+            className="object-cover object-center"
             priority
           />
           <div className="absolute inset-0 bg-clinic-base/20 mix-blend-multiply" />
