@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { Stethoscope, Leaf, Waves } from "lucide-react";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
@@ -62,8 +63,8 @@ export default function Services() {
           className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border-t-4 border-clinic-blue"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-6">
-            <span className="flex items-center justify-center w-12 h-12 bg-clinic-blue/10 text-clinic-blue text-2xl rounded-2xl">
-              🩺
+            <span className="flex items-center justify-center w-12 h-12 bg-clinic-blue/10 text-clinic-blue rounded-2xl">
+              <Stethoscope className="w-6 h-6" strokeWidth={1.75} />
             </span>
             <div>
               <h2 className="font-serif text-2xl text-clinic-blue">一般内科・救急対応</h2>
@@ -90,8 +91,8 @@ export default function Services() {
           className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border-t-4 border-clinic-green"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-6">
-            <span className="flex items-center justify-center w-12 h-12 bg-clinic-green/10 text-clinic-green text-2xl rounded-2xl">
-              🌿
+            <span className="flex items-center justify-center w-12 h-12 bg-clinic-green/10 text-clinic-green rounded-2xl">
+              <Leaf className="w-6 h-6" strokeWidth={1.75} />
             </span>
             <div>
               <h2 className="font-serif text-2xl text-clinic-blue">漢方専門外来</h2>
@@ -115,11 +116,11 @@ export default function Services() {
           whileInView="visible"
           viewport={{ once: true, margin: "-50px" }}
           variants={staggerContainer}
-          className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border-t-4 border-yellow-500"
+          className="bg-white p-8 md:p-12 rounded-3xl shadow-sm border-t-4 border-clinic-gold"
         >
           <motion.div variants={fadeUp} className="flex items-center gap-4 mb-6">
-            <span className="flex items-center justify-center w-12 h-12 bg-yellow-500/10 text-yellow-600 text-2xl rounded-2xl">
-              🌊
+            <span className="flex items-center justify-center w-12 h-12 bg-clinic-gold/10 text-clinic-gold rounded-2xl">
+              <Waves className="w-6 h-6" strokeWidth={1.75} />
             </span>
             <div>
               <h2 className="font-serif text-2xl text-clinic-blue">ライフスタイル相談</h2>

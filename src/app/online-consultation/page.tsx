@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { motion } from "framer-motion";
 import { Phone, Calendar, Video, CreditCard, Pill, CheckCircle2, AlertCircle } from "lucide-react";
 import ReservationLink from "@/components/ReservationLink";
+import { ZushiSceneArt } from "@/components/art";
 import { site, phoneDisplay } from "@/lib/site";
 
 const fadeUp = {
@@ -27,14 +27,7 @@ export default function OnlineConsultation() {
       {/* Hero Section */}
       <section className="relative w-full h-[60vh] min-h-[400px] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <Image 
-            src="/images/online-consultation.png" 
-            alt="オンライン診療の様子" 
-            fill
-            className="object-cover"
-            priority
-          />
-          <div className="absolute inset-0 bg-clinic-blue/20 mix-blend-multiply" />
+          <ZushiSceneArt className="absolute inset-0 w-full h-full" />
           <div className="absolute inset-0 bg-gradient-to-t from-clinic-base via-transparent to-transparent" />
         </div>
         

@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, Calendar } from "lucide-react";
+import { Menu, X, Phone, Calendar, ArrowRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import ReservationLink from "@/components/ReservationLink";
 import { site, phoneDisplay } from "@/lib/site";
@@ -100,7 +100,7 @@ export default function Header() {
                     className="text-2xl font-serif text-clinic-blue border-b border-clinic-subtle/50 pb-2 flex justify-between items-center"
                   >
                     {link.label}
-                    <span className="text-clinic-green">→</span>
+                    <ArrowRight className="w-5 h-5 text-clinic-green" strokeWidth={1.75} />
                   </Link>
                 </motion.div>
               ))}
