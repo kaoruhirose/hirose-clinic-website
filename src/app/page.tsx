@@ -60,13 +60,20 @@ export default function Home() {
       <section className="relative w-full h-[88vh] min-h-[620px] flex items-end justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
+            src="/images/hero-mobile.jpg"
+            alt="逗子・桜山の高台から望む、夕暮れの富士山と江ノ島と夕陽の一望"
+            fill
+            className="object-cover object-center md:hidden"
+            priority
+          />
+          <Image
             src="/images/hero-wide.jpg"
             alt="逗子・桜山の高台から望む、夕暮れの富士山と江ノ島と夕陽の一望"
             fill
-            className="object-cover object-center"
+            className="object-cover object-center hidden md:block"
             priority
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-clinic-blue/60 via-clinic-blue/10 to-transparent" />
+          <div className="absolute inset-0 bg-gradient-to-t from-clinic-blue/45 via-clinic-blue/5 to-transparent md:from-clinic-blue/60 md:via-clinic-blue/10" />
         </div>
 
         <motion.div
