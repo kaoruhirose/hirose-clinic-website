@@ -21,6 +21,42 @@
 
 ---
 
+## 2026-08-29（土）独自ドメイン公開＋メールを Google Workspace に移行
+
+> ドメイン `hiroseshinryojo.jp` の本番切り替えと、`dr.kaoru@` メールの整備。
+> 詳しい設定値の控えは `HANDOFF.md` にも記載（この日誌が正、HANDOFFは補足メモ）。
+
+### やったこと
+
+1. **ドメインの現状を調査** — 登録は「お名前.com」だが、ネームサーバーは Xserver のままで
+   お名前.com 側の設定が休眠状態だった、と判明。メールが Xserver 受信→個人Gmail転送で
+   生きていることも確認（MXを守る必要あり）。
+2. **お名前.com の DNS を整備** — A `216.198.79.1`（Vercel）・www CNAME（Vercel）を確認。
+   はじめメール保護のため MX を Xserver に設定 → 後述の方針変更で Google 宛に差し替え。
+3. **ネームサーバーを Xserver → お名前.com（`01〜04.dnsv.jp`）に切替**（反映完了を確認）。
+4. **メール方針を確定** — 調べたところ **Google Workspace Business Starter が有効**
+   （`dr.kaoru@hiroseshinryojo.jp`、月¥880、管理者も dr.kaoru@）。個人の Google One(AI Pro)とは別物。
+   → メールを Workspace で送受信する方針に。
+5. **DNS のメール向き先を Google に変更** — MX `smtp.google.com`(優先1)、
+   SPF(TXT) `v=spf1 include:_spf.google.com ~all` に設定・反映確認。
+6. （別途）トップのヒーロー画像を PC＝広角パノラマ、スマホ＝富士山を上げた縦構図に調整。
+
+### 結果
+
+- **サイト公開完了**：`https://hiroseshinryojo.jp` が HTTPS 表示。Vercel の Domains は3つとも Valid（緑）。
+- **メールDNS完了**：`dr.kaoru@hiroseshinryojo.jp` 宛が Google Workspace の受信箱に届く設定に。
+  （今後は個人Gmail(khirose716)ではなく Workspace 側を見る）
+- ESLint 0件・画像差し替え検証済み。`main` にプッシュ済み。
+
+### 🔖 やり残した宿題
+
+- [ ] **メール送受信テスト**：Gmail に `dr.kaoru@` でログイン → 別アドレスから受信確認 → 返信で送信確認
+- [ ] **DKIM 設定**（Workspace管理→Gmail→メールの認証）で送信の信頼性UP（任意だが推奨）／DMARCも任意
+- [ ] 希望あれば Workspace `dr.kaoru@` → 個人Gmail への転送設定
+- [ ] 将来：診療予約の自動化（Google Calendar 連携など）を別途設計
+
+---
+
 ## 2026-08-28（金）これまでの経緯を書き起こし＋取り残された作業を本流に合流
 
 > `plaud-to-m3` の宿題「残り4プロジェクトの `MAP.md` 書き起こし」の**1件目**。
