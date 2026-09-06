@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-<!-- BEGIN:kaoru-common-rules v4 -->
+<!-- BEGIN:kaoru-common-rules v5 -->
 # 共通ルール（全プロジェクト共通・廣瀬薫）
 
 > **このブロックは、AGENTS.md を読むすべてのAIコーディングツールで機能します。**
@@ -86,6 +86,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 **型を呼ばない作業** — 30分以内で終わり・取り返しがつき・お金と個人情報に触らない作業は、上の手順を省いてそのままやってよい。**ただし検収3点セットだけは、規模によらず必ず行う。**
 
 > このセクションは**1つ足すなら1つ削る**。長くなること自体が、この考え方への違反になる。
+> **作るものも同じ。** 着手前に「その仕組みは、解く問題より大きくないか」を見比べる。使うのが年に数回なら、道具ではなく約束ごとで足りる。**複雑さそのものが、新しい問題を生む。**
 > 型の原典は `~/Projects/active/fable-orchestra/` — つかちゃんのリポジトリ。**読むだけ・書き込み禁止。**
 
 ## 🏁 セッション終了時にやること
