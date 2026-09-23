@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-<!-- BEGIN:kaoru-common-rules v6 -->
+<!-- BEGIN:kaoru-common-rules v7 -->
 # 共通ルール（全プロジェクト共通・廣瀬薫）
 
 > **このブロックは、AGENTS.md を読むすべてのAIコーディングツールで機能します。**
@@ -63,7 +63,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 ## 🎼 作業の進め方（判断の型）
 
-**役割分担** — 賢い（高価な）AIは**判断**に使う：設計・危険の見抜き・検収。コードや調査の物量は、速い（定額の）AIに流す。
+**高額なAIは使わない（2026-09-24 決定）** — Fable などの最上位モデル（従量課金で高額）は、**作業でも、作るシステムでも使わない**（Claude Code では見張り役 `~/.claude/hooks/no-fable-guard.sh` が送る前に止める）。**判断**（設計・危険の見抜き・検収）は定額の中でいちばん賢いAI、コードや調査の物量は速いAIが受け持つ。安い API（Haiku・Sonnet・Opus＝プログラムから呼ぶ窓口）は使ってよいが、**新しく組み込むときは月額の見込みを示して薫さんの GO をもらう**。
 
 **着手前に必ず止まる4場面** — ①設計の大きな決定 ②取り返しのつかない操作（削除・上書き・本番のデータ） ③外部への公開（デプロイ・公開リポジトリ） ④お金の投入。勝手に進めず、必ず薫さんに確認する。
 
@@ -79,7 +79,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 **検収3点セット（どんなに小さくても削らない）** — ①合格条件を、報告を読むのではなく**自分で実行して**確かめる ②変更箇所を目で見る ③出来上がったものを実際に読み、**「これを悪用するなら？ 途中で失敗したら？」**を自問する。新しくファイルや設定を作ったときは、パスワードや鍵が平文で書かれていないか（説明文書も含めて）必ず検索する。
 
-**行き詰まったとき** — 同じやり方で3回目を試すのが一番高くつく。**2回失敗したら賢いAIへ上げる**。逆に、一度解けて手順が固まった仕事は、次から安いAIへ下げる。迷ったら安いほうから。
+**行き詰まったとき** — 同じやり方で3回目を試すのが一番高くつく。**2回失敗したら、より賢いAIへ上げる（上限は Opus。それでも解けなければ薫さんに相談）**。逆に、一度解けて手順が固まった仕事は、次から安いAIへ下げる。迷ったら安いほうから。
 
 **構想がぼんやりしているとき** — いきなり作らない。まず質問で目的と理由をはっきりさせ、A4半分〜1枚にまとめてから着手する。このとき解決案や技術の話はしない — **良い質問をするのが仕事で、良い答えを出すのは仕事ではない。**
 
