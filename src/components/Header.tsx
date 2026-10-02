@@ -13,7 +13,7 @@ export default function Header() {
   // Close menu when resizing to desktop
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= 768) {
+      if (window.innerWidth >= 1024) {
         setIsOpen(false);
       }
     };
@@ -34,6 +34,7 @@ export default function Header() {
     { href: "/about", label: "私たちの想い" },
     { href: "/services", label: "診療案内" },
     { href: "/online-consultation", label: "オンライン診療" },
+    { href: "/events", label: "イベント" },
     { href: "/access", label: "アクセス" },
   ];
 
@@ -49,23 +50,23 @@ export default function Header() {
         </div>
         
         {/* Desktop Nav */}
-        <nav className="hidden md:flex items-center space-x-8">
+        <nav className="hidden lg:flex items-center space-x-8">
           {navLinks.map((link) => (
             <Link 
               key={link.href}
               href={link.href} 
-              className="text-sm font-medium tracking-wide hover:text-clinic-green transition-colors"
+              className="text-sm font-medium tracking-wide whitespace-nowrap hover:text-clinic-green transition-colors"
             >
               {link.label}
             </Link>
           ))}
-          <ReservationLink className="inline-flex items-center justify-center px-6 py-2.5 rounded-full text-sm font-medium text-white bg-clinic-blue hover:bg-clinic-blue/90 shadow-sm transition-all hover:shadow-md">
+          <ReservationLink className="inline-flex items-center justify-center whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-medium text-white bg-clinic-blue hover:bg-clinic-blue/90 shadow-sm transition-all hover:shadow-md">
             診察予約
           </ReservationLink>
         </nav>
 
         {/* Mobile menu button */}
-        <div className="md:hidden flex items-center">
+        <div className="lg:hidden flex items-center">
           <button 
             onClick={() => setIsOpen(!isOpen)}
             className="p-2 text-clinic-blue hover:text-clinic-green transition-colors focus:outline-none"
@@ -84,7 +85,7 @@ export default function Header() {
             animate={{ opacity: 1, height: "calc(100vh - 80px)" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="md:hidden fixed top-20 left-0 w-full bg-clinic-base/95 backdrop-blur-lg overflow-hidden border-t border-clinic-subtle"
+            className="lg:hidden fixed top-20 left-0 w-full bg-clinic-base/95 backdrop-blur-lg overflow-hidden border-t border-clinic-subtle"
           >
             <nav className="flex flex-col p-8 space-y-6 h-full">
               {navLinks.map((link, idx) => (
