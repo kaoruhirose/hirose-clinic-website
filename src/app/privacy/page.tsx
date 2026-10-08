@@ -1,20 +1,4 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ShieldCheck } from "lucide-react";
-
-const fadeUp = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { opacity: 1, y: 0, transition: { duration: 0.8 } }
-};
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.15 }
-  }
-};
+import { EditorialSection, PageIntro } from "@/components/Editorial";
 
 const sections = [
   {
@@ -75,68 +59,24 @@ const sections = [
 
 export default function Privacy() {
   return (
-    <div className="flex flex-col w-full pb-24">
-      <section className="bg-clinic-subtle/50 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h1
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-serif text-4xl md:text-5xl text-clinic-blue mb-4"
-          >
-            プライバシーポリシー
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-clinic-green font-medium tracking-widest text-sm"
-          >
-            PRIVACY POLICY
-          </motion.p>
-        </div>
-      </section>
-
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 mt-16 w-full">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          className="flex items-start gap-4 mb-12"
-        >
-          <ShieldCheck className="w-7 h-7 text-clinic-green flex-shrink-0 mt-1" />
-          <p className="text-clinic-text/80 leading-relaxed">
+    <div className="page-shell">
+      <div className="container">
+        <PageIntro title="プライバシーポリシー">
+          <p>
             廣瀬診療所（以下「当院」といいます）は、患者さまの個人情報を適切に保護することが社会的責務であると考え、個人情報の保護に関する法律および関連法令を遵守し、以下の方針に基づいて個人情報を取り扱います。
           </p>
-        </motion.div>
-
-        <motion.div
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, margin: "-50px" }}
-          variants={staggerContainer}
-          className="space-y-10"
-        >
-          {sections.map((section) => (
-            <motion.section key={section.title} variants={fadeUp}>
-              <h2 className="font-serif text-xl md:text-2xl text-clinic-blue mb-4 border-b border-clinic-subtle pb-3">
-                {section.title}
-              </h2>
-              {section.body.map((paragraph, idx) => (
-                <p key={idx} className="text-clinic-text/80 leading-relaxed mb-3">
-                  {paragraph}
-                </p>
-              ))}
-              {section.list && (
-                <ul className="text-clinic-text/80 space-y-2 list-disc list-inside leading-relaxed">
-                  {section.list.map((item, idx) => (
-                    <li key={idx}>{item}</li>
-                  ))}
-                </ul>
-              )}
-            </motion.section>
-          ))}
-        </motion.div>
-
-        <p className="text-sm text-clinic-text/50 mt-16 text-right">
+        </PageIntro>
+        {sections.map((section) => (
+          <EditorialSection key={section.title} title={section.title}>
+            {section.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+            {section.list && (
+              <ul className="rule-list">
+                {section.list.map((item) => <li key={item}>{item}</li>)}
+              </ul>
+            )}
+          </EditorialSection>
+        ))}
+        <p className="quiet-note mt-12 text-right">
           制定日：2026年6月1日
         </p>
       </div>

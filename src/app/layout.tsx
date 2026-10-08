@@ -6,13 +6,13 @@ import Footer from "@/components/Footer";
 
 const zenKaku = Zen_Kaku_Gothic_New({
   weight: ["400", "500", "700"],
-  variable: "--font-sans",
+  variable: "--font-clinic-sans",
   subsets: ["latin"], // Note: Google Fonts subset configuration typically uses "latin" or similar even for JP fonts if needed to fetch the CSS sheet properly.
 });
 
 const shippori = Shippori_Mincho({
   weight: ["400", "500", "700"],
-  variable: "--font-serif",
+  variable: "--font-clinic-serif",
   subsets: ["latin"],
 });
 
@@ -46,11 +46,13 @@ export default function RootLayout({
   return (
     <html
       lang="ja"
+      data-scroll-behavior="smooth"
       className={`${zenKaku.variable} ${shippori.variable} antialiased selection:bg-clinic-blue/20 selection:text-clinic-blue`}
     >
       <body className="bg-clinic-base text-clinic-text font-sans min-h-screen flex flex-col scroll-smooth">
+        <a className="skip-link" href="#main-content">本文へ移動</a>
         <Header />
-        <main className="flex-1 flex flex-col">
+        <main id="main-content" className="flex-1 flex flex-col">
           {children}
         </main>
         <Footer />

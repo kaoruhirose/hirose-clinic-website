@@ -1,139 +1,61 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { Menu, X, Phone, Calendar, ArrowRight } from "lucide-react";
-import { motion, AnimatePresence } from "framer-motion";
+import { usePathname } from "next/navigation";
 import ReservationLink from "@/components/ReservationLink";
-import { site, phoneDisplay } from "@/lib/site";
+
+const links = [
+  { href: "/about", label: "診療所について" },
+  { href: "/services", label: "診療案内" },
+  { href: "/online-consultation", label: "オンライン診療", secondary: true },
+  { href: "/events", label: "裸足ハイク・催し", secondary: true },
+  { href: "/access", label: "アクセス", secondary: true },
+];
 
 export default function Header() {
+  const pathname = usePathname();
+  const home = pathname === "/";
+  const dialog = useRef<HTMLDialogElement>(null);
+  const trigger = useRef<HTMLButtonElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  // Close menu when resizing to desktop
   useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth >= 1024) {
-        setIsOpen(false);
-      }
-    };
-    window.addEventListener("resize", handleResize);
-    return () => window.removeEventListener("resize", handleResize);
-  }, []);
-
-  // Prevent scroll when menu is open
-  useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "unset";
-    // アンマウント時にスクロールを必ず復元する
+    const menu = dialog.current;
+    if (!menu || !isOpen) return;
+    const previousOverflow = document.body.style.overflow;
+    menu.showModal();
+    document.body.style.overflow = "hidden";
+    const onResize = () => { if (window.innerWidth >= 1024) menu.close(); };
+    window.addEventListener("resize", onResize);
     return () => {
-      document.body.style.overflow = "unset";
+      window.removeEventListener("resize", onResize);
+      document.body.style.overflow = previousOverflow;
+      menu.close();
     };
   }, [isOpen]);
 
-  const navLinks = [
-    { href: "/about", label: "私たちの想い" },
-    { href: "/services", label: "診療案内" },
-    { href: "/online-consultation", label: "オンライン診療" },
-    { href: "/events", label: "イベント" },
-    { href: "/access", label: "アクセス" },
-  ];
+  const close = () => { dialog.current?.close(); setIsOpen(false); };
 
   return (
-    <header className="sticky top-0 z-50 w-full bg-clinic-base/80 backdrop-blur-md border-b border-clinic-subtle">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-        <div className="flex-shrink-0">
-          <Link href="/" className="flex items-center gap-2 group" onClick={() => setIsOpen(false)}>
-            <span className="font-serif text-2xl font-medium tracking-wider text-clinic-blue transition-opacity group-hover:opacity-80">
-              廣瀬診療所
-            </span>
-          </Link>
-        </div>
-        
-        {/* Desktop Nav */}
-        <nav className="hidden lg:flex items-center space-x-8">
-          {navLinks.map((link) => (
-            <Link 
-              key={link.href}
-              href={link.href} 
-              className="text-sm font-medium tracking-wide whitespace-nowrap hover:text-clinic-green transition-colors"
-            >
-              {link.label}
-            </Link>
-          ))}
-          <ReservationLink className="inline-flex items-center justify-center whitespace-nowrap px-6 py-2.5 rounded-full text-sm font-medium text-white bg-clinic-blue hover:bg-clinic-blue/90 shadow-sm transition-all hover:shadow-md">
-            診察予約
-          </ReservationLink>
+    <header className={`site-header${home ? " site-header--over-photo" : ""}`}>
+      <div className="header-inner">
+        <Link href="/" className={home ? "location-mark" : "header-brand"} aria-label="廣瀬診療所 トップページ">{home ? "逗子・桜山" : "廣瀬診療所"}</Link>
+        <nav className="desktop-nav" aria-label="メインメニュー">
+          {links.map(link => <Link key={link.href} href={link.href} className={home && link.secondary ? "home-secondary" : undefined} aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}
+          <ReservationLink className="nav-reservation">ご予約</ReservationLink>
         </nav>
-
-        {/* Mobile menu button */}
-        <div className="lg:hidden flex items-center">
-          <button 
-            onClick={() => setIsOpen(!isOpen)}
-            className="p-2 text-clinic-blue hover:text-clinic-green transition-colors focus:outline-none"
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
+        <button ref={trigger} className="menu-trigger" aria-expanded={isOpen} aria-controls="site-menu" onClick={() => setIsOpen(true)}>メニュー<span aria-hidden="true"><i /><i /></span></button>
       </div>
-
-      {/* Mobile Nav Overlay */}
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "calc(100vh - 80px)" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3, ease: "easeInOut" }}
-            className="lg:hidden fixed top-20 left-0 w-full bg-clinic-base/95 backdrop-blur-lg overflow-hidden border-t border-clinic-subtle"
-          >
-            <nav className="flex flex-col p-8 space-y-6 h-full">
-              {navLinks.map((link, idx) => (
-                <motion.div
-                  key={link.href}
-                  initial={{ x: -20, opacity: 0 }}
-                  animate={{ x: 0, opacity: 1 }}
-                  transition={{ delay: idx * 0.1 }}
-                >
-                  <Link 
-                    href={link.href}
-                    onClick={() => setIsOpen(false)}
-                    className="text-2xl font-serif text-clinic-blue border-b border-clinic-subtle/50 pb-2 flex justify-between items-center"
-                  >
-                    {link.label}
-                    <ArrowRight className="w-5 h-5 text-clinic-green" strokeWidth={1.75} />
-                  </Link>
-                </motion.div>
-              ))}
-              
-              <motion.div
-                initial={{ y: 20, opacity: 0 }}
-                animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.4 }}
-                className="pt-4 flex flex-col gap-4 mt-auto"
-              >
-                {/* 電話番号が確定するまでは誤発信防止のため tel: リンクを表示しない */}
-                {site.phone && (
-                  <a
-                    href={`tel:${site.phone}`}
-                    className="flex items-center justify-center gap-3 py-4 rounded-2xl bg-white border border-clinic-subtle text-clinic-blue font-medium shadow-sm active:bg-clinic-subtle transition-colors"
-                  >
-                    <Phone className="w-5 h-5 text-clinic-green" />
-                    {phoneDisplay}
-                  </a>
-                )}
-                <ReservationLink
-                  onClick={() => setIsOpen(false)}
-                  className="flex items-center justify-center gap-3 py-4 rounded-2xl bg-clinic-blue text-white font-medium shadow-lg hover:bg-clinic-blue/90 active:scale-95 transition-all"
-                >
-                  <Calendar className="w-5 h-5" />
-                  今すぐ診察予約
-                </ReservationLink>
-              </motion.div>
-            </nav>
-          </motion.div>
-        )}
-      </AnimatePresence>
+      <dialog id="site-menu" className="menu-dialog" ref={dialog} aria-label="サイトメニュー" onClose={() => { setIsOpen(false); trigger.current?.focus(); }}>
+        <div className="menu-top"><Link href="/" onClick={close}>廣瀬診療所</Link><button onClick={close} autoFocus>閉じる <span aria-hidden="true">×</span></button></div>
+        <nav aria-label="モバイルメニュー">
+          {links.map((link, i) => <Link key={link.href} href={link.href} onClick={close} aria-current={pathname === link.href ? "page" : undefined}><span className="menu-number" aria-hidden="true">0{i + 1}</span>{link.label}<span aria-hidden="true">↗</span></Link>)}
+          <Link href="/news" onClick={close}><span className="menu-number" aria-hidden="true">06</span>お知らせ<span aria-hidden="true">↗</span></Link>
+        </nav>
+        <ReservationLink onClick={close} className="text-link menu-reservation">ご予約について<span aria-hidden="true">→</span></ReservationLink>
+        <p className="menu-caption">海と山のあいだで、からだの声を聴く。</p>
+      </dialog>
     </header>
   );
 }

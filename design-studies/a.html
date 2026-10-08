@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <title>凪 — 廣瀬診療所 / デザイン試作 A</title>
+  <style>
+    :root { color-scheme: light; --paper:#f6f5f0; --ink:#2c3532; --serif:"Hiragino Mincho ProN","Yu Mincho",YuMincho,serif; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--serif); -webkit-font-smoothing:antialiased; }
+    a { color:inherit; text-decoration:none; text-underline-offset:7px; }
+    a:hover { text-decoration:underline; }
+    a:focus-visible { outline:2px solid currentColor; outline-offset:7px; }
+    .hero { position:relative; height:100svh; min-height:680px; color:#fff; background:#3c4037; isolation:isolate; }
+    .hero picture,.hero picture img { position:absolute; inset:0; width:100%; height:100%; }
+    .hero picture img { object-fit:cover; object-position:50% 54%; }
+    .hero::after { content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(14,24,22,.27),transparent 28%,transparent 56%,rgba(14,24,22,.4)); z-index:-1; }
+    .hero picture { z-index:-2; }
+    .topline { position:absolute; top:36px; left:46px; right:46px; display:flex; align-items:center; justify-content:space-between; font-size:12px; letter-spacing:.18em; }
+    .place { display:flex; align-items:center; gap:16px; }
+    .place::before { content:""; width:24px; height:1px; background:currentColor; }
+    .nav { display:flex; gap:36px; align-items:center; }
+    .nav a { padding:10px 0; }
+    .nav .reserve { border-bottom:1px solid #ffffff8a; padding-bottom:9px; }
+    .wordmark { position:absolute; left:50%; top:50%; transform:translate(-50%,-50%); width:max-content; }
+    h1 { writing-mode:vertical-rl; font-size:clamp(31px,3.4vw,46px); font-weight:400; letter-spacing:.22em; line-height:1.25; margin:0; text-shadow:0 1px 20px #17261d40; }
+    .latin { position:absolute; right:calc(100% + 18px); top:7px; writing-mode:vertical-rl; white-space:nowrap; font-family:Georgia,serif; font-size:10px; letter-spacing:.29em; margin:0; }
+    .verse { position:absolute; left:8%; bottom:15%; margin:0; font-size:clamp(18px,1.9vw,25px); font-weight:400; line-height:2.2; letter-spacing:.18em; }
+    .hero-foot { position:absolute; left:46px; right:46px; bottom:29px; display:flex; align-items:center; justify-content:space-between; font-size:11px; letter-spacing:.14em; }
+    .down { display:flex; align-items:center; gap:20px; padding:10px 0; }
+    .down::after { content:"↓"; font-size:19px; }
+    .thought { padding:150px 9% 160px; display:grid; grid-template-columns:1fr 1.2fr; gap:12%; align-items:start; }
+    .section-label { font-size:11px; letter-spacing:.16em; margin:0 0 40px; font-family:Arial,sans-serif; }
+    .thought h2 { font-size:29px; line-height:2; letter-spacing:.13em; font-weight:400; margin:0; }
+    .prose { padding-top:48px; font-size:15px; line-height:2.8; letter-spacing:.07em; }
+    .prose p { margin:0 0 22px; }
+    .text-link { display:inline-flex; align-items:center; gap:44px; border-bottom:1px solid #777b704f; padding:13px 0; font-size:12px; margin-top:10px; }
+    .landscape { margin:0 9% 0 21%; }
+    .landscape img { width:100%; height:330px; object-fit:cover; object-position:50% 85%; display:block; }
+    .landscape figcaption { font-size:10px; letter-spacing:.12em; padding-top:16px; text-align:right; color:#686f67; }
+    .visit { padding:130px 9% 120px; display:grid; grid-template-columns:1fr 1.2fr; gap:12%; }
+    .visit h2 { font-size:28px; font-weight:400; letter-spacing:.12em; margin:0 0 24px; }
+    .visit p { font-size:13px; line-height:2.4; letter-spacing:.05em; }
+    .visit-links { border-top:1px solid #c7cbc3; }
+    .visit-links a { display:flex; justify-content:space-between; align-items:center; padding:23px 0; border-bottom:1px solid #c7cbc3; font-size:16px; letter-spacing:.1em; }
+    .visit-links small { font-size:10px; color:#646c62; margin-left:auto; margin-right:28px; }
+    footer { padding:45px 46px 28px; border-top:1px solid #d8dbd4; }
+    .footer-row { display:flex; justify-content:space-between; gap:30px; font-size:11px; letter-spacing:.12em; line-height:2.2; }
+    .footer-row nav { display:flex; gap:25px; }
+    .study-note { font:10px/1.8 Arial,sans-serif; color:#73766f; text-align:right; display:block; margin-top:38px; }
+    @media (min-width:1600px) { .hero { max-height:1100px; } }
+    @media (max-width:700px) {
+      .hero { height:100svh; min-height:620px; max-height:980px; }
+      .hero picture img { object-position:50% 50%; }
+      .topline { top:22px; left:24px; right:24px; font-size:10px; }
+      .place { gap:10px; letter-spacing:.1em; } .place::before { width:16px; }
+      .nav { gap:20px; } .nav .about { display:none; }
+      h1 { font-size:32px; letter-spacing:.18em; } .latin { right:calc(100% + 14px); font-size:9px; }
+      .verse { left:28px; bottom:15%; font-size:18px; line-height:2.15; letter-spacing:.12em; }
+      .hero-foot { left:24px; right:24px; bottom:18px; font-size:9px; letter-spacing:.07em; }
+      .down { gap:10px; }
+      .thought { display:block; padding:88px 28px 85px; }
+      .section-label { margin-bottom:26px; font-size:10px; }
+      .thought h2 { font-size:25px; }
+      .prose { padding-top:28px; font-size:13px; line-height:2.7; }
+      .prose br { display:none; }
+      .landscape { margin:0 0 0 28px; } .landscape img { height:240px; object-position:56% 70%; }
+      .landscape figcaption { padding-right:24px; font-size:9px; }
+      .visit { display:block; padding:85px 28px 70px; }
+      .visit h2 { font-size:25px; } .visit-links { margin-top:35px; }
+      .visit-links a { font-size:15px; } .visit-links small { font-size:9px; margin-right:16px; }
+      footer { padding:30px 28px 25px; } .footer-row { display:block; font-size:10px; }
+      .footer-row nav { gap:19px; margin-top:25px; flex-wrap:wrap; } .study-note { margin-top:25px; text-align:left; }
+    }
+    @media (prefers-reduced-motion:reduce) { html { scroll-behavior:auto; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero" aria-labelledby="clinic-name">
+      <picture><source media="(max-width:700px)" srcset="/images/hero-mobile.jpg"><img src="/images/hero-wide.jpg" alt="逗子・桜山から望む、富士山と江ノ島の夕景" fetchpriority="high" width="1440" height="748"></picture>
+      <header class="topline"><span class="place">逗子・桜山</span><nav class="nav" aria-label="主なご案内"><a class="about" href="#thought">診療所について</a><a target="_blank" rel="noopener" href="https://www.hiroseshinryojo.jp/services">診療案内</a><a class="reserve" target="_blank" rel="noopener" href="https://www.hiroseshinryojo.jp/access">ご予約</a></nav></header>
+      <div class="wordmark"><p class="latin">HIROSESHINRYOJO</p><h1 id="clinic-name">廣瀬診療所</h1></div>
+      <p class="verse">海と山のあいだで、<br>からだの声を聴く。</p>
+      <div class="hero-foot"><span>西洋医学と漢方　／　完全予約制</span><a class="down" href="#thought">この場所について</a></div>
+    </section>
+    <section class="thought" id="thought" aria-labelledby="thought-title">
+      <div><p class="section-label">私たちの診療</p><h2 id="thought-title">日々のなかに、<br>からだがある。</h2></div>
+      <div class="prose"><p>よく眠れた朝のこと。<br>食事のこと。少し気になっていること。</p><p>症状の向こうにある、ひとりひとりの暮らしへ。<br>西洋医学と漢方、ふたつの視点から、<br>いまのからだを一緒に見つめます。</p><a class="text-link" target="_blank" rel="noopener" href="https://www.hiroseshinryojo.jp/about">廣瀬診療所について <span aria-hidden="true">↗</span></a></div>
+    </section>
+    <figure class="landscape"><img src="/images/hero-wide.jpg" alt="桜山の緑の向こうにひらける海" loading="lazy" width="1440" height="748"><figcaption>この土地の風景とともに。逗子・桜山</figcaption></figure>
+    <section class="visit" aria-labelledby="visit-title">
+      <div><p class="section-label">お越しになる方へ</p><h2 id="visit-title">ひとりずつ、ゆっくりと。</h2><p>廣瀬診療所は完全予約制です。<br>ご予約方法と道順をご確認のうえ、お越しください。</p></div>
+      <nav class="visit-links" aria-label="詳しいご案内"><a target="_blank" rel="noopener" href="https://www.hiroseshinryojo.jp/services">診療案内<small>西洋医学・漢方</small><span aria-hidden="true">↗</span></a><a target="_blank" rel="noopener" href="https://www.hiroseshinryojo.jp/events">自然のなかで<small>裸足ハイク・イベント</small><span aria-hidden="true">↗</span></a><a target="_blank" rel="noopener" href="https://www.hiroseshinryojo.jp/access">ご予約・アクセス<span aria-hidden="true">↗</span></a></nav>
+    </section>
+  </main>
+  <footer><div class="footer-row"><span>廣瀬診療所<br>神奈川県逗子市桜山9丁目</span><nav aria-label="その他のご案内"><a target="_blank" rel="noopener" href="https://www.hiroseshinryojo.jp/online-consultation">オンライン診療</a><a target="_blank" rel="noopener" href="https://www.hiroseshinryojo.jp/news">お知らせ</a><a target="_blank" rel="noopener" href="https://www.instagram.com/hiroseshinryojo/">Instagram ↗</a></nav></div><a class="study-note" href="/" target="_top">試作 A「凪」・比較に戻る</a></footer>
+</body>
+</html>

@@ -1,216 +1,166 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { MapPin, Phone, Bus, CalendarDays } from "lucide-react";
+import { EditorialSection, PageIntro, Photo, TextLink } from "@/components/Editorial";
+import ReservationLink from "@/components/ReservationLink";
+import { photos } from "@/lib/photos";
 import { site, phoneDisplay } from "@/lib/site";
-
-const staggerContainer = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { staggerChildren: 0.2 }
-  }
-};
 
 export default function Access() {
   return (
-    <div className="flex flex-col w-full pb-24">
-      <section className="bg-clinic-subtle/50 pt-32 pb-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl mx-auto text-center">
-          <motion.h1 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="font-serif text-4xl md:text-5xl text-clinic-blue mb-4"
-          >
-            アクセス・ご予約
-          </motion.h1>
-          <motion.p 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.2 }}
-            className="text-clinic-green font-medium tracking-widest text-sm"
-          >
-            ACCESS & RESERVATION
-          </motion.p>
-        </div>
-      </section>
+    <div className="page-shell">
+      <div className="container">
+        <PageIntro eyebrow="アクセス・ご予約" title={<>桜山の高台で、<br />お待ちしています。</>}>
+          <p>
+            廣瀬診療所は、逗子・桜山の住宅街にある完全予約制の診療所です。
+            ご来院の前に、ご予約とアクセスのご案内をご確認ください。
+          </p>
+        </PageIntro>
 
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mt-16">
-        <div className="grid md:grid-cols-2 gap-12 lg:gap-20">
-          
-          {/* Reservation Info */}
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="space-y-10"
-          >
+        <Photo photo={photos.clinic} />
+
+        <EditorialSection id="reservation" label="初診の方へ" title={<>お一人ずつ、<br />ゆっくりと。</>}>
+          <div className="prose">
+            <p>
+              当院は完全予約制のプライベートクリニックです。
+              他の方と顔を合わせることなく、ゆったりとした時間の中で診療をお受けいただけます。
+            </p>
+            {site.reservationUrl ? (
+              <>
+                <p>ご予約は、外部の予約システムより承っております。</p>
+                <p>
+                  <ReservationLink className="text-link">WEB予約はこちら</ReservationLink>
+                </p>
+                <p className="quiet-note">外部の予約システムへ移動します。</p>
+              </>
+            ) : (
+              <>
+                <p>
+                  WEB予約のご案内は現在準備中です。
+                  ご予約についてはお電話でお問い合わせください。
+                </p>
+                <p>
+                  {site.phone ? (
+                    <TextLink href={`tel:${site.phone}`}>{phoneDisplay}</TextLink>
+                  ) : (
+                    phoneDisplay
+                  )}
+                </p>
+              </>
+            )}
+          </div>
+        </EditorialSection>
+
+        <EditorialSection label="診療時間" title="ご来院の時間">
+          <div className="schedule-wrap">
+            <table className="schedule-table">
+              <caption className="sr-only">廣瀬診療所の曜日別診療時間</caption>
+              <thead>
+                <tr>
+                  <th scope="col">診療時間</th>
+                  <th scope="col">月</th>
+                  <th scope="col">火</th>
+                  <th scope="col">水</th>
+                  <th scope="col">木</th>
+                  <th scope="col">金</th>
+                  <th scope="col">土</th>
+                  <th scope="col">日</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">
+                    <span className="block sm:inline">09:00</span>
+                    <span className="block sm:inline">〜13:00</span>
+                  </th>
+                  <td>●</td>
+                  <td>●</td>
+                  <td>休</td>
+                  <td>休</td>
+                  <td>●</td>
+                  <td>●</td>
+                  <td>休</td>
+                </tr>
+                <tr>
+                  <th scope="row">
+                    <span className="block sm:inline">15:00</span>
+                    <span className="block sm:inline">〜18:30</span>
+                  </th>
+                  <td>●</td>
+                  <td>●</td>
+                  <td>休</td>
+                  <td>休</td>
+                  <td>●</td>
+                  <td>△※</td>
+                  <td>休</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div className="quiet-note">
+            <p>休診日：水曜・木曜・日曜・祝日</p>
+            <p>△※ 土曜午後は予約診療（自費診療のみ）となります。</p>
+          </div>
+        </EditorialSection>
+
+        <EditorialSection label="アクセス" title="診療所への道のり">
+          <dl className="detail-list">
             <div>
-              <h2 className="font-serif text-2xl text-clinic-blue mb-6 border-b border-clinic-subtle pb-4">
-                初診の方へ
-              </h2>
-              <p className="text-clinic-text/80 leading-relaxed mb-6">
-                当院は完全予約制のプライベートクリニックです。<br />
-                他の方と顔を合わせることなく、ゆったりとした時間の中で診療をお受けいただけます。<br />
-                ご予約は下記の外部予約システム（STORES予約）より承っております。
-              </p>
-              {site.reservationUrl ? (
-                <a
-                  href={site.reservationUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex w-full sm:w-auto items-center justify-center px-10 py-4 text-white bg-clinic-blue hover:bg-clinic-blue/90 rounded-full font-medium transition-all shadow-md hover:shadow-lg text-lg"
-                >
-                  <CalendarDays className="mr-2 w-5 h-5" />
-                  WEB予約はこちらへ
-                </a>
-              ) : (
-                <div>
-                  {/* 予約システムのURLが確定するまでの準備中表示（site.ts で設定） */}
-                  <div className="inline-flex w-full sm:w-auto items-center justify-center px-10 py-4 text-white bg-clinic-blue/50 rounded-full font-medium shadow-md text-lg cursor-default select-none">
-                    <CalendarDays className="mr-2 w-5 h-5" />
-                    WEB予約（準備中）
-                  </div>
-                  <p className="mt-3 text-sm text-clinic-text/60">
-                    WEB予約の受付開始まで今しばらくお待ちください。
-                  </p>
-                </div>
-              )}
+              <dt>所在地</dt>
+              <dd>
+                <p>〒{site.postalCode}<br />{site.address}</p>
+                <p className="quiet-note">
+                  当院は住宅街にある自宅兼用診療所です。
+                  防犯および近隣への配慮のため、詳細な番地はご予約確定後にメールにてご案内しております。
+                </p>
+              </dd>
             </div>
-
             <div>
-              <h2 className="font-serif text-2xl text-clinic-blue mb-6 border-b border-clinic-subtle pb-4">
-                診療時間のご案内
-              </h2>
-              <div className="bg-white rounded-2xl p-6 shadow-sm border border-clinic-subtle/50 mb-4">
-                <table className="w-full text-center text-sm md:text-base border-collapse">
-                  <thead>
-                    <tr className="border-b border-clinic-subtle">
-                      <th className="py-3 px-2 text-left font-medium text-clinic-text/70">診療時間</th>
-                      <th className="py-3 px-2 font-medium">月</th>
-                      <th className="py-3 px-2 font-medium">火</th>
-                      <th className="py-3 px-2 font-medium">水</th>
-                      <th className="py-3 px-2 font-medium">木</th>
-                      <th className="py-3 px-2 font-medium">金</th>
-                      <th className="py-3 px-2 font-medium">土</th>
-                      <th className="py-3 px-2 font-medium text-red-500">日</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-clinic-subtle/50 text-clinic-text/80">
-                    <tr>
-                      <td className="py-4 px-2 text-left whitespace-nowrap">09:00 - 13:00</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
-                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
-                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                    </tr>
-                    <tr>
-                      <td className="py-4 px-2 text-left whitespace-nowrap">15:00 - 18:30</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
-                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                      <td className="py-4 px-2 text-clinic-blue">●</td>
-                      <td className="py-4 px-2 text-clinic-green font-medium">△※</td>
-                      <td className="py-4 px-2 text-red-400 font-bold">休</td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
-              <ul className="text-sm text-clinic-text/60 space-y-1 list-disc list-inside">
-                <li>休診日：水曜・木曜・日曜・祝日</li>
-                <li>△※ 土曜午後は予約診療（自費診療のみ）となります。</li>
-              </ul>
+              <dt>電車・バス</dt>
+              <dd>
+                <p>
+                  JR横須賀線「逗子駅」または京急逗子線「逗子・葉山駅」が最寄りです。
+                  両駅から京急バス（葉山方面行き）が便利です。
+                </p>
+                <ul className="rule-list">
+                  <li>逗子駅／逗子・葉山駅方面から：「切り通し下」バス停で下車</li>
+                  <li>葉山方面から：「鐙摺（あぶずり）」バス停で下車</li>
+                </ul>
+              </dd>
             </div>
-          </motion.div>
-
-          {/* Access Info & Map */}
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={staggerContainer}
-            className="space-y-10"
-          >
             <div>
-              <h2 className="font-serif text-2xl text-clinic-blue mb-6 border-b border-clinic-subtle pb-4">
-                アクセス情報
-              </h2>
-              <div className="bg-white rounded-2xl p-8 shadow-sm border border-clinic-subtle/50 space-y-6">
-                <div className="flex items-start gap-4">
-                  <MapPin className="w-6 h-6 text-clinic-green flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-medium mb-1">所在地</h3>
-                    <p className="text-clinic-text/80 leading-relaxed">
-                      〒{site.postalCode}<br />
-                      {site.address}<br />
-                      <span className="text-xs text-red-500 mt-2 block">
-                        ※当院は住宅街にある自宅兼用診療所です。防犯および近隣への配慮のため、詳細な番地はご予約確定後にメールにてご案内しております。
-                      </span>
-                    </p>
-                  </div>
-                </div>
-                
-                <div className="flex items-start gap-4">
-                  <Bus className="w-6 h-6 text-clinic-green flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-medium mb-1">電車・バスでお越しの方</h3>
-                    <p className="text-clinic-text/80 text-sm leading-relaxed mb-3">
-                      JR横須賀線「逗子駅」または京急逗子線「逗子・葉山駅」が最寄りです。両駅から京急バス（葉山方面行き）が便利です。
-                    </p>
-                    <ul className="text-clinic-text/80 space-y-2 text-sm">
-                      <li>・逗子駅／逗子・葉山駅方面から：「切り通し下」バス停で下車</li>
-                      <li>・葉山方面から：「鐙摺（あぶずり）」バス停で下車</li>
-                    </ul>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Phone className="w-6 h-6 text-clinic-green flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-medium mb-1">お電話</h3>
-                    <div className="text-clinic-text/80 space-y-2">
-                      <p>
-                        <span className="text-xs text-gray-500 block">代表</span>
-                        {site.phone ? (
-                          <a href={`tel:${site.phone}`} className="hover:text-clinic-green transition-colors">
-                            {phoneDisplay}
-                          </a>
-                        ) : (
-                          phoneDisplay
-                        )}
-                      </p>
-                      {site.urgentPhone && (
-                        <p>
-                          <span className="text-xs text-gray-500 block">お急ぎの方</span>
-                          <a href={`tel:${site.urgentPhone}`} className="hover:text-clinic-green transition-colors">
-                            {site.urgentPhone}
-                          </a>
-                        </p>
-                      )}
-                      <span className="text-xs text-gray-500 block">（基本はWEBからお申込ください）</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <dt>詳しい地図</dt>
+              <dd>
+                詳しい地図は、ご予約確定後に詳細住所とあわせてメールでご案内いたします。
+              </dd>
             </div>
+          </dl>
+        </EditorialSection>
 
-            {/* 地図: 防犯・近隣配慮のため詳細住所は予約確定後に案内する方針に合わせ、
-                地図の埋め込みは行わずご案内文のみ表示する */}
-            <div className="w-full h-64 bg-clinic-subtle/40 rounded-3xl flex items-center justify-center shadow-inner">
-              <div className="text-center text-clinic-text/70 text-sm p-6 leading-relaxed">
-                <MapPin className="w-8 h-8 mx-auto mb-3 text-clinic-green" />
-                詳しい地図は、ご予約確定後に<br />
-                詳細住所とあわせてメールでご案内いたします。
-              </div>
+        <EditorialSection id="contact" label="お問い合わせ" title="お電話でのご連絡">
+          <dl className="detail-list">
+            <div>
+              <dt>代表</dt>
+              <dd>
+                {site.phone ? (
+                  <TextLink href={`tel:${site.phone}`}>{phoneDisplay}</TextLink>
+                ) : (
+                  phoneDisplay
+                )}
+              </dd>
             </div>
-          </motion.div>
-
-        </div>
+            {site.urgentPhone && (
+              <div>
+                <dt>お急ぎの方</dt>
+                <dd>
+                  <TextLink href={`tel:${site.urgentPhone}`}>{site.urgentPhone}</TextLink>
+                </dd>
+              </div>
+            )}
+          </dl>
+          <p className="quiet-note">
+            {site.reservationUrl
+              ? "ご予約は基本的にWEBからお申し込みください。"
+              : "WEB予約のご案内が整うまで、ご予約については代表電話へお問い合わせください。"}
+          </p>
+        </EditorialSection>
       </div>
     </div>
   );
