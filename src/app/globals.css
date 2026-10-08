@@ -31,8 +31,10 @@
 .site-header { position: relative; z-index: 20; width: 100%; }
 .site-header--over-photo { position: absolute; inset: 0 0 auto; color: #fff; text-shadow: 0 1px 12px #10201060; }
 .header-inner { display: flex; align-items: center; justify-content: space-between; height: 110px; padding-inline: 4.4vw; gap: 30px; }
+.site-header--over-photo .header-inner { justify-content: flex-end; }
+.site-header--over-photo .desktop-nav { font-size: 14px; }
+.site-header--over-photo .menu-trigger { font-size: 13px; }
 .header-brand { font-family: var(--font-serif); font-size: 22px; letter-spacing: .18em; white-space: nowrap; }
-.location-mark { font-size: 12px; letter-spacing: .2em; }
 .desktop-nav { display: flex; gap: clamp(20px, 2.5vw, 42px); align-items: center; font-size: 12px; letter-spacing: .09em; }
 .desktop-nav a { padding-block: 12px; white-space: nowrap; }
 .desktop-nav a:hover, .desktop-nav a[aria-current] { text-decoration: underline; }
@@ -56,7 +58,7 @@
 .hero-image, .hero-image img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-image { z-index: -2; }
 .hero-image img { object-fit: cover; object-position: center; }
-.home-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #13221b24, transparent 32%, #13221b0a 58%, #13221b4a); z-index: -1; }
+.home-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #14201ea6, #14201e40 150px, transparent 275px), linear-gradient(180deg, #13221b24, transparent 32%, #13221b0a 58%, #13221b4a); z-index: -1; pointer-events: none; }
 .hero-wordmark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content; }
 .hero-wordmark :is(h1, h2) { writing-mode: vertical-rl; font-family: "Hiragino Mincho ProN", "Yu Mincho", var(--font-clinic-serif), serif; font-size: clamp(31px, 3.4vw, 46px); font-weight: 400; letter-spacing: .22em; line-height: 1.25; margin: 0; text-shadow: 0 1px 20px #17261d40; }
 .hero-latin { position: absolute; white-space: nowrap; font: 10px Georgia, serif; letter-spacing: .29em; margin: 0; text-shadow: 0 1px 12px #15271d50; }
@@ -64,8 +66,8 @@
 .hero-wordmark--above .hero-latin { left: 50%; bottom: calc(100% + 26px); transform: translateX(-50%); }
 .hero-wordmark--below .hero-latin { left: 50%; top: calc(100% + 22px); transform: translateX(-50%); }
 .hero-wordmark--diagonal .hero-latin { left: calc(100% + 12px); top: calc(100% - 18px); }
-.hero-poem { position: absolute; bottom: 102px; left: 6.3%; font-family: var(--font-serif); font-size: clamp(18px, 1.8vw, 25px); line-height: 2.1; letter-spacing: .19em; text-shadow: 0 1px 16px #17251b80; }
-.hero-bottom { position: absolute; bottom: 31px; left: 6.3%; right: 6.3%; display: flex; align-items: center; justify-content: space-between; font-size: 10px; letter-spacing: .15em; gap: 16px; }
+.hero-poem { position: absolute; bottom: 102px; left: 6.3%; font-family: var(--font-serif); font-size: clamp(19px, 1.9vw, 26px); line-height: 2.1; letter-spacing: .19em; text-shadow: 0 1px 16px #17251b80; }
+.hero-bottom { position: absolute; bottom: 31px; left: 6.3%; right: 6.3%; display: flex; align-items: center; justify-content: space-between; font-size: 12px; letter-spacing: .15em; gap: 16px; }
 .hero-bottom a { display: flex; align-items: center; gap: 22px; padding-block: 12px; }
 .hero-bottom p span { margin-inline: 8px; }
 .page-shell { padding-bottom: 72px; }
@@ -171,7 +173,6 @@
   .container { width: calc(100% - 48px); }
   .header-inner { height: 88px; padding-inline: 24px; }
   .header-brand { font-size: 19px; }
-  .location-mark { font-size: 10px; }
   .home-hero { min-height: 620px; max-height: 980px; }
   .hero-wordmark :is(h1, h2) { font-size: 32px; letter-spacing: .18em; }
   .hero-latin { font-size: 9px; }
@@ -179,8 +180,8 @@
   .hero-wordmark--above .hero-latin { bottom: calc(100% + 22px); }
   .hero-wordmark--below .hero-latin { top: calc(100% + 18px); }
   .hero-wordmark--diagonal .hero-latin { font-size: 8px; left: calc(100% + 8px); }
-  .hero-poem { left: 24px; bottom: 103px; font-size: 18px; letter-spacing: .12em; line-height: 2.05; }
-  .hero-bottom { left: 24px; right: 24px; bottom: 24px; font-size: 8px; letter-spacing: .05em; }
+  .hero-poem { left: 24px; bottom: 103px; font-size: 19px; letter-spacing: .12em; line-height: 2.05; }
+  .hero-bottom { left: 24px; right: 24px; bottom: 24px; font-size: 10px; letter-spacing: .05em; }
   .hero-bottom p span { margin-inline: 3px; }
   .hero-bottom a { gap: 8px; }
   .page-intro { padding: 56px 0 54px; }

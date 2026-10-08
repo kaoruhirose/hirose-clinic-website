@@ -40,7 +40,7 @@ export default function Header() {
   return (
     <header className={`site-header${home ? " site-header--over-photo" : ""}`}>
       <div className="header-inner">
-        <Link href="/" className={home ? "location-mark" : "header-brand"} aria-label="廣瀬診療所 トップページ">{home ? "逗子・桜山" : "廣瀬診療所"}</Link>
+        {!home && <Link href="/" className="header-brand" aria-label="廣瀬診療所 トップページ">廣瀬診療所</Link>}
         <nav className="desktop-nav" aria-label="メインメニュー">
           {links.map(link => <Link key={link.href} href={link.href} className={home && link.secondary ? "home-secondary" : undefined} aria-current={pathname === link.href ? "page" : undefined}>{link.label}</Link>)}
           <ReservationLink className="nav-reservation">ご予約</ReservationLink>
