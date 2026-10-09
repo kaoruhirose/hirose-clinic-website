@@ -67,6 +67,7 @@
 .hero-wordmark--below .hero-latin { left: 50%; top: calc(100% + 22px); transform: translateX(-50%); }
 .hero-wordmark--diagonal .hero-latin { left: calc(100% + 12px); top: calc(100% - 18px); }
 .hero-poem { position: absolute; bottom: 102px; left: 6.3%; font-family: var(--font-serif); font-size: clamp(19px, 1.9vw, 26px); line-height: 2.1; letter-spacing: .19em; text-shadow: 0 1px 16px #17251b80; }
+.hero-photo-caption { position: absolute; right: 6.3%; bottom: 137px; margin: 0; font-size: 11px; line-height: 1.8; letter-spacing: .12em; color: #ffffffe0; text-shadow: 0 1px 8px #17251bcc; pointer-events: none; }
 .hero-bottom { position: absolute; bottom: 31px; left: 6.3%; right: 6.3%; display: flex; align-items: center; justify-content: space-between; font-size: 12px; letter-spacing: .15em; gap: 16px; }
 .hero-bottom a { display: flex; align-items: center; gap: 22px; padding-block: 12px; }
 .hero-bottom p span { margin-inline: 8px; }
@@ -180,7 +181,8 @@
   .hero-wordmark--above .hero-latin { bottom: calc(100% + 22px); }
   .hero-wordmark--below .hero-latin { top: calc(100% + 18px); }
   .hero-wordmark--diagonal .hero-latin { font-size: 8px; left: calc(100% + 8px); }
-  .hero-poem { left: 24px; bottom: 103px; font-size: 19px; letter-spacing: .12em; line-height: 2.05; }
+  .hero-poem { left: 24px; bottom: 127px; font-size: 19px; letter-spacing: .12em; line-height: 2.05; }
+  .hero-photo-caption { right: 24px; bottom: 106px; font-size: 10px; letter-spacing: .08em; }
   .hero-bottom { left: 24px; right: 24px; bottom: 24px; font-size: 10px; letter-spacing: .05em; }
   .hero-bottom p span { margin-inline: 3px; }
   .hero-bottom a { gap: 8px; }
