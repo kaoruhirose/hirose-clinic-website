@@ -107,7 +107,7 @@ export default function Access() {
               <dd>
                 <p>〒{site.postalCode}<br />{site.address}</p>
                 <p className="quiet-note">
-                  当院は住宅街にある自宅兼用診療所です。
+                  当院は住宅街にある診療所です。
                   防犯および近隣への配慮のため、詳細な番地はご予約確定後にメールにてご案内しております。
                 </p>
               </dd>

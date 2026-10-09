@@ -9,7 +9,7 @@ const benefits = [
   },
   {
     title: "リラックスした環境",
-    description: "ご自宅など、ご自身が最もリラックスできる環境でお話しいただけるため、些細な悩みも相談しやすくなります。",
+    description: "ご自身が最もリラックスできる環境でお話しいただけるため、些細な悩みも相談しやすくなります。",
   },
   {
     title: "感染症リスクの低減",
@@ -27,7 +27,7 @@ const steps = [
   { title: "準備", description: "予約時間に、静かな場所でお待ちください。" },
   { title: "診察", description: "ビデオ通話にて医師が診察を行います。" },
   { title: "会計", description: "クレジットカード等でのオンライン決済です。" },
-  { title: "お薬", description: "処方箋をご自宅へ郵送、またはお近くの薬局へお送りします。" },
+  { title: "お薬", description: "処方箋をご指定の住所へ郵送、またはお近くの薬局へお送りします。" },
 ];
 
 const questions = [
@@ -45,7 +45,7 @@ const questions = [
   },
   {
     question: "処方箋はどのようにもらえますか？",
-    answer: "ご自宅への郵送、または指定された調剤薬局へのFAX送信が可能です。生活スタイルに合わせて選択いただけます。",
+    answer: "ご指定の住所への郵送、または指定された調剤薬局へのFAX送信が可能です。生活スタイルに合わせて選択いただけます。",
   },
 ];
 
@@ -60,7 +60,7 @@ export default function OnlineConsultation() {
           </p>
         </PageIntro>
 
-        <EditorialSection label="診療について" title={<>ご自宅から、<br />お話しする時間。</>}>
+        <EditorialSection label="診療について" title={<>くつろげる場所から、<br />お話しする時間。</>}>
           <ul className="rule-list">
             {benefits.map((benefit) => (
               <li key={benefit.title}>
