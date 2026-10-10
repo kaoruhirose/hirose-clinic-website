@@ -1,4 +1,5 @@
-import { EditorialSection, PageIntro, TextLink } from "@/components/Editorial";
+import { EditorialSection, PageIntro } from "@/components/Editorial";
+import ReservationLink from "@/components/ReservationLink";
 
 export default function Services() {
   return (
@@ -41,7 +42,8 @@ export default function Services() {
         </EditorialSection>
 
         <EditorialSection title="ご予約・ご相談">
-          <TextLink href="/access">ご予約・ご相談はこちら</TextLink>
+          <p>診療のご予約・ご相談は、廣瀬診療所の公式LINEからお問い合わせください。</p>
+          <ReservationLink className="text-link">ご予約・ご相談の方法はこちら</ReservationLink>
         </EditorialSection>
       </div>
     </div>

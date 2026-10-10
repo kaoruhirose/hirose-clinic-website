@@ -6,28 +6,28 @@
  * 自動的にフォールバックする。
  * 公開時はこのファイルだけを書き換えれば全ページに反映される。
  */
+/** URLを変更した場合は public/images/line-friend-qr.svg も再生成する。 */
+const lineUrl = "https://lin.ee/PcCz3wj" as string | null;
+
 export const site = {
   name: "廣瀬診療所",
 
-  /** 代表電話（基本のご連絡先） */
-  phone: "046-827-7399" as string | null,
-
-  /** お急ぎのご用件のための連絡先（携帯） */
-  urgentPhone: "090-4212-4600" as string | null,
+  /** お電話でのお問い合わせ先 */
+  phone: "090-4212-4600" as string | null,
 
   /** 所在地 */
   postalCode: "249-0005",
   address: "神奈川県逗子市桜山9丁目",
 
-  /** TODO: STORES予約など外部予約システムのURLが確定したら設定する */
-  reservationUrl: null as string | null,
+  /** 診療予約の案内先（サイト内の友だち追加・QRコードの案内） */
+  reservationUrl: "/access#reservation",
 
-  /** 公式LINEの友だち追加URL（イベントのお問い合わせ先に表示される） */
-  lineUrl: "https://lin.ee/PcCz3wj" as string | null,
+  /** 公式LINEの友だち追加URL（診療予約・イベントのお問い合わせ先） */
+  lineUrl,
 
   /** InstagramのプロフィールURL（フッターに表示される） */
   instagramUrl: "https://www.instagram.com/hiroseshinryojo/" as string | null,
 };
 
 /** 電話番号の画面表示用文字列（未確定の間はプレースホルダー） */
-export const phoneDisplay = site.phone ?? "046-XXX-XXXX";
+export const phoneDisplay = site.phone ?? "電話番号は準備中です";

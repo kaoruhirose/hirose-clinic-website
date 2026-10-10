@@ -1,5 +1,5 @@
+import Image from "next/image";
 import { EditorialSection, PageIntro, Photo, TextLink } from "@/components/Editorial";
-import ReservationLink from "@/components/ReservationLink";
 import { photos } from "@/lib/photos";
 import { site, phoneDisplay } from "@/lib/site";
 
@@ -22,18 +22,23 @@ export default function Access() {
               当院は完全予約制のプライベートクリニックです。
               他の方と顔を合わせることなく、ゆったりとした時間の中で診療をお受けいただけます。
             </p>
-            {site.reservationUrl ? (
+            {site.lineUrl ? (
               <>
-                <p>ご予約は、外部の予約システムより承っております。</p>
-                <p>
-                  <ReservationLink className="text-link">WEB予約はこちら</ReservationLink>
-                </p>
-                <p className="quiet-note">外部の予約システムへ移動します。</p>
+                <p>診療のご予約は、廣瀬診療所の公式LINEより承っております。</p>
+                <div className="line-registration">
+                  <figure className="line-qr">
+                    <Image src="/images/line-friend-qr.svg" width={132} height={132} unoptimized alt="廣瀬診療所の公式LINEを友だち追加するQRコード" />
+                    <figcaption>スマホのLINEで読み取り</figcaption>
+                  </figure>
+                  <div className="line-registration-copy">
+                    <TextLink href={site.lineUrl} external>友だち追加</TextLink>
+                    <p className="quiet-note">追加後、ご予約についてメッセージをお送りください。</p>
+                  </div>
+                </div>
               </>
             ) : (
               <>
                 <p>
-                  WEB予約のご案内は現在準備中です。
                   ご予約についてはお電話でお問い合わせください。
                 </p>
                 <p>
@@ -137,7 +142,7 @@ export default function Access() {
         <EditorialSection id="contact" label="お問い合わせ" title="お電話でのご連絡">
           <dl className="detail-list">
             <div>
-              <dt>代表</dt>
+              <dt>お問い合わせ</dt>
               <dd>
                 {site.phone ? (
                   <TextLink href={`tel:${site.phone}`}>{phoneDisplay}</TextLink>
@@ -146,19 +151,11 @@ export default function Access() {
                 )}
               </dd>
             </div>
-            {site.urgentPhone && (
-              <div>
-                <dt>お急ぎの方</dt>
-                <dd>
-                  <TextLink href={`tel:${site.urgentPhone}`}>{site.urgentPhone}</TextLink>
-                </dd>
-              </div>
-            )}
           </dl>
           <p className="quiet-note">
-            {site.reservationUrl
-              ? "ご予約は基本的にWEBからお申し込みください。"
-              : "WEB予約のご案内が整うまで、ご予約については代表電話へお問い合わせください。"}
+            {site.lineUrl
+              ? "診療のご予約は公式LINEからお問い合わせください。"
+              : "ご予約についてはお電話でお問い合わせください。"}
           </p>
         </EditorialSection>
       </div>

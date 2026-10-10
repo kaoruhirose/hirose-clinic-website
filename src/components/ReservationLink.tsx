@@ -1,4 +1,3 @@
-import Link from "next/link";
 import { site } from "@/lib/site";
 
 type Props = {
@@ -9,26 +8,12 @@ type Props = {
 
 /**
  * 予約ボタンの共通リンク。
- * 外部予約システムのURL（site.reservationUrl）が確定するまでは、
- * デッドリンクにせず予約案内ページ（/access）へ誘導する。
+ * サイト内の予約案内へ進み、QRコード・友だち追加ボタンを表示する。
  */
 export default function ReservationLink({ className, children, onClick }: Props) {
-  if (site.reservationUrl) {
-    return (
-      <a
-        href={site.reservationUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={className}
-        onClick={onClick}
-      >
-        {children}
-      </a>
-    );
-  }
   return (
-    <Link href="/access" className={className} onClick={onClick}>
+    <a href={site.reservationUrl} className={className} onClick={onClick}>
       {children}
-    </Link>
+    </a>
   );
 }

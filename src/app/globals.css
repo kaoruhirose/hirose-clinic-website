@@ -113,6 +113,13 @@
 .text-link { display: inline-flex; align-items: baseline; gap: 42px; border-bottom: 1px solid #70796b80; padding: 13px 0; margin-top: 25px; font-size: 13px; line-height: 1.8; letter-spacing: .06em; transition: color .2s, border-color .2s; }
 .text-link:hover { color: var(--color-clinic-green); border-color: currentColor; }
 .text-link > span:last-child { font-size: 17px; }
+.line-registration { display: flex; flex-wrap: wrap; gap: 20px; max-width: 440px; margin-top: 24px; align-items: center; }
+.line-qr { flex: 0 0 132px; max-width: 100%; margin: 0; }
+.line-qr img { display: block; width: 100%; height: auto; }
+.line-qr figcaption { margin-top: 6px; color: var(--muted); font-size: 11px; line-height: 1.8; text-align: center; }
+.line-registration-copy { flex: 1 1 120px; min-width: 0; }
+.line-registration-copy .text-link { margin-top: 0; padding-block: 8px; gap: 16px; }
+.line-registration-copy .quiet-note { margin-top: 12px; }
 .detail-list { margin-block: 32px; font-size: 14px; }
 .detail-list > div { display: grid; grid-template-columns: 90px 1fr; gap: 24px; border-top: 1px solid var(--rule); padding-block: 19px; }
 .detail-list > div:last-child { border-bottom: 1px solid var(--rule); }

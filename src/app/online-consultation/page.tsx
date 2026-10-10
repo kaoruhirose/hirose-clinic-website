@@ -20,9 +20,9 @@ const benefits = [
 const steps = [
   {
     title: "予約",
-    description: site.reservationUrl
-      ? "アプリまたはWebから日時を選択して予約します。"
-      : "WEB予約のご案内は現在準備中です。ご予約についてはお電話でお問い合わせください。",
+    description: site.lineUrl
+      ? "診療開始後のご予約については、廣瀬診療所の公式LINEからご案内します。"
+      : "診療開始後のご予約については、お電話でお問い合わせください。",
   },
   { title: "準備", description: "予約時間に、静かな場所でお待ちください。" },
   { title: "診察", description: "ビデオ通話にて医師が診察を行います。" },
@@ -33,7 +33,7 @@ const steps = [
 const questions = [
   {
     question: "初診でもオンライン診療は可能ですか？",
-    answer: "はい、可能です。ただし、症状によっては対面での診察が必要と判断される場合があります。",
+    answer: "診療開始後は、初診の方もご利用いただける予定です。ただし、症状によっては対面での診察が必要と判断される場合があります。",
   },
   {
     question: "費用はどのくらいかかりますか？",
@@ -58,6 +58,7 @@ export default function OnlineConsultation() {
             移動の負担を減らし、いつもの環境でリラックスして受診いただけます。
             西洋医学と東洋医学の知見を、オンラインでも丁寧にお届けします。
           </p>
+          <p>オンライン診療は現在、システム構築中です。準備が整い次第、開始時期やご利用方法をご案内します。</p>
         </PageIntro>
 
         <EditorialSection label="診療について" title={<><span className="text-unit">くつろげる</span><span className="text-unit">場所から、</span><br /><span className="text-unit">お話しする時間。</span></>}>
@@ -71,7 +72,7 @@ export default function OnlineConsultation() {
           </ul>
         </EditorialSection>
 
-        <EditorialSection label="ご利用の流れ" title={<>ご予約から、<br />お薬まで。</>}>
+        <EditorialSection label="開始後のご利用の流れ（予定）" title={<>ご予約から、<br />お薬まで。</>}>
           <ol className="steps">
             {steps.map((step) => (
               <li key={step.title}>
@@ -82,12 +83,12 @@ export default function OnlineConsultation() {
           </ol>
           <p>
             <ReservationLink className="text-link">
-              {site.reservationUrl ? "オンライン診療を予約する" : "ご予約方法・お問い合わせ"}
+              オンライン診療のお問い合わせ方法
             </ReservationLink>
           </p>
           <p className="quiet-note">
-            {site.reservationUrl
-              ? "外部の予約システムへ移動します。"
+            {site.lineUrl
+              ? "公式LINEの友だち追加・お問い合わせの案内へ移動します。"
               : "ご予約方法とお電話のご案内ページへ移動します。"}
           </p>
         </EditorialSection>
