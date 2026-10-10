@@ -22,6 +22,9 @@ export const site = {
   /** TODO: STORES予約など外部予約システムのURLが確定したら設定する */
   reservationUrl: null as string | null,
 
+  /** 公式LINEの友だち追加URL（イベントのお問い合わせ先に表示される） */
+  lineUrl: "https://lin.ee/PcCz3wj" as string | null,
+
   /** InstagramのプロフィールURL（フッターに表示される） */
   instagramUrl: "https://www.instagram.com/hiroseshinryojo/" as string | null,
 };

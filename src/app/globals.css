@@ -139,7 +139,19 @@
 .container > .article-list { max-width: 720px; margin-left: auto; padding-top: 40px; border-top: 1px solid var(--rule); }
 .article-list > li { scroll-margin-top: 40px; }
 .article-title { font: 400 23px/1.9 var(--font-serif); letter-spacing: .04em; margin-bottom: 22px; }
-.event-subtitle { display: block; font-size: .75em; margin-top: 8px; }
+.event-article { container-type: inline-size; }
+.prose .article-title.event-title { white-space: nowrap; font-size: min(23px, calc(100cqi / var(--title-length, 18))); }
+.event-lead { font-family: var(--font-serif); font-size: 19px; letter-spacing: .08em; }
+.event-epigraph { margin: 30px 0 34px; padding-left: 22px; border-left: 1px solid var(--rule); font-family: var(--font-serif); letter-spacing: .06em; }
+.event-epigraph footer { margin-top: 6px; font-family: var(--font-sans); font-size: 12px; color: var(--muted); }
+.event-part { margin-top: 68px; }
+.event-part > h4:first-child { margin-top: 0; }
+.event-part .schedule-table th[scope="row"] { text-align: left; }
+.event-part .rule-list .quiet-note { margin-top: 2px; }
+.event-part > .text-link, .event-part > div + p { margin-top: 24px; }
+.event-step-title { display: block; font-family: var(--font-serif); font-size: 17px; letter-spacing: .04em; }
+.event-closing { font-family: var(--font-serif); letter-spacing: .06em; margin-top: 34px; }
+.event-closing span { display: block; }
 .article-list > li + li { border-top: 1px solid var(--rule); padding-top: 55px; margin-top: 55px; }
 .article-meta { display: flex; flex-wrap: wrap; gap: 12px 30px; font-size: 11px; letter-spacing: .08em; color: var(--muted); margin-bottom: 15px; }
 .prose .article-title { margin-top: 0; font-size: 23px; }
@@ -244,6 +256,9 @@
   .schedule-table th, .schedule-table td { padding: 14px 3px; }
   .schedule-table th:first-child { font-size: 10px; }
   .prose .article-title { font-size: 21px; }
+  .event-lead { font-size: 17px; }
+  .event-part { margin-top: 52px; }
+  .event-step-title { font-size: 16px; }
   .news-preview a { grid-template-columns: 1fr 12px; gap: 4px 16px; padding-block: 19px; }
   .news-preview time { grid-column: 1 / -1; }
   .home-landscape { height: 250px; }
