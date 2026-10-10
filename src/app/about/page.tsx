@@ -23,7 +23,14 @@ export default function About() {
 
         <EditorialSection label="代表 / 医師" title="廣瀬 薫">
           <Photo photo={photos.portrait} />
-          <h3>略歴・資格</h3>
+          <h3>略歴</h3>
+          <ul className="rule-list">
+            <li>国立大学法人宮崎大学 医学部医学科 卒業</li>
+            <li>湘南鎌倉総合病院 救急総合診療科 チーフレジデント 修了</li>
+            <li>湘南鎌倉総合病院 救命救急センター 医員</li>
+            <li>葉山ハートセンター 救急総合診療科 部長</li>
+          </ul>
+          <h3>資格</h3>
           <ul className="rule-list">
             <li>日本救急医学会認定 救急科専門医</li>
             <li>日本東洋医学会認定 漢方専門医</li>
