@@ -173,12 +173,16 @@
 .home-link-list li:last-child a { border-bottom: 1px solid var(--rule); }
 .home-link-list small { display: block; font-family: var(--font-sans); font-size: 11px; color: var(--muted); margin-top: 2px; }
 .home-link-list a > span:last-child { font-family: var(--font-sans); font-size: 16px; }
+.fieldwork-index .page-intro h1 { font-size: clamp(24px, 2.5vw, 32px); }
 .fieldwork-list { list-style: none; padding: 0; }
-.fieldwork-list a { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 34px; border-top: 1px solid var(--rule); font: 400 clamp(20px, 2.3vw, 28px)/1.9 var(--font-serif); letter-spacing: .04em; }
+.fieldwork-list a { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding-block: 34px; padding-left: clamp(16px, 2vw, 28px); border-top: 1px solid var(--rule); font: 400 clamp(17px, 1.8vw, 22px)/1.9 var(--font-serif); letter-spacing: .04em; }
 .fieldwork-list li:last-child a { border-bottom: 1px solid var(--rule); }
 .fieldwork-list a:hover { color: var(--color-clinic-green); }
 .fieldwork-list a > span:first-child { min-width: 0; }
 .fieldwork-list a > span:last-child { flex-shrink: 0; font: 18px var(--font-sans); }
+.fieldwork-label { display: flex; align-items: baseline; gap: 12px; }
+.fieldwork-label > span:last-child { min-width: 0; }
+.fieldwork-marker { flex-shrink: 0; }
 .fieldwork-detail { max-width: 720px; margin-left: auto; border-top: 1px solid var(--rule); padding-top: 40px; }
 .prose .event-part > h2 { font-family: var(--font-serif); font-size: 18px; font-weight: 400; margin: 0 0 15px; }
 .news-preview li { border-top: 1px solid var(--rule); }

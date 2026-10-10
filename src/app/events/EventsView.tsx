@@ -3,19 +3,19 @@ import { PageIntro } from "@/components/Editorial";
 
 export default function EventsView() {
   return (
-    <div className="page-shell">
+    <div className="page-shell fieldwork-index">
       <div className="container">
-        <PageIntro title="フィールドワーク" english="Field work" />
+        <PageIntro title={<><span className="text-unit">フィールドワーク</span><span className="text-unit"> ／ 自然処方</span></>} english="Field work" />
         <ul className="fieldwork-list">
           <li>
             <Link href="/events/barefoot-hike">
-              <span><span className="text-unit">裸足で海と山を歩く会</span><span className="text-unit"> ／ 裸足ハイク</span></span>
+              <span className="fieldwork-label"><span className="fieldwork-marker" aria-hidden="true">-</span><span><span className="text-unit">裸足で海と山を歩く会</span><span className="text-unit"> ／ 裸足ハイク</span></span></span>
               <span aria-hidden="true">→</span>
             </Link>
           </li>
           <li>
             <Link href="/events/surf-therapy">
-              <span><span className="text-unit">海と波と</span><span className="text-unit">サーフセラピー</span></span>
+              <span className="fieldwork-label"><span className="fieldwork-marker" aria-hidden="true">-</span><span><span className="text-unit">海と波と</span><span className="text-unit">サーフセラピー</span></span></span>
               <span aria-hidden="true">→</span>
             </Link>
           </li>
