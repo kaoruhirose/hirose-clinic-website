@@ -53,7 +53,7 @@ export default function OnlineConsultation() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro eyebrow="オンライン診療" title={<>いつもの場所で、<br />診療の時間を。</>}>
+        <PageIntro eyebrow="オンライン診療" title={<>いつもの場所で、<br />診療の時間を。</>} english="A moment for care, wherever you feel at home.">
           <p>
             移動の負担を減らし、いつもの環境でリラックスして受診いただけます。
             西洋医学と東洋医学の知見を、オンラインでも丁寧にお届けします。

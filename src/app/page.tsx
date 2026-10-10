@@ -28,10 +28,10 @@ export default function Home() {
           </ul>
         </EditorialSection>
         <Photo photo={photos.hike} />
-        <EditorialSection label="裸足ハイク・催し" title={<>足もとから、<br />自然にふれる。</>}>
+        <EditorialSection label="フィールドワーク" title={<>足もとから、<br />自然にふれる。</>}>
           <p><span className="text-unit">砂のやわらかさ。</span><span className="text-unit">土の温度。</span><br className="desktop-break" /><span className="text-unit">靴を脱ぐと、</span><span className="text-unit">いつもの景色が</span><span className="text-unit">少し変わります。</span></p>
           <p><span className="text-unit">逗子の海と山を歩く、</span><span className="text-unit">少人数の裸足ハイク。</span><br className="desktop-break" /><span className="text-unit">開催日とご参加について、</span><span className="text-unit">こちらからご覧ください。</span></p>
-          <TextLink href="/events">裸足ハイク・催しについて</TextLink>
+          <TextLink href="/events">フィールドワークについて</TextLink>
         </EditorialSection>
         <EditorialSection label="診療所から" title="お知らせ">
           <ul className="news-preview">{newsItems.slice(0, 3).map(news => <li key={news.date + news.title}><Link href={`/news#news-${news.date.replaceAll(".", "-")}`}><time dateTime={news.date.replaceAll(".", "-")}>{news.date}</time><span>{news.title}</span><span aria-hidden="true">↗</span></Link></li>)}</ul>

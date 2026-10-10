@@ -6,7 +6,7 @@ export default function News() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro title="お知らせ" />
+        <PageIntro title="お知らせ" english="News and notes from our clinic." />
         <ul className="article-list">
           {newsItems.map((news) => (
             <li key={`${news.date}-${news.title}`} id={`news-${news.date.replaceAll(".", "-")}`}>

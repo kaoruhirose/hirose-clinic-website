@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro title="私たちの想い" />
+        <PageIntro title="私たちの想い" english="Listening to the body, caring for the whole person." />
 
         <Photo photo={photos.clinic} />
 

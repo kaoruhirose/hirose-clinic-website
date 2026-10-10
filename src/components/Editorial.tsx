@@ -3,8 +3,8 @@ import Image from "next/image";
 import Link from "next/link";
 import type { ClinicPhoto } from "@/lib/photos";
 
-export function PageIntro({ eyebrow, title, children }: { eyebrow?: string; title: ReactNode; children?: ReactNode }) {
-  return <header className="page-intro">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1>{children && <div className="intro-copy">{children}</div>}</header>;
+export function PageIntro({ eyebrow, title, english, children }: { eyebrow?: string; title: ReactNode; english?: string; children?: ReactNode }) {
+  return <header className="page-intro">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1>{english && <p className="intro-english" lang="en">{english}</p>}{children && <div className="intro-copy">{children}</div>}</header>;
 }
 
 export function EditorialSection({ id, label, title, children }: { id?: string; label?: string; title?: ReactNode; children: ReactNode }) {

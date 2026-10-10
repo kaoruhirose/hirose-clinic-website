@@ -4,7 +4,7 @@ export default function Services() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro title="診療案内">
+        <PageIntro title="診療案内" english="Care shaped around your everyday life.">
           <p>
             廣瀬診療所では、保険診療による確実なアプローチと、自費診療（自由診療）による柔軟なアプローチを組み合わせ、お一人おひとりに最適なケアをご提案します。
           </p>

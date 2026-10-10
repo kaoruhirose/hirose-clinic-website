@@ -66,7 +66,7 @@ export default function Privacy() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro title={<><span className="text-unit">プライバシー</span><span className="text-unit">ポリシー</span></>}>
+        <PageIntro title={<><span className="text-unit">プライバシー</span><span className="text-unit">ポリシー</span></>} english="Your privacy matters to us.">
           <p>
             廣瀬診療所（以下「当院」といいます）は、患者さまの個人情報を適切に保護することが社会的責務であると考え、個人情報の保護に関する法律および関連法令を遵守し、以下の方針に基づいて個人情報を取り扱います。
           </p>
