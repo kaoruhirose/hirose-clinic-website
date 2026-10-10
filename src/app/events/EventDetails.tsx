@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import { TextLink } from "@/components/Editorial";
 import type { ClinicEvent } from "@/lib/events";
 import { site } from "@/lib/site";
@@ -21,18 +22,29 @@ function ApplyLink({ ev }: { ev: ClinicEvent }) {
   );
 }
 
-export default function EventDetails({ ev }: { ev: ClinicEvent }) {
+type FlowVisuals = {
+  sectionClassName: string;
+  listClassName: string;
+  stepClassName: string;
+  photos: Partial<Record<string, ReactNode>>;
+};
+
+export default function EventDetails({ ev, flowVisuals, showIntroduction = true, beforeFees }: { ev: ClinicEvent; flowVisuals?: FlowVisuals; showIntroduction?: boolean; beforeFees?: ReactNode }) {
   const timeParts = ev.time.split(/(?=（)/);
   return (
     <article className="event-article">
-      {ev.lead && <p className="event-lead">{ev.lead}</p>}
-      {ev.epigraph && (
-        <blockquote className="event-epigraph">
-          <p>{ev.epigraph.text}</p>
-          <footer>── {ev.epigraph.author}</footer>
-        </blockquote>
+      {showIntroduction && (
+        <>
+          {ev.lead && <p className="event-lead">{ev.lead}</p>}
+          {ev.epigraph && (
+            <blockquote className="event-epigraph">
+              <p>{ev.epigraph.text}</p>
+              <footer>── {ev.epigraph.author}</footer>
+            </blockquote>
+          )}
+          {ev.description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
+        </>
       )}
-      {ev.description.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
 
       <dl className="detail-list">
         <div>
@@ -86,13 +98,25 @@ export default function EventDetails({ ev }: { ev: ClinicEvent }) {
       <ApplyLink ev={ev} />
 
       {ev.flow && (
-        <section className="event-part">
-          <h2>当日の流れ</h2>
-          <ol className="steps">
+        <section className={`event-part ${flowVisuals?.sectionClassName ?? ""}`}>
+          <h2 id={flowVisuals ? "hike-flow" : undefined}>当日の流れ</h2>
+          <ol className={`steps ${flowVisuals?.listClassName ?? ""}`}>
             {ev.flow.map((step) => (
               <li key={step.title}>
-                <strong className="event-step-title">{step.title}</strong>
-                {step.text}
+                {flowVisuals ? (
+                  <div className={flowVisuals.stepClassName}>
+                    <div>
+                      <strong className="event-step-title">{step.title}</strong>
+                      {step.text}
+                    </div>
+                    {flowVisuals.photos[step.title]}
+                  </div>
+                ) : (
+                  <>
+                    <strong className="event-step-title">{step.title}</strong>
+                    {step.text}
+                  </>
+                )}
               </li>
             ))}
           </ol>
@@ -116,6 +140,8 @@ export default function EventDetails({ ev }: { ev: ClinicEvent }) {
           </ul>
         </section>
       )}
+
+      {beforeFees}
 
       {(ev.feeTable || ev.payment) && (
         <section className="event-part">
@@ -223,4 +249,3 @@ export default function EventDetails({ ev }: { ev: ClinicEvent }) {
     </article>
   );
 }
-

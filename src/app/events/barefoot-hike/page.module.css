@@ -1,0 +1,362 @@
+.pageContainer {
+  width: calc(100% - clamp(48px, 7vw, 144px));
+  max-width: 1680px;
+}
+
+.details {
+  max-width: none;
+  margin-left: 0;
+}
+
+.details > :global(.event-article) > * {
+  width: min(100%, 720px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.details > :global(.event-article) > .flowSection {
+  width: 100%;
+}
+
+.flowSection > h2 {
+  margin-bottom: 48px;
+  text-align: center;
+}
+
+.opening {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  gap: 24px;
+  align-items: start;
+  margin: 0 0 88px;
+}
+
+.opening > .photo:first-child {
+  grid-column: 1 / 7;
+}
+
+.openingCopy {
+  grid-column: 8 / 13;
+  max-width: 540px;
+  align-self: start;
+}
+
+.openingCopy .openingPoem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 16px;
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  width: max-content;
+  height: max-content;
+  margin: 32px clamp(24px, 3vw, 64px) clamp(96px, 9vw, 144px) auto;
+  padding: 0;
+  border: 0;
+  font-size: clamp(20px, 1.8vw, 25px);
+  line-height: 2.3;
+  letter-spacing: .18em;
+}
+
+.openingPoem p {
+  margin: 0;
+}
+
+.poemLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.openingPoem footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  padding-inline-end: 1em;
+  color: inherit;
+  font-family: var(--font-serif);
+  font-size: 12px;
+  line-height: 2.3;
+  letter-spacing: .12em;
+}
+
+.openingPoem footer::before {
+  content: "";
+  inline-size: 32px;
+  block-size: 1px;
+  flex: none;
+  background: currentColor;
+}
+
+.circle {
+  margin-top: 80px;
+}
+
+.circle > .photo {
+  width: min(60%, 280px);
+  margin-inline: auto;
+}
+
+.circle figcaption {
+  text-align: center;
+}
+
+.photo {
+  min-width: 0;
+  margin: 0;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo figcaption {
+  margin-top: 12px;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.9;
+  letter-spacing: .05em;
+}
+
+/* 黒い帯を除き、余分な高さを上2/3・下1/3ずつ隠して他の写真と揃える。 */
+.forestFrame {
+  position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+}
+
+.forestFrame img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 58.9%;
+}
+
+.gallery {
+  margin-top: 88px;
+  margin-bottom: 48px;
+}
+
+.gallery > .photo {
+  width: min(38%, 220px);
+  margin-inline: auto;
+}
+
+.gallery figcaption {
+  text-align: center;
+}
+
+.flowList {
+  padding-left: 0;
+  margin-block: 0;
+}
+
+.flowList > li {
+  padding: 0 0 clamp(64px, 7vw, 112px);
+}
+
+.flowList > li::marker {
+  content: "";
+}
+
+.flowStep {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  align-items: center;
+  gap: clamp(16px, 2vw, 32px);
+}
+
+.flowStep > div {
+  position: relative;
+  min-width: 0;
+  grid-column: 2 / 6;
+  grid-row: 1;
+}
+
+.flowStep > div::before {
+  content: counter(list-item, decimal-leading-zero) ".";
+  position: absolute;
+  top: 5px;
+  left: -32px;
+  color: var(--muted);
+  font: 12px Georgia, serif;
+}
+
+.flowStep > .photo {
+  grid-column: 9 / 13;
+  grid-row: 1;
+}
+
+.flowList > li:nth-child(2) .flowStep > div {
+  grid-column: 8 / 12;
+}
+
+.flowList > li:nth-child(2) .photo {
+  grid-column: 1 / 6;
+}
+
+.flowList > li:nth-child(3) .flowStep > div {
+  grid-column: 3 / 7;
+}
+
+.flowList > li:nth-child(3) .photo {
+  grid-column: 9 / 12;
+}
+
+.flowList > li:nth-child(4) .flowStep > div {
+  grid-column: 8 / 12;
+}
+
+.flowList > li:nth-child(4) .photo {
+  grid-column: 2 / 6;
+}
+
+.flowList > li:nth-child(5) .photo {
+  grid-column: 8 / 13;
+}
+
+.flowList > li:nth-child(1) { --step-photo-width: 30%; }
+.flowList > li:nth-child(2) { --step-photo-width: 43%; }
+.flowList > li:nth-child(3) { --step-photo-width: 33%; }
+.flowList > li:nth-child(4) { --step-photo-width: 40%; }
+.flowList > li:nth-child(5) { --step-photo-width: 36%; }
+
+.flowList > li:last-child {
+  padding-bottom: 0;
+}
+
+@media (min-width: 1000px) {
+  .flowList {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    gap: 80px 32px;
+  }
+
+  .flowList > li {
+    padding: 0;
+  }
+
+  .flowList > li:nth-child(1) {
+    grid-column: 1 / 6;
+    --scatter-photo-width: 64%;
+  }
+
+  .flowList > li:nth-child(2) {
+    grid-column: 8 / 13;
+    margin-top: 120px;
+    --scatter-photo-width: 86%;
+  }
+
+  .flowList > li:nth-child(3) {
+    grid-column: 2 / 6;
+    --scatter-photo-width: 72%;
+  }
+
+  .flowList > li:nth-child(4) {
+    grid-column: 8 / 12;
+    margin-top: 80px;
+    --scatter-photo-width: 92%;
+  }
+
+  .flowList > li:nth-child(5) {
+    grid-column: 2 / 12;
+    margin-top: 24px;
+  }
+
+  .flowStep {
+    display: block;
+  }
+
+  .flowStep > div {
+    max-width: 440px;
+  }
+
+  .flowStep > .photo {
+    width: var(--scatter-photo-width);
+    max-width: 500px;
+    margin: 32px 0 0 auto;
+  }
+
+  .flowList > li:nth-child(even) .photo {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .flowList > li:nth-child(5) .flowStep {
+    display: grid;
+  }
+
+  .flowList > li:nth-child(5) .flowStep > div {
+    grid-column: 1 / 6;
+  }
+
+  .flowList > li:nth-child(5) .photo {
+    grid-column: 8 / 13;
+    width: 100%;
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 700px) {
+  .pageContainer {
+    width: calc(100% - 48px);
+  }
+
+  .flowSection > h2 {
+    text-align: left;
+    margin-bottom: 24px;
+  }
+
+  .flowList {
+    padding-left: 2em;
+  }
+
+  .opening {
+    display: block;
+    margin-bottom: 56px;
+  }
+
+  .opening > .photo:first-child {
+    width: 84%;
+  }
+
+  .openingCopy {
+    margin-top: 64px;
+  }
+
+  .openingCopy .openingPoem {
+    margin: 0 24px 80px auto;
+    font-size: 18px;
+  }
+
+  .circle {
+    margin-top: 56px;
+  }
+
+  .flowStep {
+    display: block;
+  }
+
+  .flowStep > .photo {
+    width: calc(var(--step-photo-width) + 28%);
+    margin: 24px 0 0 auto;
+  }
+
+  .flowList > li:nth-child(even) .photo {
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .flowList > li {
+    padding: 0 0 48px 12px;
+  }
+
+  .gallery {
+    margin-top: 60px;
+  }
+}
