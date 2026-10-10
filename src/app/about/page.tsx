@@ -25,10 +25,8 @@ export default function About() {
           <Photo photo={photos.portrait} />
           <h3>略歴・資格</h3>
           <ul className="rule-list">
-            <li>
-              日本救急医学会認定 救急科専門医<br />
-              日本東洋医学会認定 漢方専門医
-            </li>
+            <li>日本救急医学会認定 救急科専門医</li>
+            <li>日本東洋医学会認定 漢方専門医</li>
             <li>全米ヨガアライアンス認定インストラクター（RYT200）</li>
           </ul>
           <h3>ごあいさつ</h3>
