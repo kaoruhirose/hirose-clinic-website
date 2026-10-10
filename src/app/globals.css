@@ -59,7 +59,21 @@
 .hero-image { z-index: -2; }
 .hero-image img { object-fit: cover; object-position: center; }
 .home-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #14201ea6, #14201e40 150px, transparent 275px), linear-gradient(180deg, #13221b24, transparent 32%, #13221b0a 58%, #13221b4a); z-index: -1; pointer-events: none; }
-.hero-wordmark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content; }
+.hero-wordmark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content; animation: hero-wordmark-reveal 4.2s ease-in-out .35s both; }
+@keyframes hero-wordmark-reveal {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+/* 中央の文字（.35秒待機 + 4.2秒）を見せてから、周囲の案内を表示する。 */
+.site-header--over-photo .header-inner,
+.hero-poem, .hero-photo-caption, .hero-bottom { animation: hero-text-reveal 2s ease-in-out 4.9s both; }
+/* キーボードで操作したときは、案内を待たずに読めるようにする。 */
+.site-header--over-photo .header-inner:focus-within,
+.hero-bottom:focus-within { animation: none; }
+@keyframes hero-text-reveal {
+  from { opacity: 0; translate: 0 8px; }
+  to { opacity: 1; translate: 0 0; }
+}
 .hero-wordmark :is(h1, h2) { writing-mode: vertical-rl; width: 1.25em; font-family: "Hiragino Mincho ProN", "Yu Mincho", var(--font-clinic-serif), serif; font-size: clamp(31px, 3.4vw, 46px); font-weight: 400; letter-spacing: .22em; line-height: 1.25; margin: 0; text-shadow: 0 1px 20px #17261d40; }
 .hero-latin { position: absolute; white-space: nowrap; font: 10px Georgia, serif; letter-spacing: .29em; margin: 0; text-shadow: 0 1px 12px #15271d50; }
 .hero-wordmark--side .hero-latin { right: calc(100% + 18px); top: 7px; writing-mode: vertical-rl; }
@@ -239,5 +253,7 @@
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .hero-wordmark, .site-header--over-photo .header-inner,
+  .hero-poem, .hero-photo-caption, .hero-bottom { animation: none; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
