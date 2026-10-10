@@ -1,5 +1,6 @@
 import type { Metadata, ResolvingMetadata } from "next";
 import { PageIntro, TextLink } from "@/components/Editorial";
+import ReservationLink from "@/components/ReservationLink";
 import { site } from "@/lib/site";
 
 export async function generateMetadata(
@@ -100,7 +101,16 @@ export default function SurfTherapy() {
             <section className="event-part">
               <h2>お申し込み・お問い合わせ</h2>
               <p>参加をご希望の方は、お気軽にお問い合わせください。開催日時・集合場所を個別にご案内します。ご質問だけでも歓迎します。</p>
-              {site.lineUrl && <TextLink href={site.lineUrl} external>公式LINEで相談する</TextLink>}
+              <p>
+                <ReservationLink className="text-link">
+                  サーフセラピーのお申し込み・お問い合わせ方法
+                </ReservationLink>
+              </p>
+              <p className="quiet-note">
+                {site.lineUrl
+                  ? "公式LINEの友だち追加・お問い合わせの案内へ移動します。"
+                  : "ご予約方法とお電話のご案内ページへ移動します。"}
+              </p>
             </section>
           </article>
         </div>
