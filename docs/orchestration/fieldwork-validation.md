@@ -29,4 +29,13 @@
 ## 残り
 
 - サーフセラピーの紹介文・日程・参加方法が決まったら個別ページに追記する。
-- GitHub保存・本番公開は未実施。確認用URL: http://127.0.0.1:3001/events
+- GitHub保存・本番公開・公開後の検収まで完了。確認用URL: http://127.0.0.1:3001/events
+
+## 本番反映後の確認
+
+公開コード: `f089d2c` / GitHubのVercelステータス: success（Deployment has completed）
+
+- `node /private/tmp/clinic-fieldwork-live-check.cjs` → 公開サイトで320・375・768・1280pxの導線・戻る操作・直アクセス・英語・本文・料金・申込リンク・共有カードのURL・横はみ出しなし、1280pxのキーボード操作が合格。
+- `node /private/tmp/clinic-english-live-check.cjs` → 公開サイトの全8ページを320・375・768・1280pxで確認。HTTP 200・英文一致・タイトル下の配置・旧表記の削除・横はみ出しなし・メニュー表記が合格。
+- 公開サイトの一覧・個別ページ・トップ・代表的な下層ページのスマホとパソコンの画像を目視確認。
+- 公開URL: https://www.hiroseshinryojo.jp/events
