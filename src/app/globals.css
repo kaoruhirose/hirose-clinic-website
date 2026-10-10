@@ -88,6 +88,10 @@
 .page-shell { padding-bottom: 72px; }
 .page-intro { padding: 92px 0 80px; }
 .page-intro h1 { font-family: var(--font-serif); font-size: clamp(30px, 3vw, 40px); font-weight: 400; letter-spacing: .13em; line-height: 1.7; }
+/* 意味のまとまりで折り返す。文字を拡大した場合も画面からはみ出さない。 */
+.text-unit { display: inline-block; max-width: 100%; vertical-align: top; overflow-wrap: anywhere; }
+.page-intro h1, .section-heading h2, .prose h3, .article-title, .detail-list--questions dt { text-wrap: balance; }
+.intro-copy, .prose { line-break: strict; text-wrap: pretty; }
 .eyebrow { margin-bottom: 24px; font-size: 11px; line-height: 1.8; letter-spacing: .16em; color: var(--muted); }
 .intro-copy { max-width: 580px; margin-top: 30px; font-size: 14px; line-height: 2.2; letter-spacing: .04em; }
 .editorial-section { display: grid; grid-template-columns: 1fr 1.55fr; gap: 80px; border-top: 1px solid var(--rule); padding-block: 80px; scroll-margin-top: 45px; }
@@ -117,6 +121,8 @@
 .detail-list--questions dt { font-family: var(--font-serif); font-size: 18px; color: inherit; }
 .detail-list .rule-list { margin: 0; }
 .detail-list .rule-list li { border: 0; padding: 0 0 6px; }
+.fee-list { list-style: none; padding: 0; margin: 0; }
+.fee-list > li + li { margin-top: 8px; }
 .rule-list { list-style: none; padding: 0; margin: 25px 0; }
 .rule-list > li { border-top: 1px solid var(--rule); padding: 16px 0; }
 .rule-list > li:last-child { border-bottom: 1px solid var(--rule); }
@@ -141,7 +147,11 @@
 .editorial-photo img { display: block; width: 100%; height: auto; }
 .editorial-photo figcaption { margin-top: 12px; font-size: 11px; color: var(--muted); letter-spacing: .05em; }
 .home-introduction .editorial-section { border: 0; padding-block: 140px; }
-.home-introduction .section-heading h2 { font-size: 32px; }
+.home-introduction .section-heading h2 { font-size: clamp(28px, 2.5vw, 32px); }
+.desktop-break { display: none; }
+@media (min-width: 1024px) {
+  .desktop-break { display: inline; }
+}
 .home-landscape { width: 100%; height: clamp(240px, 32vw, 480px); overflow: hidden; margin: 0; }
 .home-landscape img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
 .home-link-list { margin-top: 42px; padding: 0; list-style: none; }
@@ -182,6 +192,7 @@
   .menu-trigger { display: flex; }
   .container { width: calc(100% - 80px); }
   .editorial-section { gap: 45px; grid-template-columns: 1fr 1.6fr; }
+  .section-heading h2 { font-size: 22px; }
   .footer-main nav { column-gap: 28px; }
 }
 /* 縦長のタブレットでは屋号と下部の案内にそれぞれ余白を確保する。 */
@@ -214,7 +225,7 @@
   .hero-bottom p span { margin-inline: 3px; }
   .hero-bottom a { gap: 8px; }
   .page-intro { padding: 56px 0 54px; }
-  .page-intro h1 { font-size: 30px; letter-spacing: .07em; }
+  .page-intro h1 { font-size: clamp(26px, 7.5vw, 30px); letter-spacing: .07em; }
   .intro-copy { margin-top: 24px; font-size: 14px; line-height: 2.1; }
   .editorial-section { grid-template-columns: 1fr; gap: 32px; padding-block: 48px; }
   .section-heading h2 { font-size: 24px; line-height: 1.85; }
@@ -223,7 +234,6 @@
   .prose h3 { font-size: 20px; }
   .home-introduction .editorial-section { padding-block: 80px; gap: 40px; }
   .home-introduction .section-heading h2 { font-size: 28px; }
-  .desktop-break { display: none; }
   .text-link { font-size: 12px; margin-top: 20px; gap: 28px; }
   .detail-list { font-size: 13px; }
   .detail-list > div { grid-template-columns: 65px 1fr; gap: 14px; }

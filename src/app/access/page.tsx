@@ -7,7 +7,7 @@ export default function Access() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro eyebrow="アクセス・ご予約" title={<>桜山の高台で、<br />お待ちしています。</>}>
+        <PageIntro eyebrow="アクセス・ご予約" title={<><span className="text-unit">桜山の高台で、</span><br /><span className="text-unit">お待ちしています。</span></>}>
           <p>
             廣瀬診療所は、逗子・桜山の住宅街にある完全予約制の診療所です。
             ご来院の前に、ご予約とアクセスのご案内をご確認ください。

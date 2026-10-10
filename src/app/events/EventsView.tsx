@@ -4,6 +4,7 @@ import { photos } from "@/lib/photos";
 
 function EventDetails({ ev }: { ev: ClinicEvent }) {
   const titleParts = ev.title.match(/^(.*?)(（[^）]+）)$/);
+  const timeParts = ev.time.split(/(?=（)/);
   return (
     <li>
       <article>
@@ -20,14 +21,28 @@ function EventDetails({ ev }: { ev: ClinicEvent }) {
                 </p>
               ) : (
                 <ul className="rule-list">
-                  {ev.dates.map((date) => <li key={date}>{date}</li>)}
+                  {ev.dates.map((date) => <li key={date}><span className="text-unit">{date}</span></li>)}
                 </ul>
               )}
             </dd>
           </div>
-          <div><dt>時間</dt><dd>{ev.time}</dd></div>
+          <div><dt>時間</dt><dd>{timeParts.map((part) => <span className="text-unit" key={part}>{part}</span>)}</dd></div>
           <div><dt>集合場所</dt><dd>{ev.place}</dd></div>
-          <div><dt>参加費</dt><dd>{ev.fee}</dd></div>
+          <div>
+            <dt>参加費</dt>
+            <dd>
+              <ul className="fee-list">
+                {ev.fee.split("／").map((fee, index) => {
+                  const parts = fee.trim().match(/^(.*?)(\d[\d,]*円)(.*)$/);
+                  return (
+                    <li key={index}>
+                      {parts ? <><span className="text-unit">{parts[1].trim()}</span>{" "}<span className="text-unit">{parts[2]}</span><span className="text-unit">{parts[3]}</span></> : fee}
+                    </li>
+                  );
+                })}
+              </ul>
+            </dd>
+          </div>
           <div><dt>定員</dt><dd>{ev.capacity}</dd></div>
         </dl>
 

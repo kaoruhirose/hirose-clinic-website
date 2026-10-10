@@ -60,7 +60,7 @@ export default function OnlineConsultation() {
           </p>
         </PageIntro>
 
-        <EditorialSection label="診療について" title={<>くつろげる場所から、<br />お話しする時間。</>}>
+        <EditorialSection label="診療について" title={<><span className="text-unit">くつろげる</span><span className="text-unit">場所から、</span><br /><span className="text-unit">お話しする時間。</span></>}>
           <ul className="rule-list">
             {benefits.map((benefit) => (
               <li key={benefit.title}>

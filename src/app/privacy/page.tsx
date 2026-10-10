@@ -9,6 +9,7 @@ const sections = [
   },
   {
     title: "2. 個人情報の取得と利用目的",
+    titleParts: ["2. 個人情報の", "取得と", "利用目的"],
     body: [
       "当院は、適正な手段により個人情報を取得し、以下の目的の範囲内で利用いたします。",
     ],
@@ -33,24 +34,28 @@ const sections = [
   },
   {
     title: "4. 個人情報の安全管理",
+    titleParts: ["4. 個人情報の", "安全管理"],
     body: [
       "当院は、取得した個人情報の漏えい、滅失またはき損の防止その他の安全管理のために、必要かつ適切な措置を講じます。個人情報を取り扱う従業者に対しても、適切な監督を行います。",
     ],
   },
   {
     title: "5. 開示・訂正・利用停止の請求",
+    titleParts: ["5. 開示・訂正・", "利用停止の", "請求"],
     body: [
       "ご本人から個人情報の開示、訂正、追加、削除、利用停止または消去のご請求があった場合は、ご本人であることを確認のうえ、法令に従い速やかに対応いたします。",
     ],
   },
   {
     title: "6. お問い合わせ窓口",
+    titleParts: ["6. お問い合わせ", "窓口"],
     body: [
       "個人情報の取り扱いに関するお問い合わせは、ご予約時にご案内する連絡先、または当院窓口までご連絡ください。",
     ],
   },
   {
     title: "7. 本ポリシーの変更",
+    titleParts: ["7. 本ポリシーの", "変更"],
     body: [
       "当院は、法令の改正や運用の見直しに応じて、本プライバシーポリシーを予告なく変更することがあります。変更後の内容は、本ページに掲載した時点から効力を生じるものとします。",
     ],
@@ -61,13 +66,13 @@ export default function Privacy() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro title="プライバシーポリシー">
+        <PageIntro title={<><span className="text-unit">プライバシー</span><span className="text-unit">ポリシー</span></>}>
           <p>
             廣瀬診療所（以下「当院」といいます）は、患者さまの個人情報を適切に保護することが社会的責務であると考え、個人情報の保護に関する法律および関連法令を遵守し、以下の方針に基づいて個人情報を取り扱います。
           </p>
         </PageIntro>
         {sections.map((section) => (
-          <EditorialSection key={section.title} title={section.title}>
+          <EditorialSection key={section.title} title={section.titleParts ? section.titleParts.map((part) => <span className="text-unit" key={part}>{part}</span>) : section.title}>
             {section.body.map((paragraph) => <p key={paragraph}>{paragraph}</p>)}
             {section.list && (
               <ul className="rule-list">
