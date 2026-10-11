@@ -9,7 +9,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const title = "海と波とサーフセラピー｜廣瀬診療所";
-  const description = "サーフィン歴30年以上の医師（救急科専門医）と一緒に海に入る、90分の自然処方プログラム。波と触れあいながら心と身体をゆるめる時間を、初めての方も少人数で体験できます。料金・初回の流れ・持ち物をご案内します。";
+  const description = "サーフィン歴30年以上の救急科専門医と一緒に海に入る、90分の自然処方プログラム。波と触れあいながら心と身体をゆるめる時間を、初めての方も少人数で体験できます。料金・初回の流れ・持ち物をご案内します。";
   return {
     title,
     description,
@@ -39,8 +39,8 @@ export default function SurfTherapy() {
         </PageIntro>
         <div className="fieldwork-detail fieldwork-detail--split prose">
           <article className="event-article">
-            <p>サーフィン歴30年以上の医師（救急科専門医）と一緒に海に入る、90分の体験プログラムです。</p>
-            <p>波の音、水の感触、浜辺を渡る風。海や波を感じ、自分のペースで過ごす時間を大切にしています。サーフィンが初めての方も歓迎します。</p>
+            <p>サーフィン歴30年以上の救急科専門医と一緒に海に入る、90分の体験プログラムです。</p>
+            <p>水の感触、浜辺を渡る風、寄せては返す波。海のなかで、自分のペースで過ごす時間を大切にしています。サーフィンが初めての方も歓迎します。</p>
 
             <dl className="detail-list">
               <div><dt>所要時間</dt><dd>90分</dd></div>

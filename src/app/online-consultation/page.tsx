@@ -9,8 +9,8 @@ const benefits = [
     description: "診療所まで移動せずに受診できるため、遠くにお住まいの方や、通院が負担になる方にもご利用いただけます。",
   },
   {
-    title: "慣れた場所から",
-    description: "落ち着ける場所で、日々の不調や気になることを、ご自身の言葉でお話しいただけます。",
+    title: "住み慣れた家で",
+    description: "周りを気にせず、気になることを落ち着いてお話しいただけます。",
   },
   {
     title: "外出を控えたいときに",
@@ -55,11 +55,11 @@ export default function OnlineConsultation() {
     <div className="page-shell">
       <div className="container">
         <PageIntro eyebrow="オンライン診療" title={<>いつもの場所で、<br />診療の時間を。</>} english="Across the distance, a space to be heard.">
-          <p>いつもの場所から、からだのことを話す時間を。西洋医学と東洋医学、ふたつの視点を大切にしたオンライン診療を準備しています。</p>
+          <p>ご自宅など落ち着ける場所から、画面越しに診察を受けていただけるよう準備を進めています。対面の診療と同じく、西洋医学と東洋医学の両方の見方を大切にします。</p>
           <p>オンライン診療は現在、システム構築中です。準備が整い次第、開始時期やご利用方法をご案内します。</p>
         </PageIntro>
 
-        <EditorialSection label="診療について" title={<><span className="text-unit">くつろげる</span><span className="text-unit">場所から、</span><br /><span className="text-unit">お話しする時間。</span></>}>
+        <EditorialSection label="診療について" title={<><span className="text-unit">通院がむずかしい</span><span className="text-unit">日にも。</span></>}>
           <ul className="rule-list">
             {benefits.map((benefit) => (
               <li key={benefit.title}>
