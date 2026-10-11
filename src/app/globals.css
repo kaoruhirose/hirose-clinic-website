@@ -86,6 +86,14 @@
 .hero-bottom { position: absolute; bottom: 31px; left: 6.3%; right: 6.3%; display: flex; align-items: center; justify-content: space-between; font-size: 12px; letter-spacing: .15em; gap: 16px; }
 .hero-bottom a { display: flex; align-items: center; gap: 22px; padding-block: 12px; }
 .hero-bottom p span { margin-inline: 8px; }
+.hero-instagram { position: absolute; left: 50%; bottom: 31px; transform: translateX(-50%); display: flex; align-items: center; justify-content: center; width: 44px; height: 44px; color: #fff; filter: drop-shadow(0 1px 4px #17251b80); transition: opacity .2s; }
+.hero-instagram:hover { opacity: .7; }
+.hero-instagram:focus-visible { outline: 2px solid #fff; outline-offset: 2px; border-radius: 6px; }
+@media (min-width: 701px) and (max-width: 1023px) { .hero-instagram { bottom: 38px; } }
+@media (max-width: 700px) {
+  .home-hero .hero-bottom { bottom: 62px; }
+  .hero-instagram { bottom: 12px; }
+}
 .page-shell { padding-bottom: 72px; }
 .page-intro { padding: 92px 0 80px; }
 .page-intro h1 { font-family: var(--font-serif); font-size: clamp(30px, 3vw, 40px); font-weight: 400; letter-spacing: .13em; line-height: 1.7; }
