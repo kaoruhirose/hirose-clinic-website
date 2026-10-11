@@ -22,7 +22,7 @@ export default function Access() {
                 <div className="line-registration">
                   <figure id="line-qr" className="line-qr scroll-mt-24">
                     <Image src="/images/line-friend-qr.svg" width={132} height={132} unoptimized alt="廣瀬診療所の公式LINEを友だち追加するQRコード" />
-                    <figcaption><LineText>廣瀬診療所 公式LINE</LineText></figcaption>
+                    <figcaption>廣瀬診療所 公式LINE</figcaption>
                   </figure>
                   <div className="line-registration-copy">
                     <TextLink href={site.lineUrl} external>友だち追加</TextLink>

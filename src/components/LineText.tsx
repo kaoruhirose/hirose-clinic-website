@@ -5,7 +5,7 @@ export default function LineText({ children }: { children: string }) {
   const parts = children.split("公式LINE");
   return parts.map((part, index) => (
     <Fragment key={index}>
-      {index > 0 && <a href="/access#line-qr" className="underline">公式LINE</a>}
+      {index > 0 && <a href="/access#line-qr" className="underline decoration-[0.5px]">公式LINE</a>}
       {part}
     </Fragment>
   ));
