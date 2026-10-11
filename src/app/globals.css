@@ -17,7 +17,7 @@
 }
 :root { --rule: #343d3729; --muted: #697068; }
 @layer base {
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
   body { background: var(--color-clinic-base); color: var(--color-clinic-text); }
   button, a, input { -webkit-tap-highlight-color: transparent; }
   button { cursor: pointer; }
@@ -266,27 +266,28 @@
   .hero-bottom p span { margin-inline: 3px; }
   .hero-bottom a { gap: 8px; }
   .page-intro { padding: 56px 0 54px; }
-  .page-intro h1 { font-size: clamp(26px, 7.5vw, 30px); letter-spacing: .07em; }
-  .intro-copy { margin-top: 24px; font-size: 14px; line-height: 2.1; }
+  /* スマホの文字は画面幅に合わせて伸縮させる（375px幅で本文15px・見出しはその1.3〜1.6倍が目安）。 */
+  .page-intro h1, .fieldwork-index .page-intro h1 { font-size: clamp(22px, 6.2vw, 26px); letter-spacing: .07em; }
+  .intro-copy { margin-top: 24px; font-size: clamp(14px, 4vw, 15px); line-height: 2.1; }
   .editorial-section { grid-template-columns: 1fr; gap: 32px; padding-block: 48px; }
-  .section-heading h2 { font-size: 24px; line-height: 1.85; }
-  .clinic-philosophy-title { font-size: 24px; }
+  .section-heading h2 { font-size: clamp(19px, 5.6vw, 22px); line-height: 1.85; }
+  .clinic-philosophy-title { font-size: clamp(19px, 5.6vw, 22px); }
   .eyebrow { margin-bottom: 16px; font-size: 10px; }
-  .prose { font-size: 14px; line-height: 2.15; }
-  .prose h3 { font-size: 20px; }
+  .prose { font-size: clamp(14px, 4vw, 15px); line-height: 2.15; }
+  .prose h3 { font-size: clamp(17px, 4.8vw, 19px); }
   .home-introduction .editorial-section { padding-block: 80px; gap: 40px; }
-  .home-introduction .section-heading h2 { font-size: 28px; }
+  .home-introduction .section-heading h2 { font-size: clamp(21px, 6.2vw, 25px); }
   .text-link { font-size: 12px; margin-top: 20px; gap: 28px; }
   .detail-list { font-size: 13px; }
   .detail-list > div { grid-template-columns: 65px 1fr; gap: 14px; }
   .detail-list dt { font-size: 11px; }
   .detail-list--questions > div { grid-template-columns: 1fr; gap: 12px; }
-  .detail-list--questions dt { font-size: 17px; }
+  .detail-list--questions dt { font-size: clamp(16px, 4.5vw, 17px); }
   .schedule-table { font-size: 11px; }
   .schedule-table th, .schedule-table td { padding: 14px 3px; }
   .schedule-table th:first-child { font-size: 10px; }
-  .prose .article-title { font-size: 21px; }
-  .event-lead { font-size: 17px; }
+  .prose .article-title { font-size: clamp(19px, 5.3vw, 21px); }
+  .event-lead { font-size: clamp(16px, 4.5vw, 17px); }
   .event-part { margin-top: 52px; }
   .event-step-title { font-size: 16px; }
   .news-preview a { grid-template-columns: 1fr 12px; gap: 4px 16px; padding-block: 19px; }
