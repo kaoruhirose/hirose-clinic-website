@@ -16,7 +16,7 @@ export default function Access() {
 
         <Photo photo={photos.clinic} />
 
-        <EditorialSection id="reservation" label="初診の方へ" title={<>お一人ずつ、<br />ゆっくりと。</>}>
+        <EditorialSection id="reservation" label="初診の方へ" title={<>一人ひとり、<br />ゆっくりと。</>}>
           <div className="prose">
             <p>
               当院は完全予約制のプライベートクリニックです。

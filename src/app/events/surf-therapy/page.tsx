@@ -30,7 +30,7 @@ export default function SurfTherapy() {
       <div className="container">
         <TextLink href="/events">フィールドワーク一覧へ戻る</TextLink>
         <PageIntro
-          eyebrow="フィールドワーク ／ 自然処方"
+          eyebrow="フィールドワーク / 自然処方"
           title={<><span className="text-unit">海と波と</span><span className="text-unit">サーフセラピー</span></>}
           english="In the rhythm of the waves, a moment to simply be."
         >
