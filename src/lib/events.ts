@@ -74,7 +74,7 @@ export const fieldworks: ClinicEvent[] = [
       "2026年11月29日（日）",
       "2026年12月13日（日）",
     ],
-    title: "裸足で海と山を歩く会 ／ 裸足ハイク",
+    title: "裸足で海と山を歩く会 / 裸足ハイク",
     time: "8:00〜11:00（受付 7:45〜）",
     place: "逗子海岸「太陽の塔（太陽の季節碑）」前（逗子市新宿1丁目6）",
     mapUrl: "https://maps.app.goo.gl/gvgbK7ncjMnMX4mT6",
