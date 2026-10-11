@@ -228,7 +228,8 @@ export default function EventDetails({ ev, flowVisuals, showIntroduction = true,
           <p>{ev.host.bio}</p>
           {ev.host.closing && (
             <p className="event-closing">
-              {ev.host.closing.map((line) => <span key={line}>{line}</span>)}
+              {/* PCでは読点ごとに縦の1列にし、後半を下げて散らし書きにする */}
+              {ev.host.closing.map((line) => <span key={line}>{line.split(/(?<=、)/).map((part) => <span key={part} className="event-closing-part">{part}</span>)}</span>)}
             </p>
           )}
         </section>

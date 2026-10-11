@@ -67,7 +67,7 @@
 }
 /* 中央の文字（.35秒待機 + 4.2秒）を見せてから、周囲の案内を表示する。 */
 .site-header--over-photo .header-inner,
-.hero-poem, .hero-photo-caption, .hero-bottom, .hero-instagram { animation: hero-text-reveal 2s ease-in-out 4.9s both; }
+.hero-photo-caption, .hero-bottom, .hero-instagram { animation: hero-text-reveal 2s ease-in-out 4.9s both; }
 /* キーボードで操作したときは、案内を待たずに読めるようにする。 */
 .site-header--over-photo .header-inner:focus-within,
 .hero-bottom:focus-within, .hero-instagram:focus-visible { animation: none; }
@@ -81,7 +81,6 @@
 .hero-wordmark--above .hero-latin { left: 50%; bottom: calc(100% + 26px); transform: translateX(-50%); }
 .hero-wordmark--below .hero-latin { left: 50%; top: calc(100% + 22px); transform: translateX(-50%); }
 .hero-wordmark--diagonal .hero-latin { left: calc(100% + 12px); top: calc(100% - 18px); }
-.hero-poem { position: absolute; bottom: 102px; left: 6.3%; font-family: var(--font-serif); font-size: clamp(19px, 1.9vw, 26px); line-height: 2.1; letter-spacing: .19em; text-shadow: 0 1px 16px #17251b80; }
 .hero-photo-caption { position: absolute; right: 6.3%; bottom: 137px; margin: 0; font-size: 11px; line-height: 1.8; letter-spacing: .12em; color: #ffffffe0; text-shadow: 0 1px 8px #17251bcc; pointer-events: none; }
 .hero-bottom { position: absolute; bottom: 31px; left: 6.3%; right: 6.3%; display: flex; align-items: center; justify-content: space-between; font-size: 12px; letter-spacing: .15em; gap: 16px; }
 .hero-bottom a { display: flex; align-items: center; gap: 22px; padding-block: 12px; }
@@ -178,7 +177,7 @@
 .event-part > .text-link, .event-part > div + p { margin-top: 24px; }
 .event-step-title { display: block; font-family: var(--font-serif); font-size: 17px; letter-spacing: .04em; }
 .event-closing { font-family: var(--font-serif); letter-spacing: .06em; margin-top: 34px; }
-.event-closing span { display: block; }
+.event-closing > span { display: block; }
 .article-list > li + li { border-top: 1px solid var(--rule); padding-top: 55px; margin-top: 55px; }
 .article-meta { display: flex; flex-wrap: wrap; gap: 12px 30px; font-size: 11px; letter-spacing: .08em; color: var(--muted); margin-bottom: 15px; }
 .prose .article-title { margin-top: 0; font-size: 23px; }
@@ -188,6 +187,10 @@
 .home-introduction .editorial-section { border: 0; padding-block: 140px; }
 .home-introduction .section-heading h2 { font-size: clamp(28px, 2.5vw, 32px); }
 .desktop-break { display: none; }
+/* C1 詩は表紙の写真に載せず、白い背景の中央に縦書き2列で置く（2列目を下げる散らし書き） */
+.home-poem { display: flex; flex-direction: row-reverse; justify-content: center; gap: 1.4em; padding: 120px 0 0; font-family: var(--font-serif); font-size: 22px; line-height: 1.6; letter-spacing: .3em; }
+.home-poem span { writing-mode: vertical-rl; }
+.home-poem span + span { padding-top: 3.2em; }
 @media (min-width: 1024px) {
   .desktop-break { display: inline; }
   /* A3 長い節でも、左の見出しを画面に残す */
@@ -282,6 +285,25 @@
   .privacy-page .section-heading h2 { font-size: 20px; }
   .privacy-page .editorial-section { padding-block: 72px; }
 }
+@media (min-width: 1024px) {
+  /* C1 PCでは詩を少し大きく、上の余白を広めに */
+  .home-poem { padding: 168px 0 8px; font-size: 24px; letter-spacing: .32em; }
+  /* C2 トップの3つの見出しを縦書きに。本文と向き合う右側に置き、頭を本文の1行目にそろえる */
+  .editorial-section--tate > .section-heading { display: flex; flex-direction: row-reverse; justify-content: flex-start; align-items: flex-start; gap: 22px; padding-top: .5em; }
+  .editorial-section--tate .section-heading h2 { writing-mode: vertical-rl; font-size: 30px; letter-spacing: .28em; line-height: 2; margin: 0; }
+  .editorial-section--tate .section-heading :is(.eyebrow, .section-english) { writing-mode: vertical-rl; margin: 0; }
+  /* C3 「身土不二」と添えた言葉を、右から左へ読む縦書きの一幅にまとめる */
+  .clinic-philosophy { justify-content: center; align-items: flex-start; gap: 56px; padding-right: 0; margin-top: 72px; }
+  .clinic-philosophy-copy { writing-mode: vertical-rl; text-align: start; font-size: 16px; line-height: 2.3; letter-spacing: .18em; }
+  .clinic-philosophy-copy .text-unit { display: block; }
+  .clinic-philosophy-copy br { display: none; }
+  .clinic-philosophy-copy p + p { margin-top: 0; margin-right: 1.6em; }
+  /* C4 裸足ハイクの結びの言葉を縦書き6列の散らし書きに */
+  .prose .event-closing { display: flex; flex-direction: row-reverse; justify-content: center; gap: 1.6em; margin-block: 72px; font-size: 17px; line-height: 1.8; letter-spacing: .2em; }
+  .event-closing > span { display: contents; }
+  .event-closing-part { writing-mode: vertical-rl; }
+  .event-closing-part + .event-closing-part { padding-top: 2.4em; }
+}
 .wordmark-study-controls { position: sticky; top: 0; z-index: 21; background: var(--color-clinic-base); padding: 24px 4.4vw; border-top: 1px solid var(--rule); }
 .wordmark-study-controls h1 { font-family: var(--font-serif); font-size: 19px; letter-spacing: .08em; margin-bottom: 24px; }
 .wordmark-study-controls fieldset { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; max-width: 940px; }
@@ -308,7 +330,6 @@
   .hero-wordmark { top: 44%; }
   .hero-wordmark :is(h1, h2) { font-size: clamp(34px, 4.2vw, 46px); }
   .hero-latin { font-size: 11px; }
-  .hero-poem { bottom: 170px; font-size: clamp(21px, 2.7vw, 28px); line-height: 1.9; }
   .hero-photo-caption { bottom: 116px; }
   .hero-bottom { bottom: 38px; }
 }
@@ -326,7 +347,6 @@
   .hero-wordmark--above .hero-latin { bottom: calc(100% + 22px); }
   .hero-wordmark--below .hero-latin { top: calc(100% + 18px); }
   .hero-wordmark--diagonal .hero-latin { font-size: 8px; left: calc(100% + 8px); }
-  .hero-poem { left: 24px; bottom: 127px; font-size: 19px; letter-spacing: .12em; line-height: 2.05; }
   .hero-photo-caption { right: 24px; bottom: 106px; font-size: 10px; letter-spacing: .08em; }
   .hero-bottom { left: 24px; right: 24px; bottom: 24px; font-size: 10px; letter-spacing: .05em; }
   .hero-bottom p span { margin-inline: 3px; }
@@ -345,6 +365,7 @@
   .eyebrow { margin-bottom: 16px; font-size: 10px; }
   .prose { font-size: clamp(14px, 4vw, 15px); line-height: 2.15; }
   .prose h3 { font-size: clamp(17px, 4.8vw, 19px); }
+  .home-poem { padding-top: 88px; font-size: 19px; letter-spacing: .24em; }
   .home-introduction .editorial-section { padding-block: 80px; gap: 40px; }
   .home-introduction .section-heading h2 { font-size: clamp(21px, 6.2vw, 25px); }
   .text-link { font-size: 12px; margin-top: 20px; gap: 28px; }
@@ -380,6 +401,6 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-wordmark, .site-header--over-photo .header-inner,
-  .hero-poem, .hero-photo-caption, .hero-bottom, .hero-instagram { animation: none; }
+  .hero-photo-caption, .hero-bottom, .hero-instagram { animation: none; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
