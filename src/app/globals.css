@@ -35,7 +35,7 @@
 .site-header--over-photo .desktop-nav { font-size: 14px; }
 .site-header--over-photo .menu-trigger { font-size: 13px; }
 .header-brand { --brand-size: 22px; font-family: var(--font-serif); font-size: var(--brand-size); line-height: 1.5; letter-spacing: .15em; white-space: nowrap; }
-.header-brand-latin, .footer-latin { display: block; margin-top: calc(var(--brand-size, 25px) * .48); font: calc(var(--brand-size, 25px) * .36)/1.2 Georgia, serif; letter-spacing: .22em; text-align: left; }
+.header-brand-latin, .footer-latin { display: block; margin-top: calc(var(--brand-size, 25px) * .26); font: calc(var(--brand-size, 25px) * .36)/1.2 Georgia, serif; letter-spacing: .22em; text-align: left; }
 .desktop-nav { display: flex; gap: clamp(20px, 2.5vw, 42px); align-items: center; font-size: 12px; letter-spacing: .09em; }
 .desktop-nav a { padding-block: 12px; white-space: nowrap; }
 .desktop-nav a:hover, .desktop-nav a[aria-current] { text-decoration: underline; }
@@ -253,7 +253,6 @@
   .container { width: calc(100% - 48px); }
   .header-inner { height: 88px; padding-inline: 24px; }
   .header-brand { --brand-size: 19px; }
-  .header-brand-latin, .footer-latin { margin-top: calc(var(--brand-size, 25px) * .26); }
   .home-hero { min-height: 620px; max-height: 980px; }
   .hero-wordmark :is(h1, h2) { font-size: 32px; letter-spacing: .18em; }
   .hero-latin { font-size: 9px; }
