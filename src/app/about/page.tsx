@@ -3,25 +3,33 @@ import { photos } from "@/lib/photos";
 
 export default function About() {
   return (
-    <div className="page-shell">
+    <div className="page-shell about-page">
       <div className="container">
-        <PageIntro title="私たちの想い" english="Listening to the body, caring for the whole person." />
+        <PageIntro title="私たちの想い" english="Listening for the stories the body holds.">
+          <div className="clinic-philosophy">
+            <div className="clinic-philosophy-copy">
+              <p><span className="text-unit">からだと、暮らす土地は、</span><span className="text-unit">ひとつながり。</span></p>
+              <p><span className="text-unit">海を渡る風、</span><span className="text-unit">足もとの土、</span><span className="text-unit">季節の移ろい。</span><br /><span className="text-unit">からだもまた、</span><span className="text-unit">その営みのなかにあります。</span></p>
+            </div>
+            <p className="clinic-philosophy-title">身土不二</p>
+          </div>
+        </PageIntro>
 
         <Photo photo={photos.clinic} />
 
         <EditorialSection title={<>なぜ、逗子で<br />開院したのか</>}>
           <p>
-            救急医療の最前線で命と向き合い続けるなかで、「病気になってから治す」ことの限界を感じるようになりました。ストレスや環境の変化が引き起こす不調を、もっと手前で防ぐことはできないのか——。
+            救急医療の最前線で命と向き合うなかで、不調の背景にある日々の暮らしにも目を向けたいと考えるようになりました。からだが大きく調子を崩す前に、できることはないか。その問いが、今の診療につながっています。
           </p>
           <p>
-            その答えを探して東洋医学（漢方）を学び、人を臓器や検査値ではなく「全体」として捉えることの大切さに気づきました。自然の営みと人のからだは、深くつながっています。
+            その問いをたどり、東洋医学（漢方）を学びました。臓器や検査値に加えて、体質や暮らし、心の状態まで見渡すこと。季節や環境とともに変わるからだに、耳を澄ませること。診療で大切にしている視点です。
           </p>
           <p>
-            晴れた夕暮れに、高台にある診療所の窓辺からは、富士山と江ノ島が海の向こうに浮かびます。海と山に抱かれたこの逗子・桜山の地で、大きな病院ではなく、暮らしの延長にある「港」のような場所をつくりたい。それが、この地に診療所を開いた理由です。
+            晴れた夕暮れに、高台にある診療所の窓辺からは、富士山と江ノ島が海の向こうに浮かびます。海と山のあいだ、この逗子・桜山で、日々の暮らしに近い診療を営みたい。ひと息ついて、からだのことを話せる「港」のような場所を思い描きました。
           </p>
         </EditorialSection>
 
-        <EditorialSection label="代表 / 医師" title="廣瀬 薫">
+        <EditorialSection label="代表 / 医師" title="廣瀬 薫" english="KAORU HIROSE, M.D.">
           <Photo photo={photos.portrait} />
           <h3>略歴</h3>
           <ul className="rule-list">
@@ -38,20 +46,20 @@ export default function About() {
           </ul>
           <h3>ごあいさつ</h3>
           <p>
-            「なんとなく調子が悪い」「病院に行くべきか迷っている」——そんなときこそ、どうぞ気軽に扉を叩いてください。
+            「なんとなく調子が悪い」「病院に行くべきか迷っている」。そんな小さな迷いも、どうぞお聞かせください。
           </p>
           <p>
-            西洋医学の客観的な診断と、東洋医学による体質からの見立て、そして無理のないライフスタイルの提案。この3つを行き来しながら、あなたが自分の力で健やかさを取り戻していく道のりに、伴走いたします。
+            西洋医学による診断、漢方からの見立て、日々の暮らしの工夫。いくつかの視点を重ねながら、あなたに合う道筋を一緒に考えていきます。無理なく続けられることを、少しずつ。
           </p>
         </EditorialSection>
 
         <EditorialSection id="yoga" title={<>ヨガと<br />メディテーション</>}>
-          <h3>自然とつながり、自らを整える</h3>
+          <h3>呼吸から、自分に立ち返る</h3>
           <p>
-            当診療所では、治療という枠を超えた「予防医学」の実践として、ヨガとメディテーションの指導・ワークショップを行っています。
+            診療に加えて、日々のからだに目を向ける時間として、ヨガとメディテーション（瞑想）の指導・ワークショップを行っています。
           </p>
           <p>
-            ヨガインストラクター（全米ヨガアライアンスRYT200）の資格を持つ代表が、心身の緊張をほどく呼吸法から、逗子の海と山を感じるフィールドワークまでをご案内します。薬に頼りきるのではなく、自分自身の力で「巡り」を良くしていく——その最初の一歩を、ここから始めてみませんか。
+            ヨガインストラクター（全米ヨガアライアンスRYT200）の資格を持つ代表が、呼吸に意識を向ける時間から、逗子の海と山を感じるフィールドワークまでをご案内します。息をすること、からだを動かすこと、自然にふれること。身近な営みから、ご自身をいたわる習慣を見つけていきます。
           </p>
           <TextLink href="/events">イベントのご案内</TextLink>
         </EditorialSection>

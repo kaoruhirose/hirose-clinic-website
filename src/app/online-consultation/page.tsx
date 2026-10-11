@@ -4,16 +4,16 @@ import { site, phoneDisplay } from "@/lib/site";
 
 const benefits = [
   {
-    title: "通院・待ち時間の解消",
-    description: "移動時間や待合室での待ち時間がなくなり、お忙しい方や体調が優れない方でもスムーズに受診できます。",
+    title: "通院の負担を減らす",
+    description: "診療所まで移動せずに受診できるため、遠くにお住まいの方や、通院が負担になる方にもご利用いただけます。",
   },
   {
-    title: "リラックスした環境",
-    description: "ご自身が最もリラックスできる環境でお話しいただけるため、些細な悩みも相談しやすくなります。",
+    title: "慣れた場所から",
+    description: "落ち着ける場所で、日々の不調や気になることを、ご自身の言葉でお話しいただけます。",
   },
   {
-    title: "感染症リスクの低減",
-    description: "外出を控えることで、他の感染症に罹患するリスクを抑えることができ、二次感染の防止にも繋がります。",
+    title: "外出を控えたいときに",
+    description: "通院のための外出や、待合室で人と接する機会を減らせます。",
   },
 ];
 
@@ -53,10 +53,10 @@ export default function OnlineConsultation() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro eyebrow="オンライン診療" title={<>いつもの場所で、<br />診療の時間を。</>} english="A moment for care, wherever you feel at home.">
+        <PageIntro eyebrow="オンライン診療" title={<>いつもの場所で、<br />診療の時間を。</>} english="Across the distance, a space to be heard.">
           <p>
-            移動の負担を減らし、いつもの環境でリラックスして受診いただけます。
-            西洋医学と東洋医学の知見を、オンラインでも丁寧にお届けします。
+            いつもの場所から、からだのことを話す時間を。
+            西洋医学と漢方、ふたつの視点を大切にしたオンライン診療を準備しています。
           </p>
           <p>オンライン診療は現在、システム構築中です。準備が整い次第、開始時期やご利用方法をご案内します。</p>
         </PageIntro>
@@ -107,8 +107,8 @@ export default function OnlineConsultation() {
         <EditorialSection label="お問い合わせ" title="お電話でのご相談">
           <div className="prose">
             <p>
-              操作方法や、ご自身の症状がオンライン診療に適しているかなど、
-              不明な点がございましたらお気軽にお電話ください。
+              操作方法や、症状がオンライン診療に適しているかなど、
+              ご不明な点はお電話でご相談ください。
             </p>
             <p>
               {site.phone ? (

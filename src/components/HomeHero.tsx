@@ -18,7 +18,6 @@ export default function HomeHero({ position = "below", study = false }: { positi
       </div>
       <div className={`hero-wordmark hero-wordmark--${position}`}>
         <Title>廣瀬診療所</Title><p className="hero-latin" lang="en">HIROSESHINRYOJO</p>
-        {!study && <p className="hero-english" lang="en">Care between the sea and the hills.</p>}
       </div>
       <p className="hero-poem">海と山のあいだで、<br />からだの声を聴く。</p>
       <p className="hero-photo-caption">〜 診療所からの眺め 〜</p>

@@ -90,7 +90,7 @@ export default async function BarefootHike() {
         <PageIntro
           eyebrow="フィールドワーク"
           title={<><span className="text-unit">裸足で海と山を歩く会</span><span className="text-unit"> ／ 裸足ハイク</span></>}
-          english="Barefoot walks between the sea and the hills."
+          english="From sand to soil, one barefoot step at a time."
         />
         <div className={styles.opening} id="hike-introduction">
           <HikePhoto photo={hikePhotos[2]} opening sizes="(max-width: 700px) 80vw, 48vw" />

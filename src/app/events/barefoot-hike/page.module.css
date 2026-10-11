@@ -33,12 +33,14 @@
 
 .opening > .photo:first-child {
   grid-column: 1 / 7;
+  align-self: end;
 }
 
 .openingCopy {
   grid-column: 8 / 13;
   max-width: 540px;
-  align-self: start;
+  align-self: end;
+  padding-bottom: calc(12px + 11px * 1.9);
 }
 
 .openingCopy .openingPoem {
@@ -50,7 +52,7 @@
   text-orientation: mixed;
   width: max-content;
   height: max-content;
-  margin: 32px clamp(24px, 3vw, 64px) clamp(96px, 9vw, 144px) auto;
+  margin: 56px clamp(44px, 5vw, 96px) clamp(96px, 9vw, 144px) auto;
   padding: 0;
   border: 0;
   font-size: clamp(20px, 1.8vw, 25px);
@@ -326,11 +328,12 @@
   }
 
   .openingCopy {
-    margin-top: 64px;
+    margin-top: 80px;
+    padding-bottom: 0;
   }
 
   .openingCopy .openingPoem {
-    margin: 0 24px 80px auto;
+    margin: 0 44px 96px auto;
     font-size: 18px;
   }
 

@@ -32,14 +32,14 @@ export default function SurfTherapy() {
         <PageIntro
           eyebrow="フィールドワーク ／ 自然処方"
           title={<><span className="text-unit">海と波と</span><span className="text-unit">サーフセラピー</span></>}
-          english="Meet the sea and the waves."
+          english="In the rhythm of the waves, a moment to simply be."
         >
-          <p>波と触れあいながら、心と身体をゆるめる時間。廣瀬診療所の自然処方プログラムです。</p>
+          <p>波の音に耳を澄ませ、海と過ごすひととき。廣瀬診療所の自然処方プログラムです。</p>
         </PageIntro>
         <div className="fieldwork-detail prose">
           <article className="event-article">
             <p>サーフィン歴30年以上の医師（救急医）と一緒に海に入る、90分の体験プログラムです。</p>
-            <p>上手に波に乗ることを目指すのではなく、海や波を感じながら、自分のペースで過ごします。サーフィンが初めての方も歓迎します。</p>
+            <p>波の音、水の感触、浜辺を渡る風。海や波を感じ、自分のペースで過ごす時間を大切にしています。サーフィンが初めての方も歓迎します。</p>
 
             <dl className="detail-list">
               <div><dt>所要時間</dt><dd>90分</dd></div>
@@ -100,7 +100,7 @@ export default function SurfTherapy() {
 
             <section className="event-part">
               <h2>お申し込み・お問い合わせ</h2>
-              <p>参加をご希望の方は、お気軽にお問い合わせください。開催日時・集合場所を個別にご案内します。ご質問だけでも歓迎します。</p>
+              <p>参加をご希望の方には、開催日時・集合場所を個別にご案内します。初めての方も、ご質問だけの方も、どうぞお気軽にお問い合わせください。</p>
               <p>
                 <ReservationLink className="text-link">
                   サーフセラピーのお申し込み・お問い合わせ方法

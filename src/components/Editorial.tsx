@@ -7,8 +7,8 @@ export function PageIntro({ eyebrow, title, english, children }: { eyebrow?: str
   return <header className="page-intro">{eyebrow && <p className="eyebrow">{eyebrow}</p>}<h1>{title}</h1>{english && <p className="intro-english" lang="en">{english}</p>}{children && <div className="intro-copy">{children}</div>}</header>;
 }
 
-export function EditorialSection({ id, label, title, children }: { id?: string; label?: string; title?: ReactNode; children: ReactNode }) {
-  return <section id={id} className="editorial-section"><div className="section-heading">{label && <p className="eyebrow">{label}</p>}{title && <h2>{title}</h2>}</div><div className="editorial-body prose">{children}</div></section>;
+export function EditorialSection({ id, label, title, english, children }: { id?: string; label?: string; title?: ReactNode; english?: string; children: ReactNode }) {
+  return <section id={id} className="editorial-section"><div className="section-heading">{label && <p className="eyebrow">{label}</p>}{title && <h2>{title}</h2>}{english && <p className="section-english" lang="en">{english}</p>}</div><div className="editorial-body prose">{children}</div></section>;
 }
 
 export function TextLink({ href, children, external = false }: { href: string; children: ReactNode; external?: boolean }) {

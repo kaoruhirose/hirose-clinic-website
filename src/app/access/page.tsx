@@ -7,7 +7,7 @@ export default function Access() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro eyebrow="アクセス・ご予約" title={<><span className="text-unit">桜山の高台で、</span><br /><span className="text-unit">お待ちしています。</span></>} english="We look forward to welcoming you to Sakurayama.">
+        <PageIntro eyebrow="アクセス・ご予約" title={<><span className="text-unit">桜山の高台で、</span><br /><span className="text-unit">お待ちしています。</span></>} english="A quiet welcome on the hills of Sakurayama.">
           <p>
             廣瀬診療所は、逗子・桜山の住宅街にある完全予約制の診療所です。
             ご来院の前に、ご予約とアクセスのご案内をご確認ください。
@@ -20,7 +20,7 @@ export default function Access() {
           <div className="prose">
             <p>
               当院は完全予約制のプライベートクリニックです。
-              他の方と顔を合わせることなく、ゆったりとした時間の中で診療をお受けいただけます。
+              お一人ずつお迎えし、落ち着いてお話しいただける時間を大切にしています。
             </p>
             {site.lineUrl ? (
               <>

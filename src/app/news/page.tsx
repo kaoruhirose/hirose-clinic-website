@@ -6,7 +6,7 @@ export default function News() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro title="お知らせ" english="News and notes from our clinic." />
+        <PageIntro title="お知らせ" english="Little notes from our days on the hill." />
         <ul className="article-list">
           {newsItems.map((news) => (
             <li key={`${news.date}-${news.title}`} id={`news-${news.date.replaceAll(".", "-")}`}>
@@ -22,7 +22,7 @@ export default function News() {
           ))}
         </ul>
         <p className="quiet-note mt-12">
-          最新のお知らせは随時こちらに掲載いたします。
+          診療のご案内や、診療所の日々の便りを、こちらにお届けします。
         </p>
       </div>
     </div>
