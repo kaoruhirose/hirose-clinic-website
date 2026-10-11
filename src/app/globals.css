@@ -108,6 +108,10 @@
 .section-english { margin-top: 14px; color: var(--muted); font: 13px/1.9 Georgia, serif; letter-spacing: .035em; }
 .about-page .section-english { margin-top: 4px; }
 .about-page .intro-copy { max-width: 900px; }
+@media (min-width: 701px) {
+  /* 見出しの左端をそろえたまま、本文に近い側へ寄せる。 */
+  .about-page .editorial-section > .section-heading { width: min(100%, 280px); justify-self: end; }
+}
 .clinic-philosophy { display: flex; align-items: flex-end; justify-content: flex-end; gap: clamp(24px, 3vw, 36px); padding-right: clamp(12px, 3vw, 32px); margin-top: 56px; }
 .clinic-philosophy-title { flex-shrink: 0; margin: 0; writing-mode: vertical-rl; text-orientation: upright; white-space: nowrap; color: var(--muted); font-family: var(--font-serif); font-size: clamp(24px, 2.3vw, 30px); font-weight: 400; line-height: 1.5; letter-spacing: .3em; }
 .clinic-philosophy-copy { min-width: 0; text-align: right; font-family: var(--font-serif); font-size: 16px; line-height: 2.2; letter-spacing: .04em; }
