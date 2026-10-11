@@ -4,6 +4,7 @@ import HomeHero from "@/components/HomeHero";
 import { EditorialSection, TextLink, Photo } from "@/components/Editorial";
 import { photos } from "@/lib/photos";
 import { newsItems } from "@/lib/news";
+import fujiDawn from "../../public/images/clinic/fuji-dawn.webp";
 
 export default function Home() {
   return (
@@ -18,7 +19,7 @@ export default function Home() {
           <TextLink href="/about">廣瀬診療所について</TextLink>
         </EditorialSection>
       </div>
-      <figure className="home-landscape"><Image src="/images/clinic/fuji-dawn.webp" alt="診療所から望む、朝焼けの富士山と江ノ島" width={1240} height={1654} sizes="100vw" /></figure>
+      <figure className="home-landscape"><Image src={fujiDawn} alt="診療所から望む、朝焼けの富士山と江ノ島" sizes="100vw" quality={90} /></figure>
       <div className="container">
         <EditorialSection tate label="診療のご案内" title={<>一人ひとり、<br />ゆっくりと。</>}>
           <p><span className="text-unit">廣瀬診療所は、</span><span className="text-unit">逗子・桜山の高台にある</span><br className="desktop-break" /><span className="text-unit">完全予約制の診療所です。</span></p>

@@ -1,13 +1,15 @@
 import { getImageProps } from "next/image";
 import { site } from "@/lib/site";
+import heroWide from "../../public/images/hero-wide.jpg";
+import heroMobile from "../../public/images/hero-mobile.jpg";
 
 export type WordmarkPosition = "side" | "above" | "below" | "diagonal";
 
 export default function HomeHero({ position = "below", study = false }: { position?: WordmarkPosition; study?: boolean }) {
   const Title = study ? "h2" : "h1";
-  const common = { alt: "逗子の海と、夕暮れの富士山と江ノ島", sizes: "100vw", loading: "eager" as const, fetchPriority: "high" as const };
-  const { props: { srcSet: desktop } } = getImageProps({ ...common, src: "/images/hero-wide.jpg", width: 1440, height: 748 });
-  const { props: mobile } = getImageProps({ ...common, src: "/images/hero-mobile.jpg", width: 620, height: 883 });
+  const common = { alt: "逗子の海と、夕暮れの富士山と江ノ島", sizes: "100vw", quality: 90, loading: "eager" as const, fetchPriority: "high" as const };
+  const { props: { srcSet: desktop } } = getImageProps({ ...common, src: heroWide });
+  const { props: mobile } = getImageProps({ ...common, src: heroMobile });
   return (
     <section className="home-hero" aria-label="廣瀬診療所">
       <div className="hero-image">

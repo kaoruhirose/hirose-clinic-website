@@ -2,6 +2,7 @@ import LineText from "@/components/LineText";
 import Image from "next/image";
 import { EditorialSection, PageIntro } from "@/components/Editorial";
 import ReservationLink from "@/components/ReservationLink";
+import room from "../../../public/images/clinic/room.webp";
 
 export default function Services() {
   return (
@@ -14,7 +15,7 @@ export default function Services() {
         </PageIntro>
       </div>
 
-      <figure className="wide-photo"><Image src="/images/clinic/room.webp" alt="診療所の室内。大きな窓の向こうに、緑と海が広がる" width={2000} height={1500} sizes="100vw" /></figure>
+      <figure className="wide-photo"><Image src={room} alt="診療所の室内。大きな窓の向こうに、緑と海が広がる" sizes="100vw" quality={90} /></figure>
 
       <div className="container">
         <EditorialSection id="general" title="総合内科・救急対応" note="保険診療">

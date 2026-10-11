@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/images/hero.jpg",
-        width: 1440,
-        height: 1548,
+        width: 3024,
+        height: 3251,
         alt: "逗子の海岸から望む富士山と江ノ島の夕景",
       },
     ],
