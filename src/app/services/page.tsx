@@ -13,7 +13,7 @@ export default function Services() {
         </PageIntro>
 
         <EditorialSection id="general" title="総合内科・救急対応">
-          <p className="quiet-note">保険診療の範囲</p>
+          <p className="quiet-note">保険診療</p>
           <p>
             風邪、発熱、腹痛などの急な不調から、高血圧、脂質異常症、糖尿病などの生活習慣病の管理まで、幅広く対応します。
           </p>
@@ -23,7 +23,7 @@ export default function Services() {
         </EditorialSection>
 
         <EditorialSection id="kampo" title="漢方専門外来">
-          <p className="quiet-note">保険診療・自費診療（処方内容による）</p>
+          <p className="quiet-note">自由診療（自費診療）</p>
           <p>
             検査で異常が見つからなくても、調子がすぐれない。疲れや冷えが続く。女性特有の不調がある。こうしたお悩みを伺い、漢方の視点から体質やからだの状態を見つめます。
           </p>
@@ -33,7 +33,7 @@ export default function Services() {
         </EditorialSection>
 
         <EditorialSection id="lifestyle" title="ライフスタイル相談">
-          <p className="quiet-note">自費診療（カウンセリング・プログラム）</p>
+          <p className="quiet-note">自由診療（自費診療）</p>
           <p>
             薬との付き合い方を見直したい。ストレスとうまく付き合いたい。自然とのつながりを暮らしに取り入れたい。そんな思いを、日々の習慣から一緒に考える相談です。
           </p>
