@@ -9,7 +9,7 @@ export default function Footer() {
           <div><Link href="/" className="footer-brand">廣瀬診療所</Link><p className="footer-latin">HIROSESHINRYOJO</p><p className="footer-address">〒{site.postalCode}<br />{site.address}<br /><span>詳しい住所は、ご予約の確定後に公式LINEでお知らせします。</span></p></div>
           <nav aria-label="フッターメニュー"><Link href="/about">診療所について</Link><Link href="/services">診療案内</Link><Link href="/online-consultation">オンライン診療</Link><Link href="/events">フィールドワーク</Link><Link href="/access">ご予約・アクセス</Link><Link href="/news">お知らせ</Link></nav>
         </div>
-        <div className="footer-bottom"><small>© {new Date().getFullYear()} HIROSESHINRYOJO</small><Link href="/privacy">プライバシーポリシー</Link><a href="#main-content">ページの上へ ↑</a></div>
+        <div className="footer-bottom"><small>© {new Date().getFullYear()} HIROSESHINRYOJO All rights reserved.</small><Link href="/privacy">プライバシーポリシー</Link><a href="#main-content">ページの上へ ↑</a></div>
         {site.instagramUrl && (
           <div className="footer-social">
             <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram（@hiroseshinryojo・新しいタブで開く）">
