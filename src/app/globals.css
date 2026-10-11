@@ -67,10 +67,10 @@
 }
 /* 中央の文字（.35秒待機 + 4.2秒）を見せてから、周囲の案内を表示する。 */
 .site-header--over-photo .header-inner,
-.hero-poem, .hero-photo-caption, .hero-bottom { animation: hero-text-reveal 2s ease-in-out 4.9s both; }
+.hero-poem, .hero-photo-caption, .hero-bottom, .hero-instagram { animation: hero-text-reveal 2s ease-in-out 4.9s both; }
 /* キーボードで操作したときは、案内を待たずに読めるようにする。 */
 .site-header--over-photo .header-inner:focus-within,
-.hero-bottom:focus-within { animation: none; }
+.hero-bottom:focus-within, .hero-instagram:focus-visible { animation: none; }
 @keyframes hero-text-reveal {
   from { opacity: 0; translate: 0 8px; }
   to { opacity: 1; translate: 0 0; }
@@ -380,6 +380,6 @@
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .hero-wordmark, .site-header--over-photo .header-inner,
-  .hero-poem, .hero-photo-caption, .hero-bottom { animation: none; }
+  .hero-poem, .hero-photo-caption, .hero-bottom, .hero-instagram { animation: none; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
