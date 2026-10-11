@@ -53,7 +53,7 @@ export default function About() {
           </p>
         </EditorialSection>
 
-        <EditorialSection id="yoga" title="ヨガと瞑想">
+        <EditorialSection id="yoga" title="ヨガと瞑想" english="Yoga & Meditation">
           <h3>呼吸から、自分に立ち返る</h3>
           <p>
             診療とは別に、ヨガと瞑想の指導やワークショップも行っています。
