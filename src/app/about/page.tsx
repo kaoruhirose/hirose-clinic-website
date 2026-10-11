@@ -5,7 +5,7 @@ export default function About() {
   return (
     <div className="page-shell about-page">
       <div className="container">
-        <PageIntro title="私たちの想い" english="Listening for the stories the body holds.">
+        <PageIntro title="大切にしていること" english="Listening for the stories the body holds.">
           <div className="clinic-philosophy">
             <div className="clinic-philosophy-copy">
               <p><span className="text-unit">からだと、暮らす土地は、</span><span className="text-unit">ひとつながり。</span></p>

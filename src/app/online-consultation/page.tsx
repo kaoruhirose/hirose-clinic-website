@@ -27,7 +27,7 @@ const steps = [
   { title: "準備", description: "予約時間に、静かな場所でお待ちください。" },
   { title: "診察", description: "ビデオ通話にて医師が診察を行います。" },
   { title: "会計", description: "クレジットカード等でのオンライン決済です。" },
-  { title: "お薬", description: "処方箋をご指定の住所へ郵送、またはお近くの薬局へお送りします。" },
+  { title: "お薬", description: "保険診療は、お近くの薬局へ処方箋をデータでお送りします。自由診療は、ご自宅へ郵送します。" },
 ];
 
 const questions = [
@@ -45,7 +45,7 @@ const questions = [
   },
   {
     question: "処方箋はどのようにもらえますか？",
-    answer: "ご指定の住所への郵送、または指定された調剤薬局へのFAX送信が可能です。生活スタイルに合わせて選択いただけます。",
+    answer: "保険診療の場合は、お近くの薬局へ処方箋をデータでお送りします。自由診療の場合は、ご自宅へ郵送します。",
   },
 ];
 
@@ -107,8 +107,9 @@ export default function OnlineConsultation() {
         <EditorialSection label="お問い合わせ" title="お電話でのご相談">
           <div className="prose">
             <p>
-              操作方法や、症状がオンライン診療に適しているかなど、
-              ご不明な点はお電話でご相談ください。
+              {site.lineUrl
+                ? "ご予約・ご相談は、公式LINEが主な窓口です。お急ぎのときや、操作方法がわからないときは、お電話でもご相談いただけます。"
+                : "操作方法や、症状がオンライン診療に適しているかなど、ご不明な点はお電話でご相談ください。"}
             </p>
             <p>
               {site.phone ? (
@@ -117,7 +118,7 @@ export default function OnlineConsultation() {
                 phoneDisplay
               )}
             </p>
-            <p className="quiet-note">電話受付時間　9:00〜18:00</p>
+            <p className="quiet-note">電話受付　{site.phoneHours}</p>
           </div>
         </EditorialSection>
       </div>

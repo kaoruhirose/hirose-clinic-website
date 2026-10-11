@@ -16,15 +16,11 @@ export default function Access() {
 
         <Photo photo={photos.clinic} />
 
-        <EditorialSection id="reservation" label="初診の方へ" title={<>一人ひとり、<br />ゆっくりと。</>}>
+        <EditorialSection id="reservation" label="はじめての方へ" title="ご予約・お申し込み">
           <div className="prose">
-            <p>
-              当院は完全予約制のプライベートクリニックです。
-              お一人ずつお迎えし、落ち着いてお話しいただける時間を大切にしています。
-            </p>
             {site.lineUrl ? (
               <>
-                <p>診療のご予約は、廣瀬診療所の公式LINEより承っております。</p>
+                <p>診療のご予約、サーフセラピーのお申し込み、フィールドワークについてのご質問は、廣瀬診療所の公式LINEで承っています。</p>
                 <div className="line-registration">
                   <figure className="line-qr">
                     <Image src="/images/line-friend-qr.svg" width={132} height={132} unoptimized alt="廣瀬診療所の公式LINEを友だち追加するQRコード" />
@@ -32,7 +28,7 @@ export default function Access() {
                   </figure>
                   <div className="line-registration-copy">
                     <TextLink href={site.lineUrl} external>友だち追加</TextLink>
-                    <p className="quiet-note">追加後、ご予約についてメッセージをお送りください。</p>
+                    <p className="quiet-note">追加後、ご用件をメッセージでお送りください。</p>
                   </div>
                 </div>
               </>
@@ -111,10 +107,7 @@ export default function Access() {
               <dt>所在地</dt>
               <dd>
                 <p>〒{site.postalCode}<br />{site.address}</p>
-                <p className="quiet-note">
-                  当院は住宅街にある診療所です。
-                  防犯および近隣への配慮のため、詳細な番地はご予約確定後にメールにてご案内しております。
-                </p>
+                <p className="quiet-note">詳しい住所は、ご予約の確定後に公式LINEでお知らせします。</p>
               </dd>
             </div>
             <div>
@@ -128,12 +121,6 @@ export default function Access() {
                   <li>逗子駅／逗子・葉山駅方面から：「切り通し下」バス停で下車</li>
                   <li>葉山方面から：「鐙摺（あぶずり）」バス停で下車</li>
                 </ul>
-              </dd>
-            </div>
-            <div>
-              <dt>詳しい地図</dt>
-              <dd>
-                詳しい地図は、ご予約確定後に詳細住所とあわせてメールでご案内いたします。
               </dd>
             </div>
           </dl>
@@ -151,10 +138,14 @@ export default function Access() {
                 )}
               </dd>
             </div>
+            <div>
+              <dt>受付時間</dt>
+              <dd>{site.phoneHours}</dd>
+            </div>
           </dl>
           <p className="quiet-note">
             {site.lineUrl
-              ? "診療のご予約は公式LINEからお問い合わせください。"
+              ? "ご予約・お申し込みは、公式LINEで承っています。"
               : "ご予約についてはお電話でお問い合わせください。"}
           </p>
         </EditorialSection>
