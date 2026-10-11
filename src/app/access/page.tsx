@@ -8,10 +8,7 @@ export default function Access() {
     <div className="page-shell">
       <div className="container">
         <PageIntro eyebrow="アクセス・ご予約" title={<><span className="text-unit">桜山の高台で、</span><br /><span className="text-unit">お待ちしています。</span></>} english="A quiet welcome on the hills of Sakurayama.">
-          <p>
-            廣瀬診療所は、逗子・桜山の住宅街にある完全予約制の診療所です。
-            ご来院の前に、ご予約とアクセスのご案内をご確認ください。
-          </p>
+          <p>廣瀬診療所は、逗子・桜山の住宅街にある完全予約制の診療所です。ご来院の前に、ご予約とアクセスのご案内をご確認ください。</p>
         </PageIntro>
 
         <Photo photo={photos.clinic} />
@@ -113,10 +110,7 @@ export default function Access() {
             <div>
               <dt>電車・バス</dt>
               <dd>
-                <p>
-                  JR横須賀線「逗子駅」または京急逗子線「逗子・葉山駅」が最寄りです。
-                  両駅から京急バス（葉山方面行き）が便利です。
-                </p>
+                <p>JR横須賀線「逗子駅」または京急逗子線「逗子・葉山駅」が最寄りです。両駅から京急バス（葉山方面行き）が便利です。</p>
                 <ul className="rule-list">
                   <li>逗子駅／逗子・葉山駅方面から：「切り通し下」バス停で下車</li>
                   <li>葉山方面から：「鐙摺（あぶずり）」バス停で下車</li>

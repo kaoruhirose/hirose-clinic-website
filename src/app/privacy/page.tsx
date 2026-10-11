@@ -64,7 +64,7 @@ const sections = [
 
 export default function Privacy() {
   return (
-    <div className="page-shell">
+    <div className="page-shell privacy-page">
       <div className="container">
         <PageIntro title={<><span className="text-unit">プライバシー</span><span className="text-unit">ポリシー</span></>} english="Your privacy matters to us.">
           <p>
