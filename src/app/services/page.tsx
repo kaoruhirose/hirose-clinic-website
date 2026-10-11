@@ -11,7 +11,7 @@ export default function Services() {
           </p>
         </PageIntro>
 
-        <EditorialSection id="general" title="一般内科・救急対応">
+        <EditorialSection id="general" title="総合内科・救急対応">
           <p className="quiet-note">保険診療の範囲</p>
           <p>
             風邪、発熱、腹痛などの急な不調から、高血圧、脂質異常症、糖尿病などの生活習慣病の管理まで、幅広く対応します。
