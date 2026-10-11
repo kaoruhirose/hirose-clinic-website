@@ -36,7 +36,7 @@ export default function SurfTherapy() {
         >
           <p>波の音に耳を澄ませ、海と過ごすひととき。廣瀬診療所の自然処方プログラムです。</p>
         </PageIntro>
-        <div className="fieldwork-detail prose">
+        <div className="fieldwork-detail fieldwork-detail--split prose">
           <article className="event-article">
             <p>サーフィン歴30年以上の医師（救急医）と一緒に海に入る、90分の体験プログラムです。</p>
             <p>波の音、水の感触、浜辺を渡る風。海や波を感じ、自分のペースで過ごす時間を大切にしています。サーフィンが初めての方も歓迎します。</p>
