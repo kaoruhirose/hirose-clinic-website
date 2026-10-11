@@ -89,7 +89,7 @@ export default async function BarefootHike() {
         <TextLink href="/events">フィールドワーク一覧へ戻る</TextLink>
         <PageIntro
           eyebrow="フィールドワーク"
-          title={<><span className="text-unit">裸足で海と山を歩く会</span><span className="text-unit"> / 裸足ハイク</span></>}
+          title={<><span className="text-unit">裸足で海と山を歩く会</span>{" "}<span className="text-unit">/ 裸足ハイク</span></>}
           english="From sand to soil, one barefoot step at a time."
         />
         <div className={styles.opening} id="hike-introduction">
