@@ -14,7 +14,7 @@ export default function Home() {
       <div className="container home-introduction" id="introduction">
         <EditorialSection tate label="診療所のこと" title={<>日々のなかに、<br />からだがある。</>}>
           <p><span className="text-unit">よく眠れた朝のこと。</span><span className="text-unit">いつもの食事のこと。</span><br className="desktop-break" /><span className="text-unit">まだ言葉にならない、違和感のこと。</span></p>
-          <p><span className="text-unit">症状のことも、</span><span className="text-unit">その背景にある暮らしのことも。</span><br className="desktop-break" /><span className="text-unit">西洋医学と漢方、</span><span className="text-unit">ふたつの視点から、</span><br className="desktop-break" /><span className="text-unit">いまのからだを</span><span className="text-unit">一緒に見つめます。</span></p>
+          <p><span className="text-unit">症状のことも、</span><span className="text-unit">その背景にある暮らしのことも。</span><br className="desktop-break" /><span className="text-unit">西洋医学と東洋医学、</span><span className="text-unit">ふたつの視点から、</span><br className="desktop-break" /><span className="text-unit">いまのからだを</span><span className="text-unit">一緒に見つめます。</span></p>
           <TextLink href="/about">廣瀬診療所について</TextLink>
         </EditorialSection>
       </div>

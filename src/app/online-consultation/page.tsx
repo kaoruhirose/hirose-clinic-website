@@ -55,7 +55,7 @@ export default function OnlineConsultation() {
     <div className="page-shell">
       <div className="container">
         <PageIntro eyebrow="オンライン診療" title={<>いつもの場所で、<br />診療の時間を。</>} english="Across the distance, a space to be heard.">
-          <p>いつもの場所から、からだのことを話す時間を。西洋医学と漢方、ふたつの視点を大切にしたオンライン診療を準備しています。</p>
+          <p>いつもの場所から、からだのことを話す時間を。西洋医学と東洋医学、ふたつの視点を大切にしたオンライン診療を準備しています。</p>
           <p>オンライン診療は現在、システム構築中です。準備が整い次第、開始時期やご利用方法をご案内します。</p>
         </PageIntro>
 

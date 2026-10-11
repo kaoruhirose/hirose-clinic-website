@@ -22,7 +22,7 @@ export default function HomeHero({ position = "below", study = false }: { positi
       </div>
       <p className="hero-photo-caption">〜 診療所からの眺め 〜</p>
       <div className="hero-bottom">
-        <p>西洋医学と漢方 <span aria-hidden="true">／</span> 完全予約制</p>
+        <p>西洋医学と東洋医学 <span aria-hidden="true">／</span> 完全予約制</p>
         {!study && <a href="#introduction">診療所のこと <span aria-hidden="true">↓</span></a>}
       </div>
       {!study && site.instagramUrl && (
