@@ -88,7 +88,7 @@ export function KampoArt({ className }: { className?: string }) {
   );
 }
 
-/** 円相（えんそう）と水平線 — ヨガ・メディテーションの静けさを表す意匠 */
+/** 円相（えんそう）と水平線 — ヨガ・瞑想の静けさを表す意匠 */
 export function EnsoArt({ className }: { className?: string }) {
   return (
     <svg
