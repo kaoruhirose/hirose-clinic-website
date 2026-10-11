@@ -18,15 +18,15 @@ export default function Home() {
           <TextLink href="/about">廣瀬診療所について</TextLink>
         </EditorialSection>
       </div>
-      {photos.clinic ? <Photo photo={photos.clinic} className="home-landscape" /> : <figure className="home-landscape"><Image src="/images/hero-wide.jpg" alt="海の向こうに富士山を望む、逗子の夕景" width={1440} height={748} sizes="100vw" /></figure>}
+      <figure className="home-landscape"><Image src="/images/clinic/fuji-dawn.webp" alt="診療所から望む、朝焼けの富士山と江ノ島" width={1240} height={1654} sizes="100vw" /></figure>
       <div className="container">
         <EditorialSection tate label="診療のご案内" title={<>一人ひとり、<br />ゆっくりと。</>}>
           <p><span className="text-unit">廣瀬診療所は、</span><span className="text-unit">逗子・桜山の高台にある</span><br className="desktop-break" /><span className="text-unit">完全予約制の診療所です。</span></p>
           <p><span className="text-unit">からだの不調も、</span><span className="text-unit">暮らしのなかの小さな迷いも。</span><br className="desktop-break" /><span className="text-unit">お話を伺う時間を、</span><span className="text-unit">大切にしています。</span></p>
           <ul className="home-link-list">
-            <li><Link href="/services"><span>診療案内<small>総合内科・漢方・暮らしの相談</small></span><span aria-hidden="true">↗</span></Link></li>
-            <li><Link href="/online-consultation"><span>オンライン診療<small>遠くにお住まいの方へ</small></span><span aria-hidden="true">↗</span></Link></li>
-            <li><Link href="/access"><span>ご予約・アクセス<small>お越しになる前に</small></span><span aria-hidden="true">↗</span></Link></li>
+            <li><Link href="/services"><span>診療案内<small>総合内科・漢方・暮らしの相談</small></span><span aria-hidden="true">→</span></Link></li>
+            <li><Link href="/online-consultation"><span>オンライン診療<small>遠くにお住まいの方へ</small></span><span aria-hidden="true">→</span></Link></li>
+            <li><Link href="/access"><span>ご予約・アクセス<small>お越しになる前に</small></span><span aria-hidden="true">→</span></Link></li>
           </ul>
         </EditorialSection>
         <Photo photo={photos.hike} />
@@ -36,7 +36,7 @@ export default function Home() {
           <TextLink href="/events">フィールドワークについて</TextLink>
         </EditorialSection>
         <EditorialSection label="診療所から" title="お知らせ">
-          <ul className="news-preview">{newsItems.slice(0, 3).map(news => <li key={news.date + news.title}><Link href={`/news#news-${news.date.replaceAll(".", "-")}`}><time dateTime={news.date.replaceAll(".", "-")}>{news.date}</time><span>{news.title}</span><span aria-hidden="true">↗</span></Link></li>)}</ul>
+          <ul className="news-preview">{newsItems.slice(0, 3).map(news => <li key={news.date + news.title}><Link href={`/news#news-${news.date.replaceAll(".", "-")}`}><time dateTime={news.date.replaceAll(".", "-")}>{news.date}</time><span>{news.title}</span><span aria-hidden="true">→</span></Link></li>)}</ul>
           <TextLink href="/news">すべてのお知らせ</TextLink>
         </EditorialSection>
       </div>

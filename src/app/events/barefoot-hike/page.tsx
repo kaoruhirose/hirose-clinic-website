@@ -86,7 +86,7 @@ export default async function BarefootHike() {
   return (
     <div className="page-shell">
       <div className={`container ${styles.pageContainer}`}>
-        <TextLink href="/events">フィールドワーク一覧へ戻る</TextLink>
+        <TextLink href="/events" back>フィールドワーク一覧へ</TextLink>
         <PageIntro
           eyebrow="フィールドワーク"
           title={<><span className="text-unit">裸足で海と山を歩く会</span>{" "}<span className="text-unit">/ 裸足ハイク</span></>}
@@ -126,7 +126,7 @@ export default async function BarefootHike() {
         <div className={styles.gallery} id="hike-gallery-title">
           <HikePhoto photo={hikePhotos[7]} sizes="(max-width: 700px) 38vw, 220px" />
         </div>
-        <TextLink href="/events">フィールドワーク一覧へ戻る</TextLink>
+        <TextLink href="/events" back>フィールドワーク一覧へ</TextLink>
       </div>
     </div>
   );

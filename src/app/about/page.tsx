@@ -61,7 +61,7 @@ export default function About() {
           <p>
             ヨガインストラクター（全米ヨガアライアンスRYT200）の資格を持つ代表が、呼吸に意識を向ける時間から、逗子の海と山を感じるフィールドワークまでをご案内します。息をすること、からだを動かすこと、自然にふれること。身近な営みから、ご自身をいたわる習慣を見つけていきます。
           </p>
-          <TextLink href="/events">イベントのご案内</TextLink>
+          <TextLink href="/events">フィールドワークのご案内</TextLink>
         </EditorialSection>
       </div>
     </div>

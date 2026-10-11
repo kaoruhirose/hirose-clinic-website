@@ -19,10 +19,10 @@ const shippori = Shippori_Mincho({
 export const metadata: Metadata = {
   metadataBase: new URL("https://hiroseshinryojo.jp"),
   title: "廣瀬診療所 | 西洋医学×東洋医学 逗子の自然と調和する診療所",
-  description: "神奈川県逗子市にある廣瀬診療所。救急専門医と漢方専門医の視点から、未病を防ぎ、自然と調和するライフスタイルを提案します。",
+  description: "神奈川県逗子市にある廣瀬診療所。救急科専門医と漢方専門医の視点から、未病を防ぎ、自然と調和するライフスタイルを提案します。",
   openGraph: {
     title: "廣瀬診療所 | 西洋医学×東洋医学 逗子の自然と調和する診療所",
-    description: "神奈川県逗子市にある廣瀬診療所。救急専門医と漢方専門医の視点から、未病を防ぎ、自然と調和するライフスタイルを提案します。",
+    description: "神奈川県逗子市にある廣瀬診療所。救急科専門医と漢方専門医の視点から、未病を防ぎ、自然と調和するライフスタイルを提案します。",
     url: "/",
     siteName: "廣瀬診療所",
     locale: "ja_JP",

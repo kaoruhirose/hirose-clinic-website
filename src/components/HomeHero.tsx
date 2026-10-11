@@ -20,9 +20,9 @@ export default function HomeHero({ position = "below", study = false }: { positi
       <div className={`hero-wordmark hero-wordmark--${position}`}>
         <Title>廣瀬診療所</Title><p className="hero-latin" lang="en">HIROSESHINRYOJO</p>
       </div>
-      <p className="hero-photo-caption">〜 診療所からの眺め 〜</p>
+      <p className="hero-photo-caption">診療所からの眺め</p>
       <div className="hero-bottom">
-        <p>西洋医学と東洋医学 <span aria-hidden="true">／</span> 完全予約制</p>
+        <p>西洋医学と東洋医学 <span aria-hidden="true">/</span> 完全予約制</p>
         {!study && <a href="#introduction">診療所のこと <span aria-hidden="true">↓</span></a>}
       </div>
       {!study && site.instagramUrl && (

@@ -1,4 +1,5 @@
 import LineText from "@/components/LineText";
+import Image from "next/image";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -20,6 +21,8 @@ function InstagramLink() {
 export default function Footer() {
   return (
     <footer className="site-footer">
+      {/* 診療所から見える夕暮れの富士山を背景に、文字を重ねる */}
+      <Image src="/images/clinic/fuji-dusk.webp" alt="" fill sizes="100vw" className="footer-photo" />
       <div className="container">
         <div className="footer-main">
           <div><Link href="/" className="footer-brand">廣瀬診療所</Link><p className="footer-latin">HIROSESHINRYOJO</p><p className="footer-address">〒{site.postalCode}<br />{site.address}<br /><span><LineText>詳しい住所は、ご予約の確定後に公式LINEでお知らせします。</LineText></span></p></div>

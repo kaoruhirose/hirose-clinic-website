@@ -8,7 +8,7 @@ export default function Access() {
   return (
     <div className="page-shell">
       <div className="container">
-        <PageIntro eyebrow="アクセス・ご予約" title={<><span className="text-unit">桜山の高台で、</span><br /><span className="text-unit">お待ちしています。</span></>} english="A quiet welcome on the hills of Sakurayama.">
+        <PageIntro eyebrow="ご予約・アクセス" title={<><span className="text-unit">桜山の高台で、</span><br /><span className="text-unit">お待ちしています。</span></>} english="A quiet welcome on the hills of Sakurayama.">
           <p>廣瀬診療所は、逗子・桜山の住宅街にある完全予約制の診療所です。ご来院の前に、ご予約とアクセスのご案内をご確認ください。</p>
         </PageIntro>
 
@@ -69,33 +69,33 @@ export default function Access() {
                     <span className="block sm:inline">09:00</span>
                     <span className="block sm:inline">〜13:00</span>
                   </th>
-                  <td>●</td>
-                  <td>●</td>
-                  <td>休</td>
-                  <td>休</td>
-                  <td>●</td>
-                  <td>●</td>
-                  <td>休</td>
+                  <td><span className="slot" role="img" aria-label="診療" /></td>
+                  <td><span className="slot" role="img" aria-label="診療" /></td>
+                  <td className="slot-closed">休</td>
+                  <td className="slot-closed">休</td>
+                  <td><span className="slot" role="img" aria-label="診療" /></td>
+                  <td><span className="slot" role="img" aria-label="診療" /></td>
+                  <td className="slot-closed">休</td>
                 </tr>
                 <tr>
                   <th scope="row">
                     <span className="block sm:inline">15:00</span>
                     <span className="block sm:inline">〜18:30</span>
                   </th>
-                  <td>●</td>
-                  <td>●</td>
-                  <td>休</td>
-                  <td>休</td>
-                  <td>●</td>
-                  <td>△※</td>
-                  <td>休</td>
+                  <td><span className="slot" role="img" aria-label="診療" /></td>
+                  <td><span className="slot" role="img" aria-label="診療" /></td>
+                  <td className="slot-closed">休</td>
+                  <td className="slot-closed">休</td>
+                  <td><span className="slot" role="img" aria-label="診療" /></td>
+                  <td><span className="slot slot--limited" role="img" aria-label="予約診療（自費診療のみ）" />※</td>
+                  <td className="slot-closed">休</td>
                 </tr>
               </tbody>
             </table>
           </div>
           <div className="quiet-note">
             <p>休診日：水曜・木曜・日曜・祝日</p>
-            <p>△※ 土曜午後は予約診療（自費診療のみ）となります。</p>
+            <p><span className="slot slot--limited" aria-hidden="true" />※ 土曜午後は予約診療（自費診療のみ）となります。</p>
           </div>
         </EditorialSection>
 

@@ -81,7 +81,7 @@ export default function OnlineConsultation() {
           </ol>
           <p>
             <ReservationLink className="text-link">
-              オンライン診療のお問い合わせ方法
+              オンライン診療のお問い合わせ方法<span aria-hidden="true">→</span>
             </ReservationLink>
           </p>
           <p className="quiet-note">

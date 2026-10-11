@@ -9,7 +9,7 @@ export async function generateMetadata(
   parent: ResolvingMetadata,
 ): Promise<Metadata> {
   const title = "海と波とサーフセラピー｜廣瀬診療所";
-  const description = "サーフィン歴30年以上の医師（救急医）と一緒に海に入る、90分の自然処方プログラム。波と触れあいながら心と身体をゆるめる時間を、初めての方も少人数で体験できます。料金・初回の流れ・持ち物をご案内します。";
+  const description = "サーフィン歴30年以上の医師（救急科専門医）と一緒に海に入る、90分の自然処方プログラム。波と触れあいながら心と身体をゆるめる時間を、初めての方も少人数で体験できます。料金・初回の流れ・持ち物をご案内します。";
   return {
     title,
     description,
@@ -29,7 +29,7 @@ export default function SurfTherapy() {
   return (
     <div className="page-shell">
       <div className="container">
-        <TextLink href="/events">フィールドワーク一覧へ戻る</TextLink>
+        <TextLink href="/events" back>フィールドワーク一覧へ</TextLink>
         <PageIntro
           eyebrow="フィールドワーク / 自然処方"
           title={<><span className="text-unit">海と波と</span><span className="text-unit">サーフセラピー</span></>}
@@ -39,7 +39,7 @@ export default function SurfTherapy() {
         </PageIntro>
         <div className="fieldwork-detail fieldwork-detail--split prose">
           <article className="event-article">
-            <p>サーフィン歴30年以上の医師（救急医）と一緒に海に入る、90分の体験プログラムです。</p>
+            <p>サーフィン歴30年以上の医師（救急科専門医）と一緒に海に入る、90分の体験プログラムです。</p>
             <p>波の音、水の感触、浜辺を渡る風。海や波を感じ、自分のペースで過ごす時間を大切にしています。サーフィンが初めての方も歓迎します。</p>
 
             <dl className="detail-list">
@@ -66,9 +66,9 @@ export default function SurfTherapy() {
                   <caption className="sr-only">サーフセラピー90分の参加費（税込・1人あたり）</caption>
                   <thead><tr><th scope="col">人数</th><th scope="col">初めての方</th><th scope="col">2回目以降</th></tr></thead>
                   <tbody>
-                    <tr><th scope="row">1名</th><td>7,700円/人</td><td>5,500円/人</td></tr>
-                    <tr><th scope="row">2名（ペア割）</th><td>7,150円/人</td><td>4,950円/人</td></tr>
-                    <tr><th scope="row">3名（グループ割）</th><td>6,600円/人</td><td>4,400円/人</td></tr>
+                    <tr><th scope="row">1名</th><td>7,700円</td><td>5,500円</td></tr>
+                    <tr><th scope="row">2名（ペア割）</th><td>7,150円</td><td>4,950円</td></tr>
+                    <tr><th scope="row">3名（グループ割）</th><td>6,600円</td><td>4,400円</td></tr>
                   </tbody>
                 </table>
               </div>
@@ -104,7 +104,7 @@ export default function SurfTherapy() {
               <p>参加をご希望の方には、開催日時・集合場所を個別にご案内します。初めての方も、ご質問だけの方も、どうぞお気軽にお問い合わせください。</p>
               <p>
                 <ReservationLink className="text-link">
-                  サーフセラピーのお申し込み・お問い合わせ方法
+                  サーフセラピーのお申し込み・お問い合わせ方法<span aria-hidden="true">→</span>
                 </ReservationLink>
               </p>
               <p className="quiet-note">
@@ -115,7 +115,7 @@ export default function SurfTherapy() {
             </section>
           </article>
         </div>
-        <TextLink href="/events">フィールドワーク一覧へ戻る</TextLink>
+        <TextLink href="/events" back>フィールドワーク一覧へ</TextLink>
       </div>
     </div>
   );

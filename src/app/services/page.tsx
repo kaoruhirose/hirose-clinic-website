@@ -1,4 +1,5 @@
 import LineText from "@/components/LineText";
+import Image from "next/image";
 import { EditorialSection, PageIntro } from "@/components/Editorial";
 import ReservationLink from "@/components/ReservationLink";
 
@@ -11,19 +12,21 @@ export default function Services() {
             保険診療と自費診療（自由診療）を組み合わせながら、症状や体質、日々の暮らしに合わせた診療をご提案します。
           </p>
         </PageIntro>
+      </div>
 
-        <EditorialSection id="general" title="総合内科・救急対応">
-          <p className="quiet-note">保険診療</p>
+      <figure className="wide-photo"><Image src="/images/clinic/room.webp" alt="診療所の室内。大きな窓の向こうに、緑と海が広がる" width={2000} height={1500} sizes="100vw" /></figure>
+
+      <div className="container">
+        <EditorialSection id="general" title="総合内科・救急対応" note="保険診療">
           <p>
             風邪、発熱、腹痛などの急な不調から、高血圧、脂質異常症、糖尿病などの生活習慣病の管理まで、幅広く対応します。
           </p>
           <p>
-            救急専門医としての経験をもとに、怪我の処置（縫合等）や初期対応も行います。治療の緊急性や、専門的な医療機関への受診が必要かを判断します。「こんなことで受診してよいのかな」と迷うときも、まずはご相談ください。
+            救急科専門医としての経験をもとに、怪我の処置（縫合等）や初期対応も行います。治療の緊急性や、専門的な医療機関への受診が必要かを判断します。「こんなことで受診してよいのかな」と迷うときも、まずはご相談ください。
           </p>
         </EditorialSection>
 
-        <EditorialSection id="kampo" title="漢方専門外来">
-          <p className="quiet-note">自由診療（自費診療）</p>
+        <EditorialSection id="kampo" title="漢方専門外来" note="自由診療（自費診療）">
           <p>
             検査で異常が見つからなくても、調子がすぐれない。疲れや冷えが続く。女性特有の不調がある。こうしたお悩みを伺い、漢方の視点から体質やからだの状態を見つめます。
           </p>
@@ -32,8 +35,7 @@ export default function Services() {
           </p>
         </EditorialSection>
 
-        <EditorialSection id="lifestyle" title="ライフスタイル相談">
-          <p className="quiet-note">自由診療（自費診療）</p>
+        <EditorialSection id="lifestyle" title="ライフスタイル相談" note="自由診療（自費診療）">
           <p>
             薬との付き合い方を見直したい。ストレスとうまく付き合いたい。自然とのつながりを暮らしに取り入れたい。そんな思いを、日々の習慣から一緒に考える相談です。
           </p>
@@ -44,7 +46,7 @@ export default function Services() {
 
         <EditorialSection title="ご予約・ご相談">
           <p><LineText>診療のご予約・ご相談は、廣瀬診療所の公式LINEからお問い合わせください。</LineText></p>
-          <ReservationLink className="text-link">ご予約・ご相談の方法はこちら</ReservationLink>
+          <ReservationLink className="text-link">ご予約・ご相談の方法はこちら<span aria-hidden="true">→</span></ReservationLink>
         </EditorialSection>
       </div>
     </div>

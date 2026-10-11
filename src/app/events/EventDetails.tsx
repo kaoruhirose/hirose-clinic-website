@@ -70,7 +70,7 @@ export default function EventDetails({ ev, flowVisuals, showIntroduction = true,
             {ev.mapUrl && (
               <>
                 <br />
-                <a href={ev.mapUrl} target="_blank" rel="noopener noreferrer">地図を開く</a>
+                <a href={ev.mapUrl} target="_blank" rel="noopener noreferrer">地図を開く <span aria-hidden="true">↗</span></a>
               </>
             )}
           </dd>

@@ -127,6 +127,8 @@
 .text-link { display: inline-flex; align-items: baseline; gap: 42px; border-bottom: 1px solid #70796b80; padding: 13px 0; margin-top: 25px; font-size: 13px; line-height: 1.8; letter-spacing: .06em; transition: color .2s, border-color .2s; }
 .text-link:hover { color: var(--color-clinic-green); border-color: currentColor; }
 .text-link > span:last-child { font-size: 17px; }
+.text-link--back { gap: 16px; }
+.text-link--back > span:first-child { font-size: 17px; }
 .line-registration { display: flex; flex-wrap: wrap; gap: 20px; max-width: 440px; margin-top: 24px; align-items: center; }
 .line-qr { flex: 0 0 132px; max-width: 100%; margin: 0; }
 .line-qr img { display: block; width: 100%; height: auto; }
@@ -161,6 +163,12 @@
 .schedule-table th, .schedule-table td { padding: 17px 7px; border-bottom: 1px solid var(--rule); font-weight: 400; }
 .schedule-table thead { color: var(--muted); }
 .schedule-table th:first-child { text-align: left; }
+/* D4 診療時間表：黒丸をやめ、小さな松葉色の丸に。土曜午後は白抜き、「休」は薄く */
+.slot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--color-clinic-green); vertical-align: middle; }
+.slot--limited { background: transparent; box-shadow: inset 0 0 0 1px var(--color-clinic-green); margin-right: 2px; }
+.slot-closed { color: var(--muted); }
+/* D6 診療区分（保険診療など）は見出しの下に */
+.section-note { margin-top: 10px; }
 .article-list { list-style: none; padding: 0; }
 .container > .article-list { max-width: 720px; margin-left: auto; padding-top: 40px; border-top: 1px solid var(--rule); }
 .article-list > li { scroll-margin-top: 40px; }
@@ -182,6 +190,9 @@
 .article-meta { display: flex; flex-wrap: wrap; gap: 12px 30px; font-size: 11px; letter-spacing: .08em; color: var(--muted); margin-bottom: 15px; }
 .prose .article-title { margin-top: 0; font-size: 23px; }
 .editorial-photo { margin: 0 0 60px; }
+/* 診療案内の室内写真：上下を切り取り、画面の端から端までの横長に */
+.wide-photo { width: 100%; height: clamp(260px, 44vw, 680px); overflow: hidden; margin: 0 0 24px; }
+.wide-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
 .editorial-photo img { display: block; width: 100%; height: auto; }
 .editorial-photo figcaption { margin-top: 12px; font-size: 11px; color: var(--muted); letter-spacing: .05em; }
 .home-introduction .editorial-section { border: 0; padding-block: 140px; }
@@ -214,8 +225,9 @@
   .event-part .schedule-table :is(th, td) { padding-inline: 0 16px; }
   .event-part .schedule-table :is(th, td):first-child { width: 40%; }
 }
-.home-landscape { width: 100%; height: clamp(240px, 32vw, 480px); overflow: hidden; margin: 0; }
-.home-landscape img { width: 100%; height: 100%; object-fit: cover; object-position: center 55%; }
+.home-landscape { width: 100%; height: clamp(240px, 52vw, 760px); overflow: hidden; margin: 0; }
+/* 朝焼けの富士山：頂上から手前の海まで見えるように */
+.home-landscape img { width: 100%; height: 100%; object-fit: cover; object-position: center 67%; }
 .home-link-list { margin-top: 42px; padding: 0; list-style: none; }
 .home-link-list a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 0; border-top: 1px solid var(--rule); font-family: var(--font-serif); font-size: 20px; }
 .home-link-list li:last-child a { border-bottom: 1px solid var(--rule); }
@@ -245,20 +257,27 @@
 .footer-address span { font-size: 10px; color: var(--muted); }
 .footer-main nav { display: grid; grid-template-columns: 1fr 1fr; align-content: start; gap: 21px 65px; padding-top: 8px; font-size: 12px; letter-spacing: .05em; }
 .footer-main nav a:hover { text-decoration: underline; }
-.footer-bottom { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); align-items: center; gap: 22px 12px; margin-top: 65px; padding-top: 25px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 10px; letter-spacing: .05em; }
-.footer-bottom small { grid-column: 1 / -1; font: 9px Georgia, serif; letter-spacing: .1em; }
-.footer-social { grid-column: 2; grid-row: 2; display: flex; justify-content: center; }
-.footer-privacy { grid-column: 3; grid-row: 2; justify-self: end; text-align: right; }
+/* 権利表記・Instagram・プライバシーポリシーは、スマホでも同じ1行に */
+.footer-bottom { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); align-items: center; gap: 12px; margin-top: 36px; padding-top: 25px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 10px; letter-spacing: .05em; }
+.footer-bottom small { grid-column: 1; grid-row: 1; font: 9px/1.7 Georgia, serif; letter-spacing: .1em; }
+.footer-social { grid-column: 2; grid-row: 1; display: flex; justify-content: center; }
+.footer-privacy { grid-column: 3; grid-row: 1; justify-self: end; text-align: right; }
 .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; transition: color .2s; }
 .footer-social a:hover { color: var(--color-clinic-green); }
+/* フッター：夕暮れの富士山の写真に白い文字を重ねる。上は空と富士山を見せ、文字の下は暗くして読みやすく */
+.site-footer { position: relative; isolation: isolate; overflow: hidden; border-top: 0; padding-top: clamp(470px, 42vw, 630px); color: #fff; --muted: rgb(255 255 255 / .78); --rule: rgb(255 255 255 / .3); }
+.footer-photo { z-index: -2; object-fit: cover; object-position: center 62%; }
+/* 上：空をぼかしながら、ページの紙の色へ溶かす。下：だんだん夜の色へ */
+.site-footer::before { content: ""; position: absolute; inset: 0; z-index: -1; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); mask-image: linear-gradient(to bottom, #000 0%, transparent 32%); -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 32%); }
+.site-footer::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(to bottom, var(--color-clinic-base) 0%, rgb(246 245 240 / .6) 10%, rgb(246 245 240 / 0) 26%, rgb(15 19 26 / 0) 46%, rgb(15 19 26 / .7) 62%, #0f131a 80%); }
+.site-footer .footer-social a:hover { color: rgb(255 255 255 / .7); }
 @media (min-width: 1024px) {
   /* PCでは権利表記・Instagram・プライバシーポリシーを1段に並べる */
   .footer-address { font-size: 13px; }
   .footer-address span { font-size: 12px; }
   .footer-main nav { font-size: 13px; }
   .footer-bottom { font-size: 12px; }
-  .footer-bottom small { grid-column: 1; font-size: 11px; }
-  .footer-social, .footer-privacy { grid-row: 1; }
+  .footer-bottom small { font-size: 11px; }
 }
 @media (min-width: 1024px) {
   /* B1 文字の大きさを役割ごとの物差しに（節28・小見出し22・項目名18・最小12px） */
@@ -383,16 +402,24 @@
   .event-step-title { font-size: 16px; }
   .news-preview a { grid-template-columns: 1fr 12px; gap: 4px 16px; padding-block: 19px; }
   .news-preview time { grid-column: 1 / -1; }
-  .home-landscape { height: 250px; }
+  .home-landscape { height: 340px; }
+  .home-landscape img { object-position: center 85%; }
   .editorial-photo { margin-bottom: 36px; }
   .home-landscape.editorial-photo { margin-bottom: 0; }
   .page-shell { padding-bottom: 35px; }
-  .site-footer { padding-top: 48px; }
+  /* スマホ：写真を上に寄せて置き、富士山が文字に隠れないようにする。写真の下は夜の色でつなぐ */
+  .site-footer { padding-top: 600px; background: #0f131a; }
+  .site-footer::before { mask-image: linear-gradient(to bottom, #000 0%, transparent 22%); -webkit-mask-image: linear-gradient(to bottom, #000 0%, transparent 22%); }
+  .site-footer::after { background: linear-gradient(to bottom, var(--color-clinic-base) 0%, rgb(246 245 240 / .6) 7%, rgb(246 245 240 / 0) 18%, rgb(15 19 26 / 0) 40%, rgb(15 19 26 / .7) 52%, #0f131a 66%); }
+  .footer-photo { inset: 0 auto auto 50% !important; width: 140% !important; max-width: none; height: auto !important; transform: translateX(-50%); }
   .footer-main { flex-direction: column; gap: 40px; }
   .footer-main nav { gap: 20px 25px; }
   .footer-address { margin-top: 25px; }
-  .footer-bottom { margin-top: 40px; gap: 20px; }
-  .footer-bottom small { width: 100%; }
+  /* スマホ：権利表記とプライバシーポリシーを1行に、Instagramはその下の中央に。幅が足りない機種ではプライバシーポリシーだけ次の行へ */
+  .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-top: 28px; gap: 8px 12px; }
+  .footer-bottom small { white-space: nowrap; letter-spacing: .03em; }
+  .footer-privacy { white-space: nowrap; margin-left: auto; letter-spacing: 0; }
+  .footer-social { order: 3; flex-basis: 100%; }
   .wordmark-study-controls { padding: 25px 24px; }
   .wordmark-study-controls fieldset { grid-template-columns: 1fr 1fr; gap: 8px; }
   .wordmark-study-controls label > span { font-size: 10px; padding: 14px 9px; gap: 7px; }
