@@ -17,7 +17,7 @@ export default function About() {
 
         <Photo photo={photos.clinic} />
 
-        <EditorialSection title="この土地と生きる">
+        <EditorialSection id="grounding" title="この土地と生きる" english="Grounding in the rhythms of nature">
           <p>
             救急医療の現場で多くの患者さんと向き合うなかで、不調の背景にある毎日の暮らしにも目を向けたいと考えるようになりました。大きく体調を崩す前に、医師としてできることはないか。それが、いまの診療の出発点です。
           </p>

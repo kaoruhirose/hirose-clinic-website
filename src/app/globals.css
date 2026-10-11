@@ -107,6 +107,7 @@
 .section-heading h2 { font-family: var(--font-serif); font-weight: 400; font-size: clamp(24px, 2.3vw, 30px); letter-spacing: .08em; line-height: 1.9; }
 .section-english { margin-top: 14px; color: var(--muted); font: 13px/1.9 Georgia, serif; letter-spacing: .035em; }
 .about-page .section-english { margin-top: 4px; }
+.about-page :is(#grounding, #yoga) .section-english { padding-inline-start: 4px; }
 .about-page .intro-copy { max-width: 900px; }
 @media (min-width: 701px) {
   /* 見出しの左端をそろえたまま、本文に近い側へ寄せる。 */
