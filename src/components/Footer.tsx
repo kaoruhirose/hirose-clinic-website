@@ -1,11 +1,10 @@
 import Link from "next/link";
 import { site } from "@/lib/site";
 
-// PCでは最下段の右端、スマホでは最下段の下に置く（表示の切り替えは globals.css）。
-function InstagramLink({ className }: { className: string }) {
+function InstagramLink() {
   if (!site.instagramUrl) return null;
   return (
-    <div className={className}>
+    <div className="footer-social">
       <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram（@hiroseshinryojo・新しいタブで開く）">
         <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
@@ -25,8 +24,11 @@ export default function Footer() {
           <div><Link href="/" className="footer-brand">廣瀬診療所</Link><p className="footer-latin">HIROSESHINRYOJO</p><p className="footer-address">〒{site.postalCode}<br />{site.address}<br /><span>詳しい住所は、ご予約の確定後に公式LINEでお知らせします。</span></p></div>
           <nav aria-label="フッターメニュー"><Link href="/about">診療所について</Link><Link href="/services">診療案内</Link><Link href="/online-consultation">オンライン診療</Link><Link href="/events">フィールドワーク</Link><Link href="/access">ご予約・アクセス</Link><Link href="/news">お知らせ</Link></nav>
         </div>
-        <div className="footer-bottom"><small>© {new Date().getFullYear()} HIROSESHINRYOJO All rights reserved.</small><Link href="/privacy">プライバシーポリシー</Link><a href="#main-content">ページの上へ ↑</a><InstagramLink className="footer-social footer-social--inline" /></div>
-        <InstagramLink className="footer-social" />
+        <div className="footer-bottom">
+          <small>© {new Date().getFullYear()} HIROSESHINRYOJO All rights reserved.</small>
+          <InstagramLink />
+          <Link href="/privacy" className="footer-privacy">プライバシーポリシー</Link>
+        </div>
       </div>
     </footer>
   );

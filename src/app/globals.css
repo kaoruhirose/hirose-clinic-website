@@ -234,21 +234,20 @@
 .footer-address span { font-size: 10px; color: var(--muted); }
 .footer-main nav { display: grid; grid-template-columns: 1fr 1fr; align-content: start; gap: 21px 65px; padding-top: 8px; font-size: 12px; letter-spacing: .05em; }
 .footer-main nav a:hover { text-decoration: underline; }
-.footer-bottom { display: flex; flex-wrap: wrap; align-items: center; gap: 22px 38px; margin-top: 65px; padding-top: 25px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 10px; letter-spacing: .05em; }
-.footer-bottom small { margin-right: auto; font: 9px Georgia, serif; letter-spacing: .1em; }
-.footer-social { display: flex; justify-content: center; margin-top: 26px; }
+.footer-bottom { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); align-items: center; gap: 22px 12px; margin-top: 65px; padding-top: 25px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 10px; letter-spacing: .05em; }
+.footer-bottom small { grid-column: 1 / -1; font: 9px Georgia, serif; letter-spacing: .1em; }
+.footer-social { grid-column: 2; grid-row: 2; display: flex; justify-content: center; }
+.footer-privacy { grid-column: 3; grid-row: 2; justify-self: end; text-align: right; }
 .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; transition: color .2s; }
 .footer-social a:hover { color: var(--color-clinic-green); }
-.footer-social--inline { display: none; }
 @media (min-width: 1024px) {
-  /* A8 フッター：Instagramを最下段の右端へ、小さすぎる文字を大きく */
+  /* PCでは権利表記・Instagram・プライバシーポリシーを1段に並べる */
   .footer-address { font-size: 13px; }
   .footer-address span { font-size: 12px; }
   .footer-main nav { font-size: 13px; }
   .footer-bottom { font-size: 12px; }
-  .footer-bottom small { font-size: 11px; }
-  .footer-social { display: none; }
-  .footer-social.footer-social--inline { display: flex; margin: -12px -12px -12px -16px; }
+  .footer-bottom small { grid-column: 1; font-size: 11px; }
+  .footer-social, .footer-privacy { grid-row: 1; }
 }
 @media (min-width: 1024px) {
   /* B1 文字の大きさを役割ごとの物差しに（節28・小見出し22・項目名18・最小12px） */
