@@ -1,3 +1,4 @@
+import LineText from "@/components/LineText";
 import type { Metadata, ResolvingMetadata } from "next";
 import { PageIntro, TextLink } from "@/components/Editorial";
 import ReservationLink from "@/components/ReservationLink";
@@ -108,7 +109,7 @@ export default function SurfTherapy() {
               </p>
               <p className="quiet-note">
                 {site.lineUrl
-                  ? "公式LINEの友だち追加・お問い合わせの案内へ移動します。"
+                  ? <LineText>{"公式LINEの友だち追加・お問い合わせの案内へ移動します。"}</LineText>
                   : "ご予約方法とお電話のご案内ページへ移動します。"}
               </p>
             </section>

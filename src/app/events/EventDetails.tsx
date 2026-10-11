@@ -1,3 +1,4 @@
+import LineText from "@/components/LineText";
 import type { ReactNode } from "react";
 import { TextLink } from "@/components/Editorial";
 import type { ClinicEvent } from "@/lib/events";
@@ -239,7 +240,7 @@ export default function EventDetails({ ev, flowVisuals, showIntroduction = true,
           <ApplyLink ev={ev} />
           {site.lineUrl && (
             <p>
-              ご不明な点や気になることがございましたら、<a href={site.lineUrl} target="_blank" rel="noopener noreferrer">廣瀬診療所の公式LINE</a>よりお気軽にお問い合わせください。個別にご案内いたします。
+              ご不明な点や気になることがございましたら、<LineText>廣瀬診療所の公式LINE</LineText>よりお気軽にお問い合わせください。個別にご案内いたします。
             </p>
           )}
         </section>

@@ -1,3 +1,4 @@
+import LineText from "@/components/LineText";
 import Link from "next/link";
 import { site } from "@/lib/site";
 
@@ -21,7 +22,7 @@ export default function Footer() {
     <footer className="site-footer">
       <div className="container">
         <div className="footer-main">
-          <div><Link href="/" className="footer-brand">廣瀬診療所</Link><p className="footer-latin">HIROSESHINRYOJO</p><p className="footer-address">〒{site.postalCode}<br />{site.address}<br /><span>詳しい住所は、ご予約の確定後に公式LINEでお知らせします。</span></p></div>
+          <div><Link href="/" className="footer-brand">廣瀬診療所</Link><p className="footer-latin">HIROSESHINRYOJO</p><p className="footer-address">〒{site.postalCode}<br />{site.address}<br /><span><LineText>詳しい住所は、ご予約の確定後に公式LINEでお知らせします。</LineText></span></p></div>
           <nav aria-label="フッターメニュー"><Link href="/about">診療所について</Link><Link href="/services">診療案内</Link><Link href="/online-consultation">オンライン診療</Link><Link href="/events">フィールドワーク</Link><Link href="/access">ご予約・アクセス</Link><Link href="/news">お知らせ</Link></nav>
         </div>
         <div className="footer-bottom">

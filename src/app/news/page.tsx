@@ -1,3 +1,4 @@
+import LineText from "@/components/LineText";
 import { PageIntro } from "@/components/Editorial";
 // お知らせ記事の追加・編集は src/lib/news.ts で行う（トップページと共通）。
 import { newsItems } from "@/lib/news";
@@ -16,7 +17,7 @@ export default function News() {
                   <span>{news.category}</span>
                 </div>
                 <h2 className="article-title">{news.title}</h2>
-                <div className="prose"><p>{news.body}</p></div>
+                <div className="prose"><p><LineText>{news.body}</LineText></p></div>
               </article>
             </li>
           ))}

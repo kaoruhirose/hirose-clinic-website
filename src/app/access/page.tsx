@@ -1,3 +1,4 @@
+import LineText from "@/components/LineText";
 import Image from "next/image";
 import { EditorialSection, PageIntro, Photo, TextLink } from "@/components/Editorial";
 import { photos } from "@/lib/photos";
@@ -17,11 +18,11 @@ export default function Access() {
           <div className="prose">
             {site.lineUrl ? (
               <>
-                <p>診療のご予約、サーフセラピーのお申し込み、フィールドワークについてのご質問は、廣瀬診療所の公式LINEで承っています。</p>
+                <p><LineText>診療のご予約、サーフセラピーのお申し込み、フィールドワークについてのご質問は、廣瀬診療所の公式LINEで承っています。</LineText></p>
                 <div className="line-registration">
-                  <figure className="line-qr">
+                  <figure id="line-qr" className="line-qr scroll-mt-24">
                     <Image src="/images/line-friend-qr.svg" width={132} height={132} unoptimized alt="廣瀬診療所の公式LINEを友だち追加するQRコード" />
-                    <figcaption>スマホのLINEで読み取り</figcaption>
+                    <figcaption><LineText>廣瀬診療所 公式LINE</LineText></figcaption>
                   </figure>
                   <div className="line-registration-copy">
                     <TextLink href={site.lineUrl} external>友だち追加</TextLink>
@@ -104,7 +105,7 @@ export default function Access() {
               <dt>所在地</dt>
               <dd>
                 <p>〒{site.postalCode}<br />{site.address}</p>
-                <p className="quiet-note">詳しい住所は、ご予約の確定後に公式LINEでお知らせします。</p>
+                <p className="quiet-note"><LineText>詳しい住所は、ご予約の確定後に公式LINEでお知らせします。</LineText></p>
               </dd>
             </div>
             <div>
@@ -139,7 +140,7 @@ export default function Access() {
           </dl>
           <p className="quiet-note">
             {site.lineUrl
-              ? "ご予約・お申し込みは、公式LINEで承っています。"
+              ? <LineText>{"ご予約・お申し込みは、公式LINEで承っています。"}</LineText>
               : "ご予約についてはお電話でお問い合わせください。"}
           </p>
         </EditorialSection>

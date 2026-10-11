@@ -1,3 +1,4 @@
+import LineText from "@/components/LineText";
 import { EditorialSection, PageIntro, TextLink } from "@/components/Editorial";
 import ReservationLink from "@/components/ReservationLink";
 import { site, phoneDisplay } from "@/lib/site";
@@ -74,7 +75,7 @@ export default function OnlineConsultation() {
             {steps.map((step) => (
               <li key={step.title}>
                 <h3>{step.title}</h3>
-                <p>{step.description}</p>
+                <p><LineText>{step.description}</LineText></p>
               </li>
             ))}
           </ol>
@@ -85,7 +86,7 @@ export default function OnlineConsultation() {
           </p>
           <p className="quiet-note">
             {site.lineUrl
-              ? "公式LINEの友だち追加・お問い合わせの案内へ移動します。"
+              ? <LineText>{"公式LINEの友だち追加・お問い合わせの案内へ移動します。"}</LineText>
               : "ご予約方法とお電話のご案内ページへ移動します。"}
           </p>
         </EditorialSection>
@@ -105,7 +106,7 @@ export default function OnlineConsultation() {
           <div className="prose">
             <p>
               {site.lineUrl
-                ? "ご予約・ご相談は、公式LINEが主な窓口です。お急ぎのときや、操作方法がわからないときは、お電話でもご相談いただけます。"
+                ? <LineText>{"ご予約・ご相談は、公式LINEが主な窓口です。お急ぎのときや、操作方法がわからないときは、お電話でもご相談いただけます。"}</LineText>
                 : "操作方法や、症状がオンライン診療に適しているかなど、ご不明な点はお電話でご相談ください。"}
             </p>
             <p>

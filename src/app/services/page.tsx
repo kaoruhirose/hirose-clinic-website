@@ -1,3 +1,4 @@
+import LineText from "@/components/LineText";
 import { EditorialSection, PageIntro } from "@/components/Editorial";
 import ReservationLink from "@/components/ReservationLink";
 
@@ -42,7 +43,7 @@ export default function Services() {
         </EditorialSection>
 
         <EditorialSection title="ご予約・ご相談">
-          <p>診療のご予約・ご相談は、廣瀬診療所の公式LINEからお問い合わせください。</p>
+          <p><LineText>診療のご予約・ご相談は、廣瀬診療所の公式LINEからお問い合わせください。</LineText></p>
           <ReservationLink className="text-link">ご予約・ご相談の方法はこちら</ReservationLink>
         </EditorialSection>
       </div>
