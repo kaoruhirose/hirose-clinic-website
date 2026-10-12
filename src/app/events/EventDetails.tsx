@@ -7,7 +7,7 @@ import { site } from "@/lib/site";
 /** 申込への導線。日程が1件もない間は「受付前」と表示する */
 function ApplyLink({ ev }: { ev: ClinicEvent }) {
   return ev.formUrl && ev.dates.length > 0 ? (
-    <div>
+    <div className="apply-link">
       <TextLink href={ev.formUrl} external>参加を申し込む</TextLink>
       <p className="quiet-note">
         ご希望の日程は、申込フォームの中でお選びください。

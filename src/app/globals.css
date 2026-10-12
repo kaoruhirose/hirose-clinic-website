@@ -232,6 +232,9 @@ html { scroll-padding-top: var(--header-solid-height); }
 .event-part .schedule-table th[scope="row"] { text-align: left; }
 .event-part .rule-list .quiet-note { margin-top: 2px; }
 .event-part > .text-link, .event-part > div + p { margin-top: 24px; }
+/* 申込フォームへのリンクは、小さな「→」案内より目立たせる。本文と同じ大きさで、深緑を淡く敷く */
+.apply-link .text-link { font-size: inherit; gap: 32px; padding: 14px 24px; background: color-mix(in srgb, var(--color-clinic-green) 9%, transparent); color: var(--color-clinic-green); border-bottom-color: color-mix(in srgb, var(--color-clinic-green) 45%, transparent); transition: color .2s, border-color .2s, background-color .2s; }
+.apply-link .text-link:hover { background: color-mix(in srgb, var(--color-clinic-green) 15%, transparent); }
 .event-step-title { display: block; font-family: var(--font-serif); font-size: 17px; letter-spacing: .04em; }
 .event-closing { font-family: var(--font-serif); letter-spacing: .06em; margin-top: 34px; }
 .event-closing > span { display: block; }
