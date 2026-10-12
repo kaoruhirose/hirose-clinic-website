@@ -269,9 +269,11 @@
 .footer-main nav a:hover { text-decoration: underline; }
 /* 権利表記・Instagram・プライバシーポリシーは、スマホでも同じ1行に */
 .footer-bottom { display: grid; grid-template-columns: minmax(0, 1fr) 44px minmax(0, 1fr); align-items: center; gap: 12px; margin-top: 36px; padding-top: 25px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 10px; letter-spacing: .05em; }
-.footer-bottom small { grid-column: 1; grid-row: 1; font: 9px/1.7 Georgia, serif; letter-spacing: .1em; }
+.footer-bottom small { grid-column: 1; grid-row: 1; }
+/* プライバシーポリシーは権利表記と同じ書体・大きさにそろえ、細い下線を引く */
+.footer-bottom small, .footer-privacy { font: 9px/1.7 Georgia, serif; letter-spacing: .1em; }
 .footer-social { grid-column: 2; grid-row: 1; display: flex; justify-content: center; }
-.footer-privacy { grid-column: 3; grid-row: 1; justify-self: end; text-align: right; }
+.footer-privacy { grid-column: 3; grid-row: 1; justify-self: end; text-align: right; text-decoration: underline; text-decoration-thickness: 1px; }
 .footer-social a { display: inline-flex; align-items: center; justify-content: center; width: 44px; height: 44px; transition: color .2s; }
 .footer-social a:hover { color: var(--color-clinic-green); }
 /* フッター：夕暮れの富士山の写真に白い文字を重ねる。上は空と富士山を見せ、文字の下は暗くして読みやすく */
@@ -287,7 +289,7 @@
   .footer-address span { font-size: 12px; }
   .footer-main nav { font-size: 13px; }
   .footer-bottom { font-size: 12px; }
-  .footer-bottom small { font-size: 11px; }
+  .footer-bottom small, .footer-privacy { font-size: 11px; }
 }
 @media (min-width: 1024px) {
   /* B1 文字の大きさを役割ごとの物差しに（節28・小見出し22・項目名18・最小12px） */
@@ -424,13 +426,19 @@
   .footer-address { margin-top: 25px; }
   /* スマホ：権利表記とプライバシーポリシーを1行に、Instagramはその下の中央に。幅が足りない機種ではプライバシーポリシーだけ次の行へ */
   .footer-bottom { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; margin-top: 28px; gap: 8px 12px; }
-  .footer-bottom small { white-space: nowrap; letter-spacing: .03em; }
-  .footer-privacy { white-space: nowrap; margin-left: auto; letter-spacing: 0; }
+  .footer-bottom small, .footer-privacy { white-space: nowrap; letter-spacing: .03em; }
+  .footer-privacy { margin-left: auto; }
   .footer-social { order: 3; flex-basis: 100%; }
   .wordmark-study-controls { padding: 25px 24px; }
   .wordmark-study-controls fieldset { grid-template-columns: 1fr 1fr; gap: 8px; }
   .wordmark-study-controls label > span { font-size: 10px; padding: 14px 9px; gap: 7px; }
   .wordmark-study-controls > p { min-height: 44px; font-size: 11px; }
+}
+@media (max-width: 359px) {
+  /* 1行に収まらない幅では、権利表記とプライバシーポリシーを2行に分けて中央へ */
+  .footer-bottom { justify-content: center; }
+  .footer-bottom small { flex-basis: 100%; text-align: center; }
+  .footer-privacy { margin-inline: auto; }
 }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
