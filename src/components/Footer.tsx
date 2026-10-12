@@ -32,7 +32,7 @@ export default function Footer() {
         <div className="footer-bottom">
           <small>© {new Date().getFullYear()} HIROSESHINRYOJO All rights reserved.</small>
           <InstagramLink />
-          <Link href="/privacy" className="footer-privacy">プライバシーポリシー</Link>
+          <Link href="/privacy" className="footer-privacy">Privacy Policy</Link>
         </div>
       </div>
     </footer>
