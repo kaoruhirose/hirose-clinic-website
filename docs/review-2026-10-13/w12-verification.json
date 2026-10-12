@@ -1,0 +1,28 @@
+{
+  "date": "2026-10-13",
+  "commit": "154853cbd0498b83f786c9a902c8343aff21659d",
+  "url": "https://www.hiroseshinryojo.jp/services",
+  "expected": "症状や体質、日々の暮らしを伺いながら、診療をご提案します。診療内容により、保険診療または自由診療（自費診療）となります。",
+  "local": [
+    {
+      "width": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375
+    }
+  ],
+  "published": [
+    {
+      "width": 1280,
+      "scrollWidth": 1280
+    },
+    {
+      "width": 375,
+      "scrollWidth": 375
+    }
+  ],
+  "exactText": true,
+  "otherParagraphsAndReservationLinksUnchanged": true
+}
