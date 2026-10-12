@@ -61,6 +61,28 @@
 .menu-dialog nav > a > span:last-child { font-size: 16px; }
 .menu-reservation { margin-top: 32px; }
 .menu-caption { margin-top: 36px; font-size: 11px; letter-spacing: .08em; }
+/* 文字サイズの切り替え。選んでいる側に細い下線。PCは上部の右端（あ / あ）、スマホ・タブレットはメニューの中（標準　大）。 */
+.text-size-toggle { display: flex; align-items: center; letter-spacing: .09em; }
+.text-size-toggle button { min-height: 44px; padding-inline: 6px; opacity: .6; transition: opacity .2s; }
+.text-size-toggle button:hover, .text-size-toggle button[aria-pressed="true"] { opacity: 1; }
+.text-size-toggle button[aria-pressed="true"] { text-decoration: underline; text-decoration-thickness: 1px; }
+.text-size-label { margin-right: 4px; opacity: .75; }
+/* PC上部はご予約の右どなり（右端）に「あ / あ」。ご予約とのあいだに細い縦線をはさみ、線の左右を同じ間隔にする。 */
+.text-size-toggle--header { gap: 2px; line-height: 1; }
+.text-size-toggle--header::before { content: ""; width: 1px; height: 14px; margin-right: calc(clamp(20px, 2.5vw, 42px) - 7px); background: currentColor; opacity: .4; }
+.text-size-toggle--header button { min-width: 24px; padding-inline: 2px; }
+.text-size-toggle--header button:first-of-type { font-size: 11px; }
+.text-size-toggle--header button:last-of-type { font-size: 16px; }
+.text-size-slash { font-size: 12px; opacity: .5; }
+/* 「文字サイズ」の頭を、上のメニュー項目（番号欄24px＋間隔16px）の見出しにそろえる */
+.text-size-toggle--menu { margin-top: 8px; padding-block: 6px; padding-left: 40px; border-top: 1px solid var(--rule); border-bottom: 1px solid var(--rule); font-size: 14px; }
+.text-size-toggle--menu .text-size-label { flex: 1; font-size: 12px; color: var(--muted); opacity: 1; }
+/* 押せる範囲44pxは保ち、「大」の文字の右端を上のメニューの矢印（→）の右端にそろえる */
+.text-size-toggle--menu button { min-width: 44px; padding-inline: 6px 0; }
+.text-size-toggle--menu button:last-child { padding-right: 4px; text-align: right; }
+/* 「標準」は小さく、「大」は大きく見せて、押す前から違いが分かるように。高さの中心でそろえる */
+.text-size-toggle--menu button:first-of-type { font-size: 12px; }
+.text-size-toggle--menu button:last-child { font-size: 18px; }
 .home-hero { position: relative; height: 100svh; min-height: 680px; max-height: 1100px; color: #fff; isolation: isolate; overflow: hidden; }
 .hero-image, .hero-image img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-image { z-index: -2; }
@@ -449,7 +471,7 @@
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
-/* 2026-10-12 採用したD項目。通常本文のサイズ（D04）は保留して維持する。 */
+/* 2026-10-12 採用したD項目。通常本文のサイズ（D04）は維持し、2026-10-13に「文字を大きく」の切り替えとして採用（ファイル末尾）。 */
 /* D05・D06：受診・参加に必要な情報は、装飾用の小文字と分ける。 */
 .detail-list { font-size: 15px; }
 .detail-list dt { font-size: 13px; }
@@ -530,4 +552,36 @@
 }
 @media (max-width: 700px) {
   .clinic-philosophy-copy { line-height: clamp(28.8px, 8vw, 35.2px); }
+}
+
+/* 文字サイズ「大」（見る人が切り替える。html[data-text-size="large"]）。
+   通常本文と必要な情報を大きくし、見出しは本文より大きいまま保つ。料金表・補足・縦書きは変えない。 */
+@media (max-width: 1023px) {
+  /* スマホ・タブレット：本文16px（D04のA案）。節の見出し18px ＞ 小見出し17px ＞ 本文16px */
+  :root[data-text-size="large"] .prose { font-size: 16px; }
+  :root[data-text-size="large"] .intro-copy { font-size: 16px; }
+  :root[data-text-size="large"] :is(.detail-list, .detail-list--questions) { font-size: 16px; }
+  :root[data-text-size="large"] .detail-list--questions dt { font-size: 18px; }
+  :root[data-text-size="large"] .event-step-title { font-size: 17px; }
+  /* メニューの中も2pxずつ大きく（項目20→22px・矢印16→18px・ご予約12〜13→15px・閉じる12→14px）。文字サイズ欄は押す位置が動かないよう据え置く */
+  :root[data-text-size="large"] .menu-dialog nav > a { font-size: 22px; }
+  :root[data-text-size="large"] .menu-dialog nav > a > span:last-child { font-size: 18px; }
+  :root[data-text-size="large"] .menu-reservation { font-size: 15px; }
+  :root[data-text-size="large"] .menu-top button { font-size: 14px; }
+  /* 矢印が大きくなるぶん、「大」の右端も2px右へ（矢印の右端とそろえたまま） */
+  :root[data-text-size="large"] .text-size-toggle--menu button:last-child { padding-right: 2px; }
+}
+@media (min-width: 1024px) {
+  /* PC：本文16→18px。導入文・情報欄・小見出しも2pxずつ上げて、親子の順を保つ */
+  :root[data-text-size="large"] .prose { font-size: 18px; }
+  :root[data-text-size="large"] .intro-copy { font-size: 19px; }
+  :root[data-text-size="large"] .detail-list { font-size: 17px; }
+  :root[data-text-size="large"] .detail-list--questions { font-size: 18px; }
+  :root[data-text-size="large"] .detail-list--questions dt,
+  :root[data-text-size="large"] :is(.rule-list > li > h3, .event-step-title),
+  :root[data-text-size="large"] .prose .event-part h3 { font-size: 20px; }
+  :root[data-text-size="large"] .event-lead { font-size: 19px; }
+  /* 押した結果がすぐ分かるよう、上部のメニュー項目も2px大きく（13→15px、写真の上は14→16px） */
+  :root[data-text-size="large"] .desktop-nav { font-size: 15px; }
+  :root[data-text-size="large"] .site-header--over-photo .desktop-nav { font-size: 16px; }
 }

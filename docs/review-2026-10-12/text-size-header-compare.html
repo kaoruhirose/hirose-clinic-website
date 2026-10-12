@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>上部メニュー 文字サイズ表記</title>
+<style>
+  :root { --bg: #f7f5f0; --ink: #2d3748; --muted: #6b7280; --rule: #d9d4c7; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ebe7de; color: var(--ink); font-family: "Hiragino Sans", "Yu Gothic", sans-serif; }
+  header { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 10px 24px; align-items: center; }
+  h1 { font-size: 16px; font-weight: 600; margin: 0; }
+  label { font-size: 13px; display: inline-flex; gap: 6px; align-items: center; }
+  .note { font-size: 12px; color: var(--muted); width: 100%; margin: 0; }
+  main { padding: 20px 16px 40px; display: grid; gap: 28px; justify-content: start; }
+  section h2 { font-size: 15px; margin: 0 0 8px; }
+  section h2 small { font-weight: 400; color: var(--muted); margin-left: 8px; }
+  .pair { display: grid; gap: 10px; }
+  .frame { overflow: hidden; border: 1px solid #0002; background: #fff; }
+  .frame span { display: block; font-size: 11px; color: var(--muted); padding: 4px 8px; background: var(--bg); border-bottom: 1px solid var(--rule); }
+  iframe { display: block; border: 0; height: 110px; }
+  .frame span { position: relative; z-index: 1; }
+</style>
+</head>
+<body>
+<header>
+  <h1>PC上部メニュー：文字サイズの表記の比較</h1>
+  <label>画面の幅
+    <select id="width">
+      <option value="1024">1024px（小さめのノートPC）</option>
+      <option value="1280" selected>1280px（一般的なノートPC）</option>
+      <option value="1440">1440px（大きめの画面）</option>
+    </select>
+  </label>
+  <label><input type="checkbox" id="zoom" checked> 右上だけ拡大して見る</label>
+  <p class="note">画面右上（ご予約の左）の「文字」の部分だけを変えています。どの案もボタンを押すと実際に切り替わります（押した結果は全案に共有されます）。読み上げでは、どの案も「標準」「大」と伝わるようにします。</p>
+</header>
+<main id="main"></main>
+<script>
+  // 各案の見た目の差し替え（サイト本体は変えない）
+  const VARIANTS = [
+    { name: "今の形", desc: "標準・大が同じ大きさ（13px）", css: "" },
+    { name: "A：標準 大（大きさの差あり）", desc: "標準 11px／大 16px", css:
+      ".text-size-toggle--header button:first-of-type { font-size: 11px; } .text-size-toggle--header button:last-child { font-size: 16px; }" },
+    { name: "B：あ / あ（「文字」なし）", desc: "あ 11px ／ あ 16px。間に半角スラッシュ", css:
+      ".text-size-toggle--header .text-size-label { display: none; }" +
+      " .text-size-toggle--header button { font-size: 0; } .text-size-toggle--header button::after { content: 'あ'; }" +
+      " .text-size-toggle--header button:first-of-type::after { font-size: 11px; } .text-size-toggle--header button:last-child::after { font-size: 16px; }" +
+      // スラッシュは「大」側のボタンの前に置き、下線がかからないよう独立させる
+      " .text-size-toggle--header button:last-child::before { content: '/'; display: inline-block; margin-right: 8px; font-size: 12px; opacity: .6; text-decoration: none; }" },
+  ];
+  const PAGES = [{ path: "/", label: "トップ（写真の上）" }, { path: "/about", label: "ふつうのページ" }];
+  const main = document.getElementById("main"), widthSel = document.getElementById("width"), zoomChk = document.getElementById("zoom");
+  const ZOOM = 1.6;
+  // 拡大時に見せる幅：画面に収まる範囲で最大560px
+
+  function render() {
+    const w = widthSel.value;
+    main.innerHTML = "";
+    for (const v of VARIANTS) {
+      const sec = document.createElement("section");
+      sec.innerHTML = `<h2>${v.name}<small>${v.desc}</small></h2><div class="pair"></div>`;
+      for (const p of PAGES) {
+        const box = document.createElement("div");
+        box.className = "frame";
+        // 拡大時は右上の640pxだけを切り出して1.6倍で見せる
+        const zoomed = zoomChk.checked;
+        const crop = Math.min(560, Math.floor((window.innerWidth - 48) / ZOOM));
+        box.style.width = (zoomed ? crop : w) + "px";
+        box.style.zoom = zoomed ? String(ZOOM) : "1";
+        box.innerHTML = `<span>${p.label}</span>`;
+        const f = document.createElement("iframe");
+        f.style.width = w + "px";
+        f.title = `${v.name} ${p.label}`;
+        f.addEventListener("load", () => {
+          try {
+            const s = f.contentDocument.createElement("style");
+            // 比較の邪魔になる表紙の待ち時間アニメーションを止め、上部をすぐ表示する
+            s.textContent = v.css + " .site-header--over-photo .header-inner, .site-header--over-photo * { animation: none !important; opacity: 1 !important; }";
+            f.contentDocument.head.appendChild(s);
+            // 拡大時は「文字」ボタンの少し左から切り出す
+            if (zoomed) {
+              const t = f.contentDocument.querySelector(".text-size-toggle--header");
+              if (t) f.style.marginLeft = -Math.max(0, Math.round(t.getBoundingClientRect().left) - 24) + "px";
+            }
+          } catch (e) {}
+        });
+        f.src = p.path;
+        box.appendChild(f);
+        sec.querySelector(".pair").appendChild(box);
+      }
+      main.appendChild(sec);
+    }
+  }
+  widthSel.addEventListener("change", render);
+  zoomChk.addEventListener("change", render);
+  render();
+</script>
+</body>
+</html>

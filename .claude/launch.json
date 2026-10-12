@@ -7,6 +7,19 @@
       "runtimeArgs": ["run", "dev"],
       "port": 3000,
       "autoPort": true
+    },
+    {
+      "name": "prod-check",
+      "runtimeExecutable": "npm",
+      "runtimeArgs": ["run", "start", "--", "-p", "3130"],
+      "port": 3130
+    },
+    {
+      "name": "d04-compare",
+      "runtimeExecutable": "node",
+      "runtimeArgs": ["docs/review-2026-10-12/d04-server.cjs"],
+      "port": 3121,
+      "url": "http://127.0.0.1:3121"
     }
   ]
 }

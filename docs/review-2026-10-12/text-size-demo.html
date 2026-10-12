@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文字サイズ切り替えデモ</title>
+<style>
+  :root { --bg: #f7f5f0; --ink: #2d3748; --muted: #6b7280; --rule: #d9d4c7; --blue: #1c3c5a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #e6e1d6; color: var(--ink); font-family: "Hiragino Sans", "Yu Gothic", sans-serif; }
+  .bar { position: sticky; top: 0; z-index: 5; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 14px 20px; display: flex; flex-wrap: wrap; gap: 12px 20px; align-items: center; }
+  h1 { font-size: 17px; margin: 0; }
+  .switch { display: inline-flex; border: 1px solid var(--blue); border-radius: 999px; overflow: hidden; }
+  .switch button { border: 0; background: transparent; color: var(--blue); font-size: 15px; padding: 8px 22px; cursor: pointer; }
+  .switch button[aria-pressed="true"] { background: var(--blue); color: #fff; }
+  .play { border: 1px solid var(--muted); background: #fff; border-radius: 999px; padding: 8px 16px; font-size: 14px; cursor: pointer; }
+  .now { font-size: 14px; }
+  .now b { display: inline-block; min-width: 2.5em; padding: 2px 10px; border-radius: 6px; background: #fff; border: 1px solid var(--rule); text-align: center; transition: background .3s; }
+  .now b.flash { background: #fde68a; }
+  .note { width: 100%; margin: 0; font-size: 12px; color: var(--muted); }
+  .stage { display: flex; flex-wrap: wrap; gap: 28px; justify-content: center; align-items: flex-start; padding: 24px 16px 48px; }
+  figure { margin: 0; }
+  figcaption { font-size: 14px; font-weight: 600; margin-bottom: 8px; }
+  figcaption small { font-weight: 400; color: var(--muted); margin-left: 6px; }
+  .pc { border: 1px solid #0003; border-radius: 10px; overflow: hidden; background: #fff; box-shadow: 0 8px 24px #0002; }
+  .pc .chrome { height: 22px; background: #ddd8cc; display: flex; gap: 6px; align-items: center; padding-left: 10px; }
+  .pc .chrome i { width: 9px; height: 9px; border-radius: 50%; background: #bbb4a5; }
+  .viewport { overflow: hidden; position: relative; }
+  .viewport iframe { border: 0; transform-origin: 0 0; position: absolute; top: 0; left: 0; }
+  .phone { border: 10px solid #222; border-radius: 30px; overflow: hidden; background: #fff; box-shadow: 0 8px 24px #0002; }
+</style>
+</head>
+<body>
+<div class="bar">
+  <h1>文字サイズの切り替えデモ</h1>
+  <div class="switch" role="group" aria-label="表示する文字サイズ">
+    <button type="button" data-size="standard" aria-pressed="true">標準</button>
+    <button type="button" data-size="large" aria-pressed="false">大</button>
+  </div>
+  <button type="button" class="play" id="play">▶ 自動で切り替え</button>
+  <span class="now">いま：<b id="now">標準</b></span>
+  <p class="note">上のボタンを押すと、PCとスマホの両方が実際のサイトと同じように切り替わります。サイトの中の「あ / あ」（PC）やメニュー内の「標準　大」（スマホ）を押しても切り替わります。PC上部は、ご予約の右どなりの「あ / あ」です。</p>
+</div>
+<div class="stage">
+  <figure>
+    <figcaption>パソコン <small>幅1280pxの画面を縮小表示</small></figcaption>
+    <div class="pc"><div class="chrome"><i></i><i></i><i></i></div><div class="viewport" id="pcView"><iframe id="pc" title="パソコンでの表示"></iframe></div></div>
+  </figure>
+  <figure>
+    <figcaption>スマホ <small>幅375px</small></figcaption>
+    <div class="phone"><iframe id="sp" title="スマホでの表示" style="display:block;border:0;width:375px;height:700px"></iframe></div>
+  </figure>
+</div>
+<script>
+  const PAGE = "/events/surf-therapy";
+  const PC_W = 1280, PC_H = 860;
+  const pc = document.getElementById("pc"), sp = document.getElementById("sp"), pcView = document.getElementById("pcView");
+  const nowEl = document.getElementById("now"), playBtn = document.getElementById("play");
+  const switchBtns = [...document.querySelectorAll(".switch button")];
+  let size = "standard", timer = 0;
+
+  function fitPc() {
+    const avail = Math.min(900, window.innerWidth - 40);
+    const scale = avail / PC_W;
+    pc.style.width = PC_W + "px"; pc.style.height = PC_H + "px";
+    pc.style.transform = `scale(${scale})`;
+    pcView.style.width = Math.round(PC_W * scale) + "px";
+    pcView.style.height = Math.round(PC_H * scale) + "px";
+  }
+  // サイトの中の本物のボタン（標準＝1つ目、大＝2つ目）を押して切り替える
+  function applyTo(frame) {
+    try {
+      const doc = frame.contentDocument;
+      const btn = doc.querySelectorAll(".text-size-toggle button")[size === "large" ? 1 : 0];
+      if (btn && btn.getAttribute("aria-pressed") !== "true") btn.click();
+    } catch (e) {}
+  }
+  function setSize(next) {
+    size = next;
+    applyTo(pc); applyTo(sp);
+    switchBtns.forEach(b => b.setAttribute("aria-pressed", String(b.dataset.size === size)));
+    nowEl.textContent = size === "large" ? "大" : "標準";
+    nowEl.classList.add("flash"); setTimeout(() => nowEl.classList.remove("flash"), 400);
+  }
+  // サイトの中のボタンを押したときも、デモ全体を同じ大きさにそろえる
+  function watch(frame) {
+    try {
+      new MutationObserver(() => {
+        const s = frame.contentDocument.documentElement.dataset.textSize === "large" ? "large" : "standard";
+        if (s !== size) setSize(s);
+      }).observe(frame.contentDocument.documentElement, { attributes: true, attributeFilter: ["data-text-size"] });
+    } catch (e) {}
+  }
+  pc.addEventListener("load", () => {
+    applyTo(pc); watch(pc);
+  });
+  sp.addEventListener("load", () => { applyTo(sp); watch(sp); });
+  switchBtns.forEach(b => b.addEventListener("click", () => { stop(); setSize(b.dataset.size); }));
+  function stop() { clearInterval(timer); timer = 0; playBtn.textContent = "▶ 自動で切り替え"; }
+  playBtn.addEventListener("click", () => {
+    if (timer) return stop();
+    playBtn.textContent = "■ 止める";
+    setSize(size === "large" ? "standard" : "large");
+    timer = setInterval(() => setSize(size === "large" ? "standard" : "large"), 2500);
+  });
+  // デモでは端末の記憶を使わず、いつも「標準」から始める
+  try { localStorage.removeItem("hirose-text-size"); } catch (e) {}
+  fitPc();
+  window.addEventListener("resize", fitPc);
+  pc.src = PAGE; sp.src = PAGE;
+</script>
+</body>
+</html>

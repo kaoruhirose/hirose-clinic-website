@@ -4,6 +4,7 @@ import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import ReservationLink from "@/components/ReservationLink";
+import TextSizeToggle from "@/components/TextSizeToggle";
 import { site } from "@/lib/site";
 
 const links = [
@@ -45,6 +46,7 @@ export default function Header() {
         <nav className="desktop-nav" aria-label="メインメニュー">
           {links.map(link => <Link key={link.href} href={link.href} className={home && link.secondary ? "home-secondary" : undefined} aria-current={pathname === link.href ? "page" : pathname.startsWith(`${link.href}/`) ? "location" : undefined}>{link.label}</Link>)}
           <ReservationLink className="nav-reservation">ご予約</ReservationLink>
+          <TextSizeToggle className="text-size-toggle--header" kana />
         </nav>
         {/* トップの写真の上では、ご予約の右どなり（スマホはメニューの横線の左）に Instagram を置く */}
         {home && site.instagramUrl && (
@@ -64,6 +66,7 @@ export default function Header() {
           {links.map((link, i) => <Link key={link.href} href={link.href} onClick={close} aria-current={pathname === link.href ? "page" : pathname.startsWith(`${link.href}/`) ? "location" : undefined}><span className="menu-number" aria-hidden="true">0{i + 1}</span>{link.label}<span aria-hidden="true">→</span></Link>)}
           <Link href="/news" onClick={close}><span className="menu-number" aria-hidden="true">06</span>お知らせ<span aria-hidden="true">→</span></Link>
         </nav>
+        <TextSizeToggle className="text-size-toggle--menu" />
         <ReservationLink onClick={close} className="text-link menu-reservation">ご予約のご案内<span aria-hidden="true">→</span></ReservationLink>
         <p className="menu-caption">海と山のあいだで、からだの声を聴く。</p>
       </dialog>

@@ -3,6 +3,12 @@ import { Zen_Kaku_Gothic_New, Shippori_Mincho } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { TEXT_SIZE_KEY } from "@/lib/textSize";
+
+// 文字サイズ「大」を選んだ端末では、表示前に反映してちらつきを防ぐ。
+// next/script（beforeInteractive）は本番ではNext.jsの読み込み後に実行されるため、<head>に直接書く。
+// （開発時だけ React が「script タグ」の注意を出すが、サーバーで出力した HTML では最初に実行される）
+const textSizeScript = `try{if(localStorage.getItem(${JSON.stringify(TEXT_SIZE_KEY)})==="large")document.documentElement.dataset.textSize="large"}catch(e){}`;
 
 const zenKaku = Zen_Kaku_Gothic_New({
   weight: ["400", "500", "700"],
@@ -48,7 +54,11 @@ export default function RootLayout({
       lang="ja"
       data-scroll-behavior="smooth"
       className={`${zenKaku.variable} ${shippori.variable} antialiased selection:bg-clinic-blue/20 selection:text-clinic-blue`}
+      suppressHydrationWarning
     >
+      <head>
+        <script id="text-size" dangerouslySetInnerHTML={{ __html: textSizeScript }} />
+      </head>
       <body className="bg-clinic-base text-clinic-text font-sans min-h-screen flex flex-col scroll-smooth">
         <a className="skip-link" href="#main-content">本文へ移動</a>
         <Header />

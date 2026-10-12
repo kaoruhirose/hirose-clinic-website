@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>文字サイズ 標準と大</title>
+<style>
+  :root { --bg: #f7f5f0; --ink: #2d3748; --muted: #6b7280; --rule: #d9d4c7; --accent: #1c3c5a; }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: #ebe7de; color: var(--ink); font-family: "Hiragino Sans", "Yu Gothic", sans-serif; }
+  header { position: sticky; top: 0; z-index: 2; background: var(--bg); border-bottom: 1px solid var(--rule); padding: 12px 20px; display: flex; flex-wrap: wrap; gap: 12px 24px; align-items: center; }
+  h1 { font-size: 16px; font-weight: 600; margin: 0; }
+  label { font-size: 13px; display: inline-flex; gap: 6px; align-items: center; }
+  select { font-size: 13px; padding: 4px 6px; }
+  .note { font-size: 12px; color: var(--muted); width: 100%; margin: 0; }
+  main { display: flex; justify-content: center; gap: 32px; padding: 24px 16px 40px; flex-wrap: wrap; }
+  figure { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  figcaption { font-size: 14px; font-weight: 600; }
+  figcaption small { font-weight: 400; color: var(--muted); }
+  .phone { border: 10px solid #222; border-radius: 28px; background: #fff; overflow: hidden; box-shadow: 0 8px 24px #0002; }
+  iframe { display: block; border: 0; width: 375px; height: 720px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>文字サイズ「標準」と「大」の比較</h1>
+  <label>ページ
+    <select id="page">
+      <option value="/events/surf-therapy">サーフセラピー</option>
+      <option value="/">トップ</option>
+      <option value="/about">診療所について</option>
+      <option value="/services">診療案内</option>
+      <option value="/online-consultation">オンライン診療</option>
+      <option value="/events">フィールドワーク</option>
+      <option value="/access">アクセス</option>
+      <option value="/news">お知らせ</option>
+      <option value="/privacy">プライバシー</option>
+    </select>
+  </label>
+  <label>スマホの幅
+    <select id="width">
+      <option value="375" selected>375px（標準的なiPhone）</option>
+      <option value="768">768px（タブレット）</option>
+      <option value="1280">1280px（パソコン）</option>
+      <option value="390">390px（新しめのiPhone）</option>
+      <option value="320">320px（小さいスマホ）</option>
+    </select>
+  </label>
+  <label><input type="checkbox" id="sync" checked> 左右のスクロールを連動</label>
+  <p class="note">左＝標準（今のサイト）。右＝「大」：見る人が上部またはメニューの「文字 標準／大」で選んだときの表示。スマホ・タブレットは本文16px、PCは18px。料金表・補足・縦書きは変えていません。</p>
+</header>
+<main>
+  <figure>
+    <figcaption>標準 <small id="cap-a"></small></figcaption>
+    <div class="phone"><iframe id="a" title="標準"></iframe></div>
+  </figure>
+  <figure>
+    <figcaption>大 <small id="cap-b"></small></figcaption>
+    <div class="phone"><iframe id="b" title="大"></iframe></div>
+  </figure>
+</main>
+<script>
+  const a = document.getElementById("a"), b = document.getElementById("b");
+  const pageSel = document.getElementById("page"), widthSel = document.getElementById("width"), sync = document.getElementById("sync");
+  let driven = null, releaseTimer = 0;
+
+  function measure(frame, cap) {
+    try {
+      const p = frame.contentDocument.querySelector(".prose p, .prose li");
+      document.getElementById(cap).textContent = p ? "（本文 " + frame.contentWindow.getComputedStyle(p).fontSize + "）" : "";
+    } catch (e) {}
+  }
+  function onScroll(from, to) {
+    return () => {
+      // 相手側を動かした直後に返ってくるスクロールは無視する（引っぱり合い防止）
+      if (!sync.checked || driven === from) return;
+      try {
+        const f = from.contentWindow, t = to.contentWindow;
+        const max = f.document.documentElement.scrollHeight - f.innerHeight;
+        const ratio = max > 0 ? f.scrollY / max : 0;
+        driven = to;
+        t.scrollTo({ top: ratio * (t.document.documentElement.scrollHeight - t.innerHeight), behavior: "instant" });
+        clearTimeout(releaseTimer);
+        releaseTimer = setTimeout(() => { driven = null; }, 150);
+      } catch (e) {}
+    };
+  }
+  // 左右は同じ端末の記憶を共有するので、表示の切り替えは各画面の <html> に直接指定する
+  const setSize = (frame, large) => {
+    const root = frame.contentDocument.documentElement;
+    if (large) root.dataset.textSize = "large"; else delete root.dataset.textSize;
+  };
+  a.addEventListener("load", () => {
+    try { setSize(a, false); a.contentWindow.addEventListener("scroll", onScroll(a, b)); } catch (e) {}
+    setTimeout(() => measure(a, "cap-a"), 50);
+  });
+  b.addEventListener("load", () => {
+    try { setSize(b, true); b.contentWindow.addEventListener("scroll", onScroll(b, a)); } catch (e) {}
+    setTimeout(() => measure(b, "cap-b"), 50);
+  });
+  function load() {
+    const w = widthSel.value + "px";
+    a.style.width = b.style.width = w;
+    a.src = b.src = pageSel.value;
+    setTimeout(() => { measure(a, "cap-a"); measure(b, "cap-b"); }, 800);
+  }
+  pageSel.addEventListener("change", load);
+  widthSel.addEventListener("change", load);
+  load();
+</script>
+</body>
+</html>
