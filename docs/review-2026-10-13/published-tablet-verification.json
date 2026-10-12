@@ -1,0 +1,556 @@
+{
+  "date": "2026-10-13",
+  "commit": "85335776f7ad9af7ce8b7e35882f53c5ef433912",
+  "url": "https://www.hiroseshinryojo.jp",
+  "results": [
+    {
+      "overflow": 0,
+      "path": "/",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "path": "/services",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [
+        {
+          "client": 600,
+          "scroll": 600
+        }
+      ],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "path": "/privacy",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 327,
+          "columns": "327px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 327,
+          "columns": "327px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 327,
+          "columns": "327px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 327,
+          "columns": "327px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 375
+    },
+    {
+      "overflow": 0,
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 652,
+          "columns": "652px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 652,
+          "columns": "652px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 652,
+          "columns": "652px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 652,
+          "columns": "652px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 700
+    },
+    {
+      "overflow": 0,
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true
+        }
+      ],
+      "tables": [],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false
+        }
+      ],
+      "tables": [],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 552.6171875,
+          "columns": "345.383px 552.617px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 552.6171875,
+          "columns": "345.383px 552.617px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 552.6171875,
+          "columns": "345.383px 552.617px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 552.6171875,
+          "columns": "345.383px 552.617px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false
+        }
+      ],
+      "tables": [],
+      "width": 1023
+    },
+    {
+      "overflow": 0,
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 632.1640625,
+          "columns": "407.836px 632.164px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 632.1640625,
+          "columns": "407.836px 632.164px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 632.1640625,
+          "columns": "407.836px 632.164px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 632.1640625,
+          "columns": "407.836px 632.164px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false
+        }
+      ],
+      "tables": [],
+      "width": 1440
+    }
+  ]
+}
