@@ -40,17 +40,20 @@
 /* PCでは、ご予約とInstagramのあいだに細い縦線をはさみ、メニューとSNSを分けて見せる。線の左右は同じ間隔にする。 */
 .site-header--over-photo .desktop-nav::after { content: ""; width: 1px; height: 14px; margin-left: -10px; background: currentColor; opacity: .55; box-shadow: 0 1px 6px #10201060; }
 @media (min-width: 1024px) { .site-header--over-photo .header-instagram { margin-left: -23px; } }
-/* 見出しはどのページでも上部に残す。トップでは表紙の写真を過ぎたら、ほかのページと同じ見出しを上から出す。
+/* 見出しはどのページでも上部に残す。トップでは表紙の写真の下端にくっついて白い背景と一緒に下から上がり、上端に着いたら残る。
    右端は写真の上と同じく Instagram（ご予約・文字サイズとのあいだに細い縦線）。 */
 .site-header--sticky { position: sticky; top: 0; z-index: 30; background: var(--color-clinic-base); border-bottom: 1px solid var(--rule); }
-.header-sticky { position: fixed; inset: 0 0 auto; z-index: 30; background: var(--color-clinic-base); border-bottom: 1px solid var(--rule); translate: 0 -100%; opacity: 0; visibility: hidden; transition: translate .35s ease, opacity .35s ease, visibility 0s .35s; }
-.header-sticky.is-visible { translate: 0 0; opacity: 1; visibility: visible; transition: translate .35s ease, opacity .35s ease; }
+.header-sticky { position: fixed; inset: 0 0 auto; z-index: 30; background: var(--color-clinic-base); border-bottom: 1px solid var(--rule); translate: 0 100vh; visibility: hidden; will-change: translate; }
+.header-sticky.is-visible { visibility: visible; }
+/* 上部に残る見出しは、写真の上の見出しより薄くする */
+:root { --header-solid-height: 80px; }
+.header-solid .header-inner { height: var(--header-solid-height); }
 .header-solid .header-instagram { filter: none; }
 .header-solid .desktop-nav { margin-left: auto; }
 .header-solid .desktop-nav::after { content: ""; width: 1px; height: 14px; margin-left: -10px; background: currentColor; opacity: .4; }
 @media (min-width: 1024px) { .header-solid .header-inner { gap: clamp(20px, 2.5vw, 42px); } .header-solid .header-instagram { margin-left: -23px; } }
 /* 上部に残る見出しの下に、ページ内の移動先が隠れないようにする */
-html { scroll-padding-top: 110px; }
+html { scroll-padding-top: var(--header-solid-height); }
 .header-brand { --brand-size: 22px; font-family: var(--font-serif); font-size: var(--brand-size); line-height: 1.5; letter-spacing: .15em; white-space: nowrap; }
 .header-brand-latin, .footer-latin { display: block; margin-top: calc(var(--brand-size, 25px) * .26); font: calc(var(--brand-size, 25px) * .36)/1.2 Georgia, serif; letter-spacing: .22em; text-align: left; }
 .desktop-nav { display: flex; gap: clamp(20px, 2.5vw, 42px); align-items: center; font-size: 12px; letter-spacing: .09em; }
@@ -242,19 +245,20 @@ html { scroll-padding-top: 110px; }
 .home-introduction .section-heading h2 { font-size: clamp(28px, 2.5vw, 32px); }
 .desktop-break { display: none; }
 /* C1 詩は表紙の写真に載せず、白い背景の中央に縦書き2列で置く（2列目を下げる散らし書き） */
-.home-poem { display: flex; flex-direction: row-reverse; justify-content: center; gap: 1.4em; padding: 120px 0 0; font-family: var(--font-serif); font-size: 22px; line-height: 1.6; letter-spacing: .3em; }
+/* トップでは見出しが白い背景の上端に重なってせり上がるので、詩の上の余白にその厚みを足す */
+.home-poem { display: flex; flex-direction: row-reverse; justify-content: center; gap: 1.4em; padding: calc(120px + var(--header-solid-height)) 0 0; font-family: var(--font-serif); font-size: 22px; line-height: 1.6; letter-spacing: .3em; }
 .home-poem span { writing-mode: vertical-rl; }
 .home-poem span + span { padding-top: 3.2em; }
 @media (min-width: 1024px) {
   .desktop-break { display: inline; }
   /* A3 長い節でも、左の見出しを画面に残す */
-  /* 上部に残る見出し（110px）の下に置く */
-  .editorial-section > .section-heading { position: sticky; top: 142px; align-self: start; }
+  /* 上部に残る見出し（80px）の下に置く */
+  .editorial-section > .section-heading { position: sticky; top: 112px; align-self: start; }
   /* A2 サーフセラピーを、他のページと同じ「左に見出し・右に本文」の2列に */
   .fieldwork-detail.fieldwork-detail--split { max-width: none; margin-left: 0; }
   .fieldwork-detail--split .event-article > :not(.event-part) { margin-left: calc((100% - 80px) / 2.55 + 80px); }
   .fieldwork-detail--split .event-part { display: grid; grid-template-columns: 1fr 1.55fr; column-gap: 80px; align-items: start; border-top: 1px solid var(--rule); margin-top: 72px; padding-top: 80px; }
-  .fieldwork-detail--split.prose .event-part > h2 { grid-column: 1; grid-row: 1; position: sticky; top: 142px; margin: 0; font-size: 24px; letter-spacing: .08em; line-height: 1.7; }
+  .fieldwork-detail--split.prose .event-part > h2 { grid-column: 1; grid-row: 1; position: sticky; top: 112px; margin: 0; font-size: 24px; letter-spacing: .08em; line-height: 1.7; }
   .fieldwork-detail--split .event-part > :not(h2) { grid-column: 2; }
   /* A4 節と節のあいだ、ページ冒頭の余白を広げる */
   .editorial-section { padding-block: 112px; }
@@ -352,7 +356,7 @@ html { scroll-padding-top: 110px; }
 }
 @media (min-width: 1024px) {
   /* C1 PCでは詩を少し大きく、上の余白を広めに */
-  .home-poem { padding: 168px 0 8px; font-size: 24px; letter-spacing: .32em; }
+  .home-poem { padding: calc(168px + var(--header-solid-height)) 0 8px; font-size: 24px; letter-spacing: .32em; }
   /* C2 トップの3つの見出しを縦書きに。本文と向き合う右側に置き、頭を本文の1行目にそろえる */
   .editorial-section--tate > .section-heading { display: flex; flex-direction: row-reverse; justify-content: flex-start; align-items: flex-start; gap: 22px; padding-top: .5em; }
   .editorial-section--tate .section-heading h2 { writing-mode: vertical-rl; font-size: 30px; letter-spacing: .28em; line-height: 2; margin: 0; }
@@ -408,7 +412,7 @@ html { scroll-padding-top: 110px; }
 @media (max-width: 700px) {
   .container { width: calc(100% - 48px); }
   .header-inner { height: 88px; padding-inline: 24px; }
-  html { scroll-padding-top: 88px; }
+  :root { --header-solid-height: 64px; }
   .header-brand { --brand-size: 19px; }
   .home-hero { min-height: 620px; max-height: 980px; }
   .hero-wordmark :is(h1, h2) { font-size: 32px; letter-spacing: .18em; }
@@ -432,7 +436,7 @@ html { scroll-padding-top: 110px; }
   .eyebrow { margin-bottom: 16px; font-size: 10px; }
   .prose { font-size: clamp(14px, 4vw, 15px); line-height: 2.15; }
   .prose h3 { font-size: clamp(17px, 4.8vw, 19px); }
-  .home-poem { padding-top: 88px; font-size: 19px; letter-spacing: .24em; }
+  .home-poem { padding-top: calc(88px + var(--header-solid-height)); font-size: 19px; letter-spacing: .24em; }
   .home-introduction .editorial-section { padding-block: 80px; gap: 40px; }
   .home-introduction .section-heading h2 { font-size: clamp(21px, 6.2vw, 25px); }
   .text-link { font-size: 12px; margin-top: 20px; gap: 28px; }

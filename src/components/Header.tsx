@@ -39,15 +39,18 @@ export default function Header() {
 
   const close = () => { dialog.current?.close(); setIsOpen(false); };
 
-  // トップでは、表紙の写真を過ぎて白い背景に入ったら、上部に見出しを固定して出す
-  const [isStuck, setIsStuck] = useState(false);
+  // トップでは、表紙の写真の下端（白い背景の上端）に見出しをくっつけ、白い背景と一緒に下から上げる。上端に着いたらそこに残す。
+  const sticky = useRef<HTMLDivElement>(null);
+  const [isShown, setIsShown] = useState(false);
   useEffect(() => {
     if (!home) return;
     let frame = 0;
     const check = () => {
       frame = 0;
       const hero = document.querySelector(".home-hero");
-      setIsStuck(!!hero && hero.getBoundingClientRect().bottom <= 0);
+      const top = hero ? Math.max(0, hero.getBoundingClientRect().bottom) : 0;
+      if (sticky.current) sticky.current.style.translate = `0 ${top}px`;
+      setIsShown(top < window.innerHeight);
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(check); };
     frame = requestAnimationFrame(check);
@@ -57,7 +60,7 @@ export default function Header() {
       cancelAnimationFrame(frame);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
-      setIsStuck(false);
+      setIsShown(false);
     };
   }, [home]);
 
@@ -88,7 +91,7 @@ export default function Header() {
 
   return (<>
     {/* 写真の上の見出しの指定が及ばないよう、固定の見出しは <header> の外に置く */}
-    {home && <div className={`header-sticky header-solid${isStuck ? " is-visible" : ""}`} inert={!isStuck}>{bar()}</div>}
+    {home && <div ref={sticky} className={`header-sticky header-solid${isShown ? " is-visible" : ""}`} inert={!isShown}>{bar()}</div>}
     {/* トップ以外では、この見出しをそのまま上部に残す */}
     <header className={`site-header${home ? " site-header--over-photo" : " site-header--sticky header-solid"}`}>
       {bar({ overPhoto: home })}
