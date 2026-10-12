@@ -324,6 +324,8 @@
   .editorial-section--tate .section-heading h2 { writing-mode: vertical-rl; font-size: 30px; letter-spacing: .28em; line-height: 2; margin: 0; }
   .editorial-section--tate .section-heading :is(.eyebrow, .section-english) { writing-mode: vertical-rl; margin: 0; }
   /* C3 「身土不二」と添えた言葉を、右から左へ読む縦書きの一幅にまとめる */
+  /* 親の本文幅制限を外し、題と本文のまとまりをページの中央へ置く。 */
+  .about-page .page-intro > .intro-copy { max-width: none; }
   .clinic-philosophy { justify-content: center; align-items: flex-start; gap: 56px; padding-right: 0; margin-top: 72px; }
   .clinic-philosophy-copy { writing-mode: vertical-rl; text-align: start; font-size: 16px; line-height: 2.3; letter-spacing: .18em; }
   .clinic-philosophy-copy .text-unit { display: block; }
@@ -445,4 +447,87 @@
   .hero-wordmark, .site-header--over-photo .header-inner,
   .hero-photo-caption, .hero-bottom, .hero-scroll-line::after { animation: none; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+}
+
+/* 2026-10-12 採用したD項目。通常本文のサイズ（D04）は保留して維持する。 */
+/* D05・D06：受診・参加に必要な情報は、装飾用の小文字と分ける。 */
+.detail-list { font-size: 15px; }
+.detail-list dt { font-size: 13px; }
+.detail-list--questions dt { font-size: 18px; }
+.detail-list .text-link { gap: 16px; }
+.prose .quiet-note, .quiet-note { font-size: 13px; }
+.eyebrow { font-size: 12px; }
+.footer-address span { font-size: 12px; }
+
+/* D01：料金と曜日の表を別々に調整する。金額・条件はそのまま。 */
+.schedule-table--fees { font-size: 14px; letter-spacing: .02em; }
+.schedule-table--fees td { font-variant-numeric: tabular-nums; }
+.schedule-table--fees th:first-child { font-size: 13px; }
+.schedule-table--fees thead th { font-size: 13px; }
+.schedule-table--hours { font-size: 13px; }
+.schedule-table--hours th:first-child { font-size: 13px; }
+
+/* D02：小見出しと説明の間は薫さん指定の16px。 */
+.rule-list > li > h3, .steps > li > h3 { margin-bottom: 16px; }
+
+/* D08：写真と表の幅は保ち、読む段落の行長を通常本文に合わせる。 */
+@media (min-width: 1024px) {
+  .article-list .prose { max-width: 37.8em; }
+  .event-article .event-part > p, .event-article .event-part > .rule-list { max-width: 37.8em; }
+  /* D11：縦見出しは文字サイズと向きを保ち、字間だけを少し控えめに。 */
+  .editorial-section--tate .section-heading h2 { letter-spacing: .22em; }
+  /* D12：読む節の余白。詩と写真の余韻は維持する。 */
+  .editorial-section { padding-block: 104px; }
+  .privacy-page .editorial-section { padding-block: 72px; }
+  .fieldwork-detail--split .event-part { margin-top: 64px; padding-top: 72px; }
+  /* D16：質問の回答は通常本文と同じ大きさに。 */
+  .detail-list--questions { font-size: 16px; }
+}
+
+/* D10：PC以外でも「身土不二」の添え文を右から左へ読む縦書きにする。 */
+@media (max-width: 1023px) {
+  .clinic-philosophy { justify-content: center; align-items: flex-start; gap: 28px; padding-right: 0; }
+  .clinic-philosophy-copy { writing-mode: vertical-rl; text-align: start; font-size: 16px; line-height: 2.2; letter-spacing: .12em; }
+  .clinic-philosophy-copy .text-unit { display: block; white-space: nowrap; }
+  .clinic-philosophy-copy br { display: none; }
+  .clinic-philosophy-copy p + p { margin-top: 0; margin-right: 1em; }
+}
+
+@media (max-width: 700px) {
+  /* D01：3列の料金表は項目名を折り返し、金額を1行で読む。 */
+  .schedule-table--fees { table-layout: fixed; line-height: 1.8; letter-spacing: 0; }
+  .schedule-table--fees :is(th, td) { padding: 14px 4px; white-space: normal; }
+  .schedule-table--fees th:first-child { width: 39%; font-size: 13px; }
+  .schedule-table--fees thead th { font-size: 12px; }
+  .schedule-table--fees td { white-space: nowrap; }
+  .schedule-table--hours { font-size: 12px; }
+  .schedule-table--hours th:first-child { font-size: 13px; }
+  .schedule-table--hours :is(th, td) { padding-inline: 2px; }
+  /* D05・D06：値15px、項目名12px。長い項目名にも幅を取る。 */
+  .detail-list > div { grid-template-columns: 75px 1fr; gap: 16px; }
+  .detail-list dt { font-size: 12px; }
+  .detail-list--questions > div { grid-template-columns: 1fr; gap: 12px; }
+  .detail-list--questions { font-size: 15px; }
+  .detail-list--questions dt { font-size: clamp(16px, 4.5vw, 17px); }
+  /* D07：お知らせの記事見出しだけを通常のページ見出しより小さく。 */
+  .article-list .article-title { font-size: clamp(20px, 5.3vw, 21px); }
+  /* D10：列の間隔を画面に合わせて調整する。 */
+  .clinic-philosophy { gap: 16px; }
+  .clinic-philosophy-copy { line-height: clamp(28.8px, 8vw, 35.2px); }
+  /* D12・D16：節の余白と案内リンクの階層。 */
+  .editorial-section { padding-block: 56px; }
+  .home-introduction .editorial-section { padding-block: 80px; }
+  .event-part { margin-top: 56px; }
+  .home-link-list a { font-size: 19px; }
+  .home-link-list small { font-size: 12px; }
+}
+
+/* 採用した身土不二のC案：本文を控えめにし、題を深い色へ。列の間隔は維持する。 */
+.clinic-philosophy-copy { font-size: 15px; margin-top: 24px; line-height: 36.8px; }
+.clinic-philosophy-title { color: var(--color-clinic-text); }
+@media (max-width: 1023px) {
+  .clinic-philosophy-copy { margin-top: 18px; line-height: 35.2px; }
+}
+@media (max-width: 700px) {
+  .clinic-philosophy-copy { line-height: clamp(28.8px, 8vw, 35.2px); }
 }

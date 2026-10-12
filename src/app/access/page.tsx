@@ -49,7 +49,7 @@ export default function Access() {
 
         <EditorialSection label="診療時間" title="ご来院の時間">
           <div className="schedule-wrap">
-            <table className="schedule-table">
+            <table className="schedule-table schedule-table--hours">
               <caption className="sr-only">廣瀬診療所の曜日別診療時間</caption>
               <thead>
                 <tr>

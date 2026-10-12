@@ -62,7 +62,7 @@ export default function SurfTherapy() {
               <h2>参加費</h2>
               <p>料金はすべて税込、1人あたりの金額です。</p>
               <div className="schedule-wrap">
-                <table className="schedule-table whitespace-nowrap">
+                <table className="schedule-table schedule-table--fees whitespace-nowrap">
                   <caption className="sr-only">サーフセラピー90分の参加費（税込・1人あたり）</caption>
                   <thead><tr><th scope="col">人数</th><th scope="col">初めての方</th><th scope="col">2回目以降</th></tr></thead>
                   <tbody>

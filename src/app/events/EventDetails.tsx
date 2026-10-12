@@ -149,7 +149,7 @@ export default function EventDetails({ ev, flowVisuals, showIntroduction = true,
           <h2>参加費</h2>
           {ev.feeTable && (
             <div className="schedule-wrap">
-              <table className="schedule-table">
+              <table className="schedule-table schedule-table--fees">
                 <caption className="sr-only">{ev.title}の参加費</caption>
                 <thead>
                   <tr>
@@ -194,7 +194,7 @@ export default function EventDetails({ ev, flowVisuals, showIntroduction = true,
           {ev.weather && <p>{ev.weather}</p>}
           {ev.cancellation && (
             <div className="schedule-wrap">
-              <table className="schedule-table">
+              <table className="schedule-table schedule-table--fees">
                 <caption className="sr-only">{ev.title}のキャンセル規定</caption>
                 <thead>
                   <tr>
