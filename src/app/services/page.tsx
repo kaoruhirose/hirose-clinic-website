@@ -10,7 +10,7 @@ export default function Services() {
       <div className="container">
         <PageIntro title="診療案内" english="Care, in step with the rhythm of your days.">
           <p>
-            保険診療と自費診療（自由診療）を組み合わせながら、症状や体質、日々の暮らしに合わせた診療をご提案します。
+            症状や体質、日々の暮らしを伺いながら、診療をご提案します。診療内容により、保険診療または自由診療（自費診療）となります。
           </p>
         </PageIntro>
       </div>
