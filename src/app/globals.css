@@ -43,8 +43,9 @@
 /* 見出しはどのページでも上部に残す。トップでは表紙の写真の下端にくっついて白い背景と一緒に下から上がり、上端に着いたら残る。
    右端は写真の上と同じく Instagram（ご予約・文字サイズとのあいだに細い縦線）。 */
 .site-header--sticky { position: sticky; top: 0; z-index: 30; background: var(--color-clinic-base); border-bottom: 1px solid var(--rule); }
-.header-sticky { position: fixed; inset: 0 0 auto; z-index: 30; background: var(--color-clinic-base); border-bottom: 1px solid var(--rule); translate: 0 100vh; visibility: hidden; will-change: translate; }
-.header-sticky.is-visible { visibility: visible; }
+/* トップの見出しは写真の高さぶん下に置き、上端に着いたら sticky で貼りつく（スクロールのたびに計算して動かすと、スマホで遅れてガタつくため）。
+   置いたぶんと見出しの厚み・下線1pxを下に詰めて、本文は写真の上端から始める。 */
+.header-sticky { position: sticky; top: 0; z-index: 30; margin-top: var(--home-hero-height); margin-bottom: calc(-1 * var(--home-hero-height) - var(--header-solid-height) - 1px); background: var(--color-clinic-base); border-bottom: 1px solid var(--rule); }
 /* 上部に残る見出しは、写真の上の見出しより薄くする */
 :root { --header-solid-height: 80px; }
 .header-solid .header-inner { height: var(--header-solid-height); }
@@ -97,7 +98,9 @@ html { scroll-padding-top: var(--header-solid-height); }
 /* 「標準」は小さく、「大」は大きく見せて、押す前から違いが分かるように。高さの中心でそろえる */
 .text-size-toggle--menu button:first-of-type { font-size: 12px; }
 .text-size-toggle--menu button:last-child { font-size: 18px; }
-.home-hero { position: relative; height: 100svh; min-height: 680px; max-height: 1100px; color: #fff; isolation: isolate; overflow: hidden; }
+/* 表紙の写真の高さ。トップの見出しを写真の下端に置くのにも使う */
+:root { --home-hero-height: clamp(680px, 100svh, 1100px); }
+.home-hero { position: relative; height: var(--home-hero-height); color: #fff; isolation: isolate; overflow: hidden; }
 .hero-image, .hero-image img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-image { z-index: -2; }
 .hero-image img { object-fit: cover; object-position: center; }
@@ -401,7 +404,7 @@ html { scroll-padding-top: var(--header-solid-height); }
 }
 /* 縦長のタブレットでは屋号と下部の案内にそれぞれ余白を確保する。 */
 @media (min-width: 701px) and (max-width: 1366px) and (orientation: portrait) {
-  .home-hero { max-height: none; }
+  :root { --home-hero-height: max(680px, 100svh); }
   .hero-wordmark { top: 44%; }
   .hero-wordmark :is(h1, h2) { font-size: clamp(34px, 4.2vw, 46px); }
   .hero-latin { font-size: 11px; }
@@ -414,7 +417,7 @@ html { scroll-padding-top: var(--header-solid-height); }
   .header-inner { height: 88px; padding-inline: 24px; }
   :root { --header-solid-height: 64px; }
   .header-brand { --brand-size: 19px; }
-  .home-hero { min-height: 620px; max-height: 980px; }
+  :root { --home-hero-height: clamp(620px, 100svh, 980px); }
   .hero-wordmark :is(h1, h2) { font-size: 32px; letter-spacing: .18em; }
   .hero-latin { font-size: 9px; }
   .hero-wordmark--side .hero-latin { right: calc(100% + 14px); }

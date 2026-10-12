@@ -39,7 +39,8 @@ export default function Header() {
 
   const close = () => { dialog.current?.close(); setIsOpen(false); };
 
-  // トップでは、表紙の写真の下端（白い背景の上端）に見出しをくっつけ、白い背景と一緒に下から上げる。上端に着いたらそこに残す。
+  // トップの見出しは、表紙の写真の下端に置いて白い背景と一緒に上げ、上端に着いたら残す（動きはCSSの sticky に任せる）。
+  // ここでは、画面の下に隠れている間だけ押せない・選べないようにする。
   const sticky = useRef<HTMLDivElement>(null);
   const [isShown, setIsShown] = useState(false);
   useEffect(() => {
@@ -47,9 +48,7 @@ export default function Header() {
     let frame = 0;
     const check = () => {
       frame = 0;
-      const hero = document.querySelector(".home-hero");
-      const top = hero ? Math.max(0, hero.getBoundingClientRect().bottom) : 0;
-      if (sticky.current) sticky.current.style.translate = `0 ${top}px`;
+      const top = sticky.current?.getBoundingClientRect().top ?? Infinity;
       setIsShown(top < window.innerHeight);
     };
     const onScroll = () => { if (!frame) frame = requestAnimationFrame(check); };
@@ -64,6 +63,13 @@ export default function Header() {
     };
   }, [home]);
 
+  // トップで屋号を押したときは同じページなので Next.js はスクロールしない。表紙まで戻す（新しいタブで開く操作はそのまま）。
+  const toTop = (e: React.MouseEvent) => {
+    if (!home || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    window.scrollTo({ top: 0 });
+  };
+
   const instagram = site.instagramUrl && (
     <a className="header-instagram" href={site.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="廣瀬診療所のInstagram（新しいタブで開く）">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -77,7 +83,7 @@ export default function Header() {
   // overPhoto: トップの写真の上（屋号なし・主なメニューだけ）。それ以外は屋号つきの見出し。
   const bar = ({ overPhoto = false } = {}) => (
     <div className="header-inner">
-      {!overPhoto && <Link href="/" className="header-brand" aria-label="廣瀬診療所 トップページ"><span>廣瀬診療所</span><span className="header-brand-latin" lang="en">HIROSESHINRYOJO</span></Link>}
+      {!overPhoto && <Link href="/" className="header-brand" aria-label="廣瀬診療所 トップページ" onClick={toTop}><span>廣瀬診療所</span><span className="header-brand-latin" lang="en">HIROSESHINRYOJO</span></Link>}
       <nav className="desktop-nav" aria-label="メインメニュー">
         {links.map(link => <Link key={link.href} href={link.href} className={overPhoto && link.secondary ? "home-secondary" : undefined} aria-current={pathname === link.href ? "page" : pathname.startsWith(`${link.href}/`) ? "location" : undefined}>{link.label}</Link>)}
         <ReservationLink className="nav-reservation">ご予約</ReservationLink>
@@ -91,12 +97,12 @@ export default function Header() {
 
   return (<>
     {/* 写真の上の見出しの指定が及ばないよう、固定の見出しは <header> の外に置く */}
-    {home && <div ref={sticky} className={`header-sticky header-solid${isShown ? " is-visible" : ""}`} inert={!isShown}>{bar()}</div>}
+    {home && <div ref={sticky} className="header-sticky header-solid" inert={!isShown}>{bar()}</div>}
     {/* トップ以外では、この見出しをそのまま上部に残す */}
     <header className={`site-header${home ? " site-header--over-photo" : " site-header--sticky header-solid"}`}>
       {bar({ overPhoto: home })}
       <dialog id="site-menu" className="menu-dialog" ref={dialog} aria-label="サイトメニュー" onClose={() => { setIsOpen(false); trigger.current?.focus({ preventScroll: true }); }}>
-        <div className="menu-top"><Link href="/" onClick={close}><span>廣瀬診療所</span><span className="header-brand-latin" lang="en">HIROSESHINRYOJO</span></Link><button onClick={close} autoFocus>閉じる <span aria-hidden="true">×</span></button></div>
+        <div className="menu-top"><Link href="/" onClick={e => { close(); toTop(e); }}><span>廣瀬診療所</span><span className="header-brand-latin" lang="en">HIROSESHINRYOJO</span></Link><button onClick={close} autoFocus>閉じる <span aria-hidden="true">×</span></button></div>
         <nav aria-label="モバイルメニュー">
           {links.map((link, i) => <Link key={link.href} href={link.href} onClick={close} aria-current={pathname === link.href ? "page" : pathname.startsWith(`${link.href}/`) ? "location" : undefined}><span className="menu-number" aria-hidden="true">0{i + 1}</span>{link.label}<span aria-hidden="true">→</span></Link>)}
           <Link href="/news" onClick={close}><span className="menu-number" aria-hidden="true">06</span>お知らせ<span aria-hidden="true">→</span></Link>
