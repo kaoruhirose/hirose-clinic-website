@@ -40,7 +40,6 @@
 .desktop-nav a { padding-block: 12px; white-space: nowrap; }
 .desktop-nav a:hover, .desktop-nav a[aria-current] { text-decoration: underline; }
 .desktop-nav .home-secondary { display: none; }
-.nav-reservation { border-bottom: 1px solid currentColor; }
 .menu-trigger { display: none; align-items: center; gap: 16px; font-size: 11px; letter-spacing: .1em; min-height: 44px; }
 .menu-trigger span { width: 24px; display: grid; gap: 7px; }
 .menu-trigger i { display: block; height: 1px; background: currentColor; }
