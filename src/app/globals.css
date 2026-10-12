@@ -323,7 +323,7 @@
   .editorial-section--tate > .section-heading { display: flex; flex-direction: row-reverse; justify-content: flex-start; align-items: flex-start; gap: 22px; padding-top: .5em; }
   .editorial-section--tate .section-heading h2 { writing-mode: vertical-rl; font-size: 30px; letter-spacing: .28em; line-height: 2; margin: 0; }
   .editorial-section--tate .section-heading :is(.eyebrow, .section-english) { writing-mode: vertical-rl; margin: 0; }
-  /* C3 「身土不二」と添えた言葉を、右から左へ読む縦書きの一幅にまとめる */
+  /* C3 PCでは「身土不二」と添えた言葉を一幅にまとめ、画面の中央へ置く。 */
   /* 親の本文幅制限を外し、題と本文のまとまりをページの中央へ置く。 */
   .about-page .page-intro > .intro-copy { max-width: none; }
   .clinic-philosophy { justify-content: center; align-items: flex-start; gap: 56px; padding-right: 0; margin-top: 72px; }
