@@ -1,0 +1,2220 @@
+{
+  "date": "2026-10-13",
+  "url": "http://127.0.0.1:3122",
+  "standard": [
+    {
+      "overflow": 0,
+      "page": "廣瀬診療所\n\nHIROSESHINRYOJO\n\n診療所からの眺め\n\n診",
+      "path": "/",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療所のこと\n\n日々のなかに、\nからだがある。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療のご案内\n\n一人ひとり、\nゆっくりと。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "フィールドワーク\n\n足もとから、\n自然にふれる。\n\nSense of wonder"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療所から\n\nお知らせ"
+        }
+      ],
+      "tables": [],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "大切にしていること\n\nListening for the storie",
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "この土地と生きる\n\nGrounding in the rhythms of nature"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "自然処方と社会処方\n\nNatural & Social prescription"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ヨガと瞑想\n\nYoga & Meditation"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "代表 / 医師\n\n廣瀬 薫\n\nKAORU HIROSE, M.D."
+        }
+      ],
+      "tables": [],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "診療案内\n\nCare, in step with the rhythm",
+      "path": "/services",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "総合内科・救急対応\n\n保険診療"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "漢方専門外来\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ライフスタイル相談\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ご予約・ご相談"
+        }
+      ],
+      "tables": [],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "オンライン診療\n\nいつもの場所で、\n診療の時間を。\n\nAcross t",
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療について\n\n通院がむずかしい日にも。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "開始後のご利用の流れ（予定）\n\nご予約から、\nお薬まで。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ご確認事項\n\n受診の前に、\nご確認ください。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "お問い合わせ\n\nお電話でのご相談"
+        }
+      ],
+      "tables": [],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "ご予約・アクセス\n\n桜山の高台で、\nお待ちしています。\n\nA quie",
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "はじめての方へ\n\nご予約・お申し込み"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療時間\n\nご来院の時間"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "アクセス\n\n診療所への道のり"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "お問い合わせ\n\nお電話でのご連絡"
+        }
+      ],
+      "tables": [
+        {
+          "client": 600,
+          "scroll": 600,
+          "width": 600
+        }
+      ],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "お知らせ\n\nInformation\n\n2026.03.05\nお知らせ\n",
+      "path": "/news",
+      "sections": [],
+      "tables": [],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "フィールドワーク / 自然処方\n\nField work / Natur",
+      "path": "/events",
+      "sections": [],
+      "tables": [],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク\n\n裸足で海と山を歩く会",
+      "path": "/events/barefoot-hike",
+      "sections": [],
+      "tables": [
+        {
+          "client": 652,
+          "scroll": 652,
+          "width": 651.9296875
+        },
+        {
+          "client": 652,
+          "scroll": 652,
+          "width": 651.9296875
+        }
+      ],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク / 自然処方\n\n海と波",
+      "path": "/events/surf-therapy",
+      "sections": [],
+      "tables": [
+        {
+          "client": 621,
+          "scroll": 621,
+          "width": 621
+        }
+      ],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "プライバシーポリシー\n\nPrivacy Policy\n\n廣瀬診療所（以",
+      "path": "/privacy",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "1. 個人情報の定義"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "2. 個人情報の取得と利用目的"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "3. 第三者への提供"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "4. 個人情報の安全管理"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "5. 開示・訂正・利用停止の請求"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "6. お問い合わせ窓口"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "7. 本ポリシーの変更"
+        }
+      ],
+      "tables": [],
+      "width": 701
+    },
+    {
+      "overflow": 0,
+      "page": "廣瀬診療所\n\nHIROSESHINRYOJO\n\n診療所からの眺め\n\n診",
+      "path": "/",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療所のこと\n\n日々のなかに、\nからだがある。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療のご案内\n\n一人ひとり、\nゆっくりと。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "フィールドワーク\n\n足もとから、\n自然にふれる。\n\nSense of wonder"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療所から\n\nお知らせ"
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "大切にしていること\n\nListening for the storie",
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "この土地と生きる\n\nGrounding in the rhythms of nature"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "自然処方と社会処方\n\nNatural & Social prescription"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ヨガと瞑想\n\nYoga & Meditation"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "代表 / 医師\n\n廣瀬 薫\n\nKAORU HIROSE, M.D."
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "診療案内\n\nCare, in step with the rhythm",
+      "path": "/services",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "総合内科・救急対応\n\n保険診療"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "漢方専門外来\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ライフスタイル相談\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ご予約・ご相談"
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "オンライン診療\n\nいつもの場所で、\n診療の時間を。\n\nAcross t",
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療について\n\n通院がむずかしい日にも。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "開始後のご利用の流れ（予定）\n\nご予約から、\nお薬まで。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ご確認事項\n\n受診の前に、\nご確認ください。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "お問い合わせ\n\nお電話でのご相談"
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "ご予約・アクセス\n\n桜山の高台で、\nお待ちしています。\n\nA quie",
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "はじめての方へ\n\nご予約・お申し込み"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療時間\n\nご来院の時間"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "アクセス\n\n診療所への道のり"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "お問い合わせ\n\nお電話でのご連絡"
+        }
+      ],
+      "tables": [
+        {
+          "client": 600,
+          "scroll": 600,
+          "width": 600
+        }
+      ],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "お知らせ\n\nInformation\n\n2026.03.05\nお知らせ\n",
+      "path": "/news",
+      "sections": [],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "フィールドワーク / 自然処方\n\nField work / Natur",
+      "path": "/events",
+      "sections": [],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク\n\n裸足で海と山を歩く会",
+      "path": "/events/barefoot-hike",
+      "sections": [],
+      "tables": [
+        {
+          "client": 714,
+          "scroll": 714,
+          "width": 714.234375
+        },
+        {
+          "client": 714,
+          "scroll": 714,
+          "width": 714.234375
+        }
+      ],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク / 自然処方\n\n海と波",
+      "path": "/events/surf-therapy",
+      "sections": [],
+      "tables": [
+        {
+          "client": 688,
+          "scroll": 688,
+          "width": 688
+        }
+      ],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "プライバシーポリシー\n\nPrivacy Policy\n\n廣瀬診療所（以",
+      "path": "/privacy",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "1. 個人情報の定義"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "2. 個人情報の取得と利用目的"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "3. 第三者への提供"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "4. 個人情報の安全管理"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "5. 開示・訂正・利用停止の請求"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "6. お問い合わせ窓口"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "7. 本ポリシーの変更"
+        }
+      ],
+      "tables": [],
+      "width": 768
+    },
+    {
+      "overflow": 0,
+      "page": "廣瀬診療所\n\nHIROSESHINRYOJO\n\n診療所からの眺め\n\n診",
+      "path": "/",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療所のこと\n\n日々のなかに、\nからだがある。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療のご案内\n\n一人ひとり、\nゆっくりと。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "フィールドワーク\n\n足もとから、\n自然にふれる。\n\nSense of wonder"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療所から\n\nお知らせ"
+        }
+      ],
+      "tables": [],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "大切にしていること\n\nListening for the storie",
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "この土地と生きる\n\nGrounding in the rhythms of nature"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "自然処方と社会処方\n\nNatural & Social prescription"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ヨガと瞑想\n\nYoga & Meditation"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "代表 / 医師\n\n廣瀬 薫\n\nKAORU HIROSE, M.D."
+        }
+      ],
+      "tables": [],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "診療案内\n\nCare, in step with the rhythm",
+      "path": "/services",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "総合内科・救急対応\n\n保険診療"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "漢方専門外来\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ライフスタイル相談\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ご予約・ご相談"
+        }
+      ],
+      "tables": [],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "オンライン診療\n\nいつもの場所で、\n診療の時間を。\n\nAcross t",
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療について\n\n通院がむずかしい日にも。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "開始後のご利用の流れ（予定）\n\nご予約から、\nお薬まで。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "ご確認事項\n\n受診の前に、\nご確認ください。"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "お問い合わせ\n\nお電話でのご相談"
+        }
+      ],
+      "tables": [],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "ご予約・アクセス\n\n桜山の高台で、\nお待ちしています。\n\nA quie",
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "はじめての方へ\n\nご予約・お申し込み"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "診療時間\n\nご来院の時間"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "アクセス\n\n診療所への道のり"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "お問い合わせ\n\nお電話でのご連絡"
+        }
+      ],
+      "tables": [
+        {
+          "client": 600,
+          "scroll": 600,
+          "width": 600
+        }
+      ],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "お知らせ\n\nInformation\n\n2026.03.05\nお知らせ\n",
+      "path": "/news",
+      "sections": [],
+      "tables": [],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "フィールドワーク / 自然処方\n\nField work / Natur",
+      "path": "/events",
+      "sections": [],
+      "tables": [],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク\n\n裸足で海と山を歩く会",
+      "path": "/events/barefoot-hike",
+      "sections": [],
+      "tables": [
+        {
+          "client": 720,
+          "scroll": 720,
+          "width": 720
+        },
+        {
+          "client": 720,
+          "scroll": 720,
+          "width": 720
+        }
+      ],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク / 自然処方\n\n海と波",
+      "path": "/events/surf-therapy",
+      "sections": [],
+      "tables": [
+        {
+          "client": 720,
+          "scroll": 720,
+          "width": 720
+        }
+      ],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "プライバシーポリシー\n\nPrivacy Policy\n\n廣瀬診療所（以",
+      "path": "/privacy",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "1. 個人情報の定義"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "2. 個人情報の取得と利用目的"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "3. 第三者への提供"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "4. 個人情報の安全管理"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "5. 開示・訂正・利用停止の請求"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "6. お問い合わせ窓口"
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "15px",
+          "gap": "32px",
+          "stacked": true,
+          "title": "7. 本ポリシーの変更"
+        }
+      ],
+      "tables": [],
+      "width": 899
+    },
+    {
+      "overflow": 0,
+      "page": "廣瀬診療所\n\nHIROSESHINRYOJO\n\n診療所からの眺め\n\n診",
+      "path": "/",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "診療所のこと\n\n日々のなかに、\nからだがある。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "診療のご案内\n\n一人ひとり、\nゆっくりと。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "フィールドワーク\n\n足もとから、\n自然にふれる。\n\nSense of wonder"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "診療所から\n\nお知らせ"
+        }
+      ],
+      "tables": [],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "大切にしていること\n\nListening for the storie",
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "この土地と生きる\n\nGrounding in the rhythms of nature"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "自然処方と社会処方\n\nNatural & Social prescription"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "ヨガと瞑想\n\nYoga & Meditation"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "代表 / 医師\n\n廣瀬 薫\n\nKAORU HIROSE, M.D."
+        }
+      ],
+      "tables": [],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "診療案内\n\nCare, in step with the rhythm",
+      "path": "/services",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "総合内科・救急対応\n\n保険診療"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "漢方専門外来\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "ライフスタイル相談\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "ご予約・ご相談"
+        }
+      ],
+      "tables": [],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "オンライン診療\n\nいつもの場所で、\n診療の時間を。\n\nAcross t",
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "診療について\n\n通院がむずかしい日にも。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "開始後のご利用の流れ（予定）\n\nご予約から、\nお薬まで。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "ご確認事項\n\n受診の前に、\nご確認ください。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "お問い合わせ\n\nお電話でのご相談"
+        }
+      ],
+      "tables": [],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "ご予約・アクセス\n\n桜山の高台で、\nお待ちしています。\n\nA quie",
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "はじめての方へ\n\nご予約・お申し込み"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "診療時間\n\nご来院の時間"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "アクセス\n\n診療所への道のり"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "お問い合わせ\n\nお電話でのご連絡"
+        }
+      ],
+      "tables": [
+        {
+          "client": 477,
+          "scroll": 477,
+          "width": 476.9296875
+        }
+      ],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "お知らせ\n\nInformation\n\n2026.03.05\nお知らせ\n",
+      "path": "/news",
+      "sections": [],
+      "tables": [],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "フィールドワーク / 自然処方\n\nField work / Natur",
+      "path": "/events",
+      "sections": [],
+      "tables": [],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク\n\n裸足で海と山を歩く会",
+      "path": "/events/barefoot-hike",
+      "sections": [],
+      "tables": [
+        {
+          "client": 720,
+          "scroll": 720,
+          "width": 720
+        },
+        {
+          "client": 720,
+          "scroll": 720,
+          "width": 720
+        }
+      ],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク / 自然処方\n\n海と波",
+      "path": "/events/surf-therapy",
+      "sections": [],
+      "tables": [
+        {
+          "client": 720,
+          "scroll": 720,
+          "width": 720
+        }
+      ],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "プライバシーポリシー\n\nPrivacy Policy\n\n廣瀬診療所（以",
+      "path": "/privacy",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "1. 個人情報の定義"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "2. 個人情報の取得と利用目的"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "3. 第三者への提供"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "4. 個人情報の安全管理"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "5. 開示・訂正・利用停止の請求"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "6. お問い合わせ窓口"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "15px",
+          "gap": "45px",
+          "stacked": false,
+          "title": "7. 本ポリシーの変更"
+        }
+      ],
+      "tables": [],
+      "width": 900
+    },
+    {
+      "overflow": 0,
+      "page": "廣瀬診療所\n\nHIROSESHINRYOJO\n\n診療所からの眺め\n\n診",
+      "path": "/",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "診療所のこと\n\n日々のなかに、\nからだがある。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "診療のご案内\n\n一人ひとり、\nゆっくりと。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "フィールドワーク\n\n足もとから、\n自然にふれる。\n\nSense of wonder"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "診療所から\n\nお知らせ"
+        }
+      ],
+      "tables": [],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "大切にしていること\n\nListening for the storie",
+      "path": "/about",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "この土地と生きる\n\nGrounding in the rhythms of nature"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "自然処方と社会処方\n\nNatural & Social prescription"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "ヨガと瞑想\n\nYoga & Meditation"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "代表 / 医師\n\n廣瀬 薫\n\nKAORU HIROSE, M.D."
+        }
+      ],
+      "tables": [],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "診療案内\n\nCare, in step with the rhythm",
+      "path": "/services",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "総合内科・救急対応\n\n保険診療"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "漢方専門外来\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "ライフスタイル相談\n\n自由診療（自費診療）"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "ご予約・ご相談"
+        }
+      ],
+      "tables": [],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "オンライン診療\n\nいつもの場所で、\n診療の時間を。\n\nAcross t",
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "診療について\n\n通院がむずかしい日にも。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "開始後のご利用の流れ（予定）\n\nご予約から、\nお薬まで。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "ご確認事項\n\n受診の前に、\nご確認ください。"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "お問い合わせ\n\nお電話でのご相談"
+        }
+      ],
+      "tables": [],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "ご予約・アクセス\n\n桜山の高台で、\nお待ちしています。\n\nA quie",
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "はじめての方へ\n\nご予約・お申し込み"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "診療時間\n\nご来院の時間"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "アクセス\n\n診療所への道のり"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "お問い合わせ\n\nお電話でのご連絡"
+        }
+      ],
+      "tables": [
+        {
+          "client": 506,
+          "scroll": 506,
+          "width": 505.71875
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "お知らせ\n\nInformation\n\n2026.03.05\nお知らせ\n",
+      "path": "/news",
+      "sections": [],
+      "tables": [],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "フィールドワーク / 自然処方\n\nField work / Natur",
+      "path": "/events",
+      "sections": [],
+      "tables": [],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク\n\n裸足で海と山を歩く会",
+      "path": "/events/barefoot-hike",
+      "sections": [],
+      "tables": [
+        {
+          "client": 720,
+          "scroll": 720,
+          "width": 720
+        },
+        {
+          "client": 720,
+          "scroll": 720,
+          "width": 720
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "←\nフィールドワーク一覧へ\n\nフィールドワーク / 自然処方\n\n海と波",
+      "path": "/events/surf-therapy",
+      "sections": [],
+      "tables": [
+        {
+          "client": 506,
+          "scroll": 506,
+          "width": 505.71875
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "overflow": 0,
+      "page": "プライバシーポリシー\n\nPrivacy Policy\n\n廣瀬診療所（以",
+      "path": "/privacy",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "1. 個人情報の定義"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "2. 個人情報の取得と利用目的"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "3. 第三者への提供"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "4. 個人情報の安全管理"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "5. 開示・訂正・利用停止の請求"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "6. お問い合わせ窓口"
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "16px",
+          "gap": "80px",
+          "stacked": false,
+          "title": "7. 本ポリシーの変更"
+        }
+      ],
+      "tables": [],
+      "width": 1024
+    }
+  ],
+  "edges": [
+    {
+      "aligned": true,
+      "bodyWidth": 327,
+      "columns": "327px",
+      "font": "15px",
+      "overflow": 0,
+      "stacked": true,
+      "width": 375
+    },
+    {
+      "aligned": true,
+      "bodyWidth": 652,
+      "columns": "652px",
+      "font": "15px",
+      "overflow": 0,
+      "stacked": true,
+      "width": 700
+    },
+    {
+      "aligned": true,
+      "bodyWidth": 600,
+      "columns": "740px",
+      "font": "15px",
+      "overflow": 0,
+      "stacked": true,
+      "width": 820
+    },
+    {
+      "aligned": false,
+      "bodyWidth": 552.6171875,
+      "columns": "345.383px 552.617px",
+      "font": "15px",
+      "overflow": 0,
+      "stacked": false,
+      "width": 1023
+    },
+    {
+      "aligned": false,
+      "bodyWidth": 632.1640625,
+      "columns": "407.836px 632.164px",
+      "font": "16px",
+      "overflow": 0,
+      "stacked": false,
+      "width": 1440
+    }
+  ],
+  "large": [
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "16px",
+          "stacked": true
+        }
+      ],
+      "size": "large",
+      "tables": [
+        {
+          "client": 600,
+          "scroll": 600
+        }
+      ],
+      "width": 701
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "621px",
+          "font": "16px",
+          "stacked": true
+        }
+      ],
+      "size": "large",
+      "tables": [],
+      "width": 701
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "16px",
+          "stacked": true
+        }
+      ],
+      "size": "large",
+      "tables": [
+        {
+          "client": 600,
+          "scroll": 600
+        }
+      ],
+      "width": 768
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "688px",
+          "font": "16px",
+          "stacked": true
+        }
+      ],
+      "size": "large",
+      "tables": [],
+      "width": 768
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "16px",
+          "stacked": true
+        }
+      ],
+      "size": "large",
+      "tables": [
+        {
+          "client": 600,
+          "scroll": 600
+        }
+      ],
+      "width": 899
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "16px",
+          "stacked": true
+        },
+        {
+          "aligned": true,
+          "bodyWidth": 600,
+          "columns": "819px",
+          "font": "16px",
+          "stacked": true
+        }
+      ],
+      "size": "large",
+      "tables": [],
+      "width": 899
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "16px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "16px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "16px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "16px",
+          "stacked": false
+        }
+      ],
+      "size": "large",
+      "tables": [
+        {
+          "client": 477,
+          "scroll": 477
+        }
+      ],
+      "width": 900
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "16px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "16px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "16px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 476.9296875,
+          "columns": "298.07px 476.93px",
+          "font": "16px",
+          "stacked": false
+        }
+      ],
+      "size": "large",
+      "tables": [],
+      "width": 900
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/access",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "18px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "18px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "18px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "18px",
+          "stacked": false
+        }
+      ],
+      "size": "large",
+      "tables": [
+        {
+          "client": 506,
+          "scroll": 506
+        }
+      ],
+      "width": 1024
+    },
+    {
+      "menuOpen": false,
+      "overflow": 0,
+      "path": "/online-consultation",
+      "sections": [
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "18px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "18px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "18px",
+          "stacked": false
+        },
+        {
+          "aligned": false,
+          "bodyWidth": 505.71875,
+          "columns": "326.273px 505.719px",
+          "font": "18px",
+          "stacked": false
+        }
+      ],
+      "size": "large",
+      "tables": [],
+      "width": 1024
+    }
+  ]
+}

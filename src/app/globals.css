@@ -554,6 +554,14 @@
   .clinic-philosophy-copy { line-height: clamp(28.8px, 8vw, 35.2px); }
 }
 
+/* D03：狭いタブレットは見出しの下に本文を置く1列。読む幅は600px以内にする。 */
+@media (min-width: 701px) and (max-width: 899px) {
+  .editorial-section { grid-template-columns: minmax(0, 1fr); gap: 32px; }
+  .editorial-section > .editorial-body { max-width: 600px; }
+  /* 紹介ページの2列用の見出し寄せを解除し、本文と左端をそろえる。 */
+  .about-page .editorial-section > .section-heading { width: auto; justify-self: stretch; }
+}
+
 /* 文字サイズ「大」（見る人が切り替える。html[data-text-size="large"]）。
    通常本文と必要な情報を大きくし、見出しは本文より大きいまま保つ。料金表・補足・縦書きは変えない。 */
 @media (max-width: 1023px) {
