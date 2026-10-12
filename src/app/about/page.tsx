@@ -29,6 +29,30 @@ export default function About() {
           </p>
         </EditorialSection>
 
+        <EditorialSection id="prescription" title="自然処方と社会処方" english="Natural & Social prescription">
+          <h3>自然と、人とのつながりを処方する</h3>
+          <p>
+            からだの不調の背景には、季節や環境、人との関わりといった、暮らしそのものがあります。当院では、お薬の処方とあわせて、自然のなかで過ごす時間や、人とつながる機会を「処方」としてご提案しています。
+          </p>
+          <p>
+            自然処方は、海辺を裸足で歩く、波にふれる、土にふれるなど、自然のリズムにからだをゆだねる時間です。社会処方は、地域の集まりやボランティア、畑仕事などを通して、人とのつながりや自分の居場所を見つけていくことです。欧州では、すでに医療のなかに取り入れられている考え方です。
+          </p>
+          <p>
+            人の健康と、地球の健康はひとつながり。どこに暮らす方にとっても、自然にふれる時間と、人とつながる場所は大切なものです。逗子・葉山の海と山へ、そしてこの土地の人の輪へ。この診療所が、その入り口になれたらと考えています。
+          </p>
+        </EditorialSection>
+
+        <EditorialSection id="yoga" title="ヨガと瞑想" english="Yoga & Meditation">
+          <h3>呼吸から、自分に立ち返る</h3>
+          <p>
+            診療とは別に、ヨガと瞑想の指導やワークショップも行っています。
+          </p>
+          <p>
+            呼吸に意識を向けるクラスから、逗子の海と山を歩くフィールドワークまで、ヨガインストラクターの資格をもつ代表がご案内します。息をする、からだを動かす、自然にふれる。身近なことから、自分をいたわる習慣を見つけていきましょう。
+          </p>
+          <TextLink href="/events">フィールドワークのご案内</TextLink>
+        </EditorialSection>
+
         <EditorialSection label="代表 / 医師" title="廣瀬 薫" english="KAORU HIROSE, M.D.">
           <Photo photo={photos.portrait} />
           <h3>略歴</h3>
@@ -51,17 +75,6 @@ export default function About() {
           <p>
             西洋医学による診断に、漢方の見立てと暮らしの工夫を重ねながら、その方に合った治療や養生の方法を一緒に考えます。無理なく続けられることから、少しずつ始めていきましょう。
           </p>
-        </EditorialSection>
-
-        <EditorialSection id="yoga" title="ヨガと瞑想" english="Yoga & Meditation">
-          <h3>呼吸から、自分に立ち返る</h3>
-          <p>
-            診療とは別に、ヨガと瞑想の指導やワークショップも行っています。
-          </p>
-          <p>
-            呼吸に意識を向けるクラスから、逗子の海と山を歩くフィールドワークまで、ヨガインストラクターの資格をもつ代表がご案内します。息をする、からだを動かす、自然にふれる。身近なことから、自分をいたわる習慣を見つけていきましょう。
-          </p>
-          <TextLink href="/events">フィールドワークのご案内</TextLink>
         </EditorialSection>
       </div>
     </div>
