@@ -59,12 +59,12 @@ export default function About() {
           <div><TextLink href="https://phi.or.jp/phi/planetary-health/" external>プラネタリーヘルスとは（PHIのサイト）</TextLink></div>
           <div><TextLink href="/events">フィールドワークのご案内</TextLink></div>
           <h3>参考リンク</h3>
-          <ul className="rule-list">
+          <ul className="rule-list reference-list">
             {[
               { href: "https://phi.or.jp/", title: "一般社団法人プラネタリーヘルスイニシアティブ（PHI）", note: "当院が連携している団体です" },
+              { href: "https://planetaryhealthalliance.org/", title: "Planetary Health Alliance", note: "プラネタリーヘルスの国際的なネットワーク（英語）" },
               { href: "https://www.env.go.jp/policy/hakusyo/r05/html/hj23010101.html", title: "環境白書 令和5年版「地球の限界（プラネタリー・バウンダリー）」", note: "環境省" },
               { href: "https://www.stockholmresilience.org/research/planetary-boundaries.html", title: "Planetary boundaries", note: "ストックホルム・レジリエンス・センター（英語）" },
-              { href: "https://planetaryhealthalliance.org/", title: "Planetary Health Alliance", note: "プラネタリーヘルスの国際的なネットワーク（英語）" },
             ].map(link => (
               <li key={link.href}>
                 <a href={link.href} target="_blank" rel="noopener noreferrer">{link.title}<span aria-hidden="true"> ↗</span></a>
