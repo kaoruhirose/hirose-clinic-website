@@ -58,7 +58,7 @@ export default function About() {
           </p>
           <div><TextLink href="https://phi.or.jp/phi/planetary-health/" external>プラネタリーヘルスとは（PHIのサイト）</TextLink></div>
           <div><TextLink href="/events">フィールドワークのご案内</TextLink></div>
-          <h3>参考リンク</h3>
+          <h3 className="reference-heading">参考リンク</h3>
           <ul className="rule-list reference-list">
             {[
               { href: "https://phi.or.jp/", title: "一般社団法人プラネタリーヘルスイニシアティブ（PHI）", note: "当院が連携している団体です" },

@@ -205,6 +205,8 @@ html { scroll-padding-top: var(--header-solid-height); }
 .rule-list > li:last-child { border-bottom: 1px solid var(--rule); }
 /* 参考リンクは本文より一段小さく。本文の大きさ（画面幅・文字サイズ「大」）に合わせて連動させる */
 .reference-list { font-size: .875em; }
+/* 参考リンクの見出しは、上のリンクとの間を少し広くあけて区切る（通常の小見出しは44px） */
+.prose h3.reference-heading { margin-top: 60px; }
 .steps { list-style: decimal-leading-zero; padding-left: 2em; margin: 24px 0; }
 .steps > li { padding: 0 0 30px 12px; }
 .steps > li::marker { font: 12px Georgia, serif; color: var(--muted); }
