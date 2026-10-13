@@ -315,8 +315,8 @@ html { scroll-padding-top: var(--header-solid-height); }
 .footer-bottom { display: flex; flex-direction: column; align-items: center; gap: 10px; margin-top: 36px; padding-top: 25px; border-top: 1px solid var(--rule); color: var(--muted); text-align: center; }
 .footer-privacy { font: 11px/1.7 Georgia, serif; letter-spacing: .1em; text-decoration: underline; text-decoration-thickness: 1px; }
 .footer-copyright { font: 9px/1.7 Georgia, serif; letter-spacing: .1em; }
-/* 淡いグレー。白っぽい背景でも暗いフッター写真の上でも読める濃さにする */
-.site-copyright { display: none; position: fixed; right: 14px; bottom: 40px; z-index: 10; writing-mode: vertical-rl; font: 11px/1 Georgia, serif; letter-spacing: .1em; color: #a3a3a3; pointer-events: none; }
+/* 淡いグレー。白っぽい背景でも暗いフッター写真の上でも読める濃さにする。せり上がる見出し（z-index 30）にも隠れないよう、その上に重ねる */
+.site-copyright { display: none; position: fixed; right: 14px; bottom: 40px; z-index: 31; writing-mode: vertical-rl; font: 11px/1 Georgia, serif; letter-spacing: .1em; color: #a3a3a3; pointer-events: none; }
 /* フッター：夕暮れの富士山の写真に白い文字を重ねる。上は空と富士山を見せ、文字の下は暗くして読みやすく */
 .site-footer { position: relative; isolation: isolate; overflow: hidden; border-top: 0; padding-top: clamp(470px, 42vw, 630px); color: #fff; --muted: rgb(255 255 255 / .78); --rule: rgb(255 255 255 / .3); }
 .footer-photo { z-index: -2; object-fit: cover; object-position: center 62%; }
