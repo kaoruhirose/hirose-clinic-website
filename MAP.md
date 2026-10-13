@@ -33,7 +33,7 @@
 - 薫さんの「できたら公開して保存して」で承認。mainへ保存・送信。
 
 ### 🔖 やり残した宿題
-- [ ] 本番 `https://www.hiroseshinryojo.jp/about` で、並び順と文字が一段小さいことを確認する。
+- [x] 本番 `https://www.hiroseshinryojo.jp/about` で、並び順と文字が一段小さいことを確認する（公開コード `db8e60d`。PC1024pxで本文16px→リンク14px、並び順どおり、横はみ出しなし）。
 
 ---
 
