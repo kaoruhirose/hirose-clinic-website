@@ -35,9 +35,10 @@
 - lint・型チェック成功。手元で実測：PC1280pxで権利表記が右下に縦書き固定・#a3a3a3、Privacy Policy の中心が画面中央（640px）、Instagramなし。スマホ375pxで縦書き表記は出ず、区切り線→Privacy Policy 26px／Privacy Policy→権利表記 16px／権利表記→最下部 25px、横はみ出しなし。明るい背景・暗いフッターの両方で画面を目視。
 - 途中で確認用サーバーが古いCSSを配り続けた（記録済みの症状）。`.next/dev` をゴミ箱へ移して再起動し解消。
 - 薫さんの「公開して保存して」で承認し、mainへ保存・送信。
+- **本番公開・GitHub保存済み（公開コード `f71a317`）。** 本番 `https://www.hiroseshinryojo.jp/` で実測：PC1280pxで権利表記が右下に縦書き固定・#a3a3a3・11px、Privacy Policy 13pxで画面中央、Instagramなし。スマホ375pxで縦書き表記は出ず、Privacy Policy 11pxで中央、区切り線→26px／Privacy Policy→権利表記16px／最下部まで25px、横はみ出しなし。スマホの画面を目視。
 
 ### 🔖 やり残した宿題
-- [ ] 本番で右下の縦書き表記・中央の Privacy Policy・スマホの余白を確認する。
+- [x] 本番で右下の縦書き表記・中央の Privacy Policy・スマホの余白を確認する。
 - [ ] サーフセラピーのページの「お申し込み・お問い合わせ方法→」も同じ見た目にそろえるか（前回から継続）。
 - [ ] W01〜W11・W13〜W31とF01〜F08、スマホ実機確認・内部用 `/design/wordmark` の重なり・社会処方・お知らせ・旧 `/preview` などは継続。
 
