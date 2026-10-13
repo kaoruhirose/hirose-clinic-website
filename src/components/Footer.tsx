@@ -4,23 +4,10 @@ import Link from "next/link";
 import { site } from "@/lib/site";
 import fujiDusk from "../../public/images/clinic/fuji-dusk.webp";
 
-function InstagramLink() {
-  if (!site.instagramUrl) return null;
-  return (
-    <div className="footer-social">
-      <a href={site.instagramUrl} target="_blank" rel="noopener noreferrer" aria-label="Instagram（@hiroseshinryojo・新しいタブで開く）">
-        <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-          <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-          <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
-          <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
-        </svg>
-      </a>
-    </div>
-  );
-}
-
 export default function Footer() {
+  const copyright = `© ${new Date().getFullYear()} HIROSESHINRYOJO All rights reserved.`;
   return (
+    <>
     <footer className="site-footer">
       {/* 診療所から見える夕暮れの富士山を背景に、文字を重ねる */}
       <Image src={fujiDusk} alt="" fill sizes="(max-width: 700px) 140vw, 100vw" quality={90} className="footer-photo" />
@@ -30,11 +17,13 @@ export default function Footer() {
           <nav aria-label="フッターメニュー"><Link href="/about">診療所について</Link><Link href="/services">診療案内</Link><Link href="/online-consultation">オンライン診療</Link><Link href="/events">フィールドワーク</Link><Link href="/access">ご予約・アクセス</Link><Link href="/news">お知らせ</Link></nav>
         </div>
         <div className="footer-bottom">
-          <small>© {new Date().getFullYear()} HIROSESHINRYOJO All rights reserved.</small>
-          <InstagramLink />
           <Link href="/privacy" className="footer-privacy">Privacy Policy</Link>
+          <small className="footer-copyright">{copyright}</small>
         </div>
       </div>
     </footer>
+    {/* PCでは権利表記を画面の右下に縦書きで置く（フッター内の表記はPCでは隠す） */}
+    <small className="site-copyright">{copyright}</small>
+    </>
   );
 }
