@@ -42,6 +42,38 @@ export default function About() {
           </p>
         </EditorialSection>
 
+        <EditorialSection id="planetary-health" title="プラネタリーヘルス" english="Planetary Health">
+          <h3>人も地球も、ともに健やかに</h3>
+          <p>
+            医師として、目の前の方を治すことに力を注いできました。その一方で、サーファーとして海に通ううちに、自然から受け取る恵みの大きさと、自然への畏れを感じるようになりました。海や大地を守り、再生する活動にも参加してきましたが、医療と自然への想いは、どこか別々のものでした。
+          </p>
+          <p>
+            その二つをひとつに結んでくれたのが、プラネタリーヘルスとの出会いでした。プラネタリーヘルスとは、人の健康と、それを支える地球の自然の健康を、ひとつながりのものとして捉える新しい考え方です。人は地球に生かされ、人の営みがまた地球をいきいきとさせる。人も地球もともに健やかな世の中をつくることを、医師としてのライフワークにしたいと考えています。
+          </p>
+          <p>
+            はじめの一歩は、身近な暮らしのなかにあります。日々の選択で、環境への負担が少しでも少ないほうを選んでみる。空や木々、季節の移ろいに目を向けてみる。わずかな時間でも外に出て、自然にふれる。自然から癒やしを受け取る関係を、暮らしのなかで少しずつ深めていきましょう。
+          </p>
+          <p>
+            当院は、一般社団法人プラネタリーヘルスイニシアティブと連携し、この考え方を診療や地域の活動のなかで実践していきます。
+          </p>
+          <div><TextLink href="https://phi.or.jp/phi/planetary-health/" external>プラネタリーヘルスとは（PHIのサイト）</TextLink></div>
+          <div><TextLink href="/events">フィールドワークのご案内</TextLink></div>
+          <h3>参考リンク</h3>
+          <ul className="rule-list">
+            {[
+              { href: "https://phi.or.jp/", title: "一般社団法人プラネタリーヘルスイニシアティブ（PHI）", note: "当院が連携している団体です" },
+              { href: "https://www.env.go.jp/policy/hakusyo/r05/html/hj23010101.html", title: "環境白書 令和5年版「地球の限界（プラネタリー・バウンダリー）」", note: "環境省" },
+              { href: "https://www.stockholmresilience.org/research/planetary-boundaries.html", title: "Planetary boundaries", note: "ストックホルム・レジリエンス・センター（英語）" },
+              { href: "https://planetaryhealthalliance.org/", title: "Planetary Health Alliance", note: "プラネタリーヘルスの国際的なネットワーク（英語）" },
+            ].map(link => (
+              <li key={link.href}>
+                <a href={link.href} target="_blank" rel="noopener noreferrer">{link.title}<span aria-hidden="true"> ↗</span></a>
+                <br /><span className="quiet-note">{link.note}</span>
+              </li>
+            ))}
+          </ul>
+        </EditorialSection>
+
         <EditorialSection id="yoga" title="ヨガと瞑想" english="Yoga & Meditation">
           <h3>呼吸から、自分に立ち返る</h3>
           <p>
