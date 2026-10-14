@@ -35,7 +35,7 @@
 - 注意：GitHub の保管場所は「公開」設定のため、過去のセーブ地点と `docs/review-2026-10-13/images/` の作業記録の画面写真には、この写真が残っている（サイトには出ない）。
 
 ### 🔖 やり残した宿題
-- [ ] 本番 `https://www.hiroseshinryojo.jp/services` で写真が消えていること、`/images/clinic/room.webp` が開けないことを確認する。
+- [x] 本番 `https://www.hiroseshinryojo.jp/services` で写真が消えていること、`/images/clinic/room.webp` が開けないことを確認する（公開コード `2ccfb8e`。PC1024pxで写真なし・見出し4つが順どおり・横はみ出しなし、ページのHTMLに写真の記述なし、写真のアドレスは「見つかりません」(404)）。
 - [ ] 診察室の写真の整え方を決める（撮り直す／画像編集AIで整える）。整ったら `services/page.tsx` に戻す。
 
 ---
