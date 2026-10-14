@@ -1,6 +1,8 @@
 import LineText from "@/components/LineText";
+import Image from "next/image";
 import { EditorialSection, PageIntro } from "@/components/Editorial";
 import ReservationLink from "@/components/ReservationLink";
+import room from "../../../public/images/clinic/room.webp";
 
 export default function Services() {
   return (
@@ -11,7 +13,11 @@ export default function Services() {
             症状や体質、日々の暮らしを伺いながら、診療をご提案します。診療内容により、保険診療または自由診療（自費診療）となります。
           </p>
         </PageIntro>
+      </div>
 
+      <figure className="wide-photo"><Image src={room} alt="診察室。大きな窓の向こうに緑と海が広がり、施術台とソファーが置かれている" sizes="100vw" quality={90} /></figure>
+
+      <div className="container">
         <EditorialSection id="general" title="総合内科・救急対応" note="保険診療">
           <p>
             風邪、発熱、腹痛などの急な不調から、高血圧、脂質異常症、糖尿病などの生活習慣病の管理まで、幅広く対応します。
