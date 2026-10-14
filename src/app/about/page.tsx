@@ -1,5 +1,7 @@
+import Image from "next/image";
 import { EditorialSection, PageIntro, Photo, TextLink } from "@/components/Editorial";
 import { photos } from "@/lib/photos";
+import fujiDawn from "../../../public/images/clinic/fuji-dawn.webp";
 
 export default function About() {
   return (
@@ -25,8 +27,9 @@ export default function About() {
             その答えを探して、漢方（東洋医学）を学びました。検査の数値だけでなく、体質や暮らしぶり、心の状態までを見渡し、季節や環境とともに移り変わるからだの声に耳を傾ける。いまの診療で、何より大切にしていることです。
           </p>
           <p>
-            晴れた日の夕暮れ、高台にある診療所の窓からは、海の向こうに富士山と江ノ島が浮かびます。海と山にはさまれたこの逗子・桜山で、ひと息ついてからだのことを話せる「港」のような場所をつくりたい。そう考えて、ここに診療所を開きました。
+            晴れた日には、高台の診療所から、海の向こうに富士山と江ノ島が浮かんで見えます。海と山にはさまれたこの逗子・桜山で、ひと息ついてからだのことを話せる「港」のような場所をつくりたい。そう考えて、ここに診療所を開きました。
           </p>
+          <figure className="fuji-landscape"><Image src={fujiDawn} alt="診療所から望む、朝焼けの富士山と江ノ島" sizes="(max-width: 700px) 100vw, 640px" quality={90} /></figure>
         </EditorialSection>
 
         <EditorialSection id="prescription" title="自然処方と社会処方" english="Natural & Social prescription">

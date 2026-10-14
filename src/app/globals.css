@@ -283,9 +283,9 @@ html { scroll-padding-top: var(--header-solid-height); }
   .event-part .schedule-table :is(th, td) { padding-inline: 0 16px; }
   .event-part .schedule-table :is(th, td):first-child { width: 40%; }
 }
-.home-landscape { width: 100%; height: clamp(240px, 52vw, 760px); overflow: hidden; margin: 0; }
-/* 朝焼けの富士山：頂上から手前の海まで見えるように */
-.home-landscape img { width: 100%; height: 100%; object-fit: cover; object-position: center 67%; }
+/* 診療所についての朝焼けの富士山：文章の列の幅にそろえた横長。空は残し、下の海を少し切る */
+.fuji-landscape { margin: 56px 0 0; aspect-ratio: 16 / 9; overflow: hidden; }
+.fuji-landscape img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 60%; }
 .home-link-list { margin-top: 42px; padding: 0; list-style: none; }
 .home-link-list a { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding: 21px 0; border-top: 1px solid var(--rule); font-family: var(--font-serif); font-size: 20px; }
 .home-link-list li:last-child a { border-bottom: 1px solid var(--rule); }
@@ -462,10 +462,9 @@ html { scroll-padding-top: var(--header-solid-height); }
   .event-step-title { font-size: 16px; }
   .news-preview a { grid-template-columns: 1fr 12px; gap: 4px 16px; padding-block: 19px; }
   .news-preview time { grid-column: 1 / -1; }
-  .home-landscape { height: 340px; }
-  .home-landscape img { object-position: center 85%; }
   .editorial-photo { margin-bottom: 36px; }
-  .home-landscape.editorial-photo { margin-bottom: 0; }
+  /* 朝焼けの富士山：スマホでは文章との間を少し詰める */
+  .fuji-landscape { margin-top: 48px; }
   .page-shell { padding-bottom: 35px; }
   /* スマホ：写真を上に寄せて置き、富士山が文字に隠れないようにする。写真の下は夜の色でつなぐ */
   .site-footer { padding-top: 600px; background: #0f131a; }
