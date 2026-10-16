@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-<!-- BEGIN:kaoru-common-rules v7 -->
+<!-- BEGIN:kaoru-common-rules v8 -->
 # 共通ルール（全プロジェクト共通・廣瀬薫）
 
 > **このブロックは、AGENTS.md を読むすべてのAIコーディングツールで機能します。**
@@ -60,6 +60,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
   薫さんが「手を動かさないで」と言ったら、コードを書かずに相談だけする。
 - **消す・上書きする前に、必ず中身を確認して報告する。** 削除は「ゴミ箱へ移動」を優先（戻せるように）。
 - 作業が長くなったら、区切りごとに保存を提案する。
+- **外部のサービスを使う作業は、作り始める前に前提がそろっているかを確かめる。**
+  APIキー（外部サービスを使うための合言葉）・ログイン・ファイルを読む許可など、足りないものは最初に薫さんへ伝える。
+  鍵は「設定されているか」だけを確かめ、値そのものは画面に出さない。
 
 ## 🎼 作業の進め方（判断の型）
 
@@ -95,8 +98,16 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 1. `MAP.md` の見本ブロックの直下に、今日の記録を追記する（**新しいものが上**）
    - 日付／やったこと／結果／**やり残した宿題**
-2. `git add` → `git commit` → `git push` を実行する
+2. `git add` → `git commit` → `git push` を実行する。
+   `git add` するのは**このセッションで自分が変えたファイルだけ**（別のAIが作業中のファイルを混ぜない）
 3. 完了を報告し、新しいセッションを始めるよう伝える
+
+薫さんが「公開して」と言ったら、**上の保存まで一続きで行う**。
+「公開して保存して」と言い直してもらう必要はない。この一言が、公開の承認になる。
+
+1. 公開する（GitHub へ送ると自動で公開される仕組みなら、送ることが公開になる）
+2. 本番のページを自分で開き、変更が出ていることをスマホ幅とPC幅で確かめる
+3. 確かめた結果も書き添えて、上の保存（1〜3）を行う
 
 ## 環境の前提（迷子にならないための地図）
 
@@ -230,3 +241,11 @@ Tailwind の `font-sans` / `font-serif` で使い分ける。
 
 アニメーションは Framer Motion の `useInView` + `motion.div` でスクロール連動。
 新しく追加するときも既存ページと同じ書き方に合わせること。
+
+## 見た目を変えたあとの点検
+
+サイト全体に効く変更（`globals.css`・文字の大きさ・見出し・ヘッダーやフッター・重なり順（z-index）・余白）をしたら、
+**薫さんに見せる前に、全ページをスマホ幅（375px）とPC幅（1280px）で確かめる。** 直したページだけ見て終わりにしない。
+
+- 見るところ：見出しと本文の大きさの釣り合い／ヘッダー・フッターとの重なり／消えた余白／横はみ出し
+- 全ページは `src/app/` の下にある `page.tsx` から数える（ページが増えても漏れないように）
