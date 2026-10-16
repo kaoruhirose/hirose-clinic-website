@@ -212,17 +212,34 @@ npm run lint     # コードのチェック
 
 ## ページ構成
 
-すべて `src/app/` 以下（App Router の書き方）：
+すべて `src/app/` 以下（App Router の書き方）。**ページを足したり消したりしたら、この表も直すこと。**
 
-| ファイル | 役割 |
-|---|---|
-| `layout.tsx` | 全ページ共通の枠。`<Header>` と `<Footer>` を囲む |
-| `page.tsx` | トップページ |
-| `about/page.tsx` | 診療所について |
-| `services/page.tsx` | 診療内容 |
-| `access/page.tsx` | アクセス |
+| アドレス | ファイル | 役割（メニューでの名前） |
+|---|---|---|
+| — | `layout.tsx` | 全ページ共通の枠。`<Header>` と `<Footer>` を囲む |
+| `/` | `page.tsx` | トップページ |
+| `/about` | `about/page.tsx` | 診療所について |
+| `/services` | `services/page.tsx` | 診療案内 |
+| `/online-consultation` | `online-consultation/page.tsx` | オンライン診療 |
+| `/events` | `events/page.tsx` | フィールドワーク / 自然処方の一覧（中身は `events/EventsView.tsx`） |
+| `/events/barefoot-hike` | `events/barefoot-hike/page.tsx` | 裸足で海と山を歩く会 / 裸足ハイク |
+| `/events/surf-therapy` | `events/surf-therapy/page.tsx` | 海と波とサーフセラピー |
+| `/access` | `access/page.tsx` | ご予約・アクセス（ヘッダーでは「アクセス」） |
+| `/news` | `news/page.tsx` | お知らせ |
+| `/privacy` | `privacy/page.tsx` | プライバシーポリシー（フッターから入る） |
+| `/design/wordmark` | `design/wordmark/page.tsx` | 内部用：屋号の配置比較。メニューに無く、検索にも出ない設定 |
+| `/preview` | `preview/page.tsx` | デザイン実験用の別ホーム案。メニューに無いが**一般公開中**（隠すか消すかは MAP.md の宿題） |
 
-共通部品は `src/components/`（`Header.tsx` / `Footer.tsx`）。
+共通部品は `src/components/`：
+
+- `Header.tsx` / `Footer.tsx` — ヘッダーとフッター
+- `Editorial.tsx` — ページの冒頭（`PageIntro`）・節（`EditorialSection`）・写真・リンクの型。各ページはこれで組む
+- `HomeHero.tsx` — トップの表紙写真
+- `ReservationLink.tsx` — 予約ボタン ／ `LineText.tsx` — 本文の「公式LINE」を QR コードへのリンクにする
+- `TextSizeToggle.tsx` — 文字の大きさ「標準／大」の切り替え
+- `art.tsx` — 写真の無い箇所に使う、サイト専用の絵（SVG）
+
+中身のデータは `src/lib/`：お知らせ `news.ts`／イベント `events.ts`／連絡先・外部URL `site.ts`／Google フォームからの開催日程 `formDates.ts`。
 
 ## デザインの決まりごと
 
