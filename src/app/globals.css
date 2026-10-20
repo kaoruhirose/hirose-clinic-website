@@ -428,8 +428,8 @@ html { scroll-padding-top: var(--header-solid-height); }
   .hero-wordmark--side .hero-latin { right: calc(100% + 14px); }
   .hero-wordmark--above .hero-latin { bottom: calc(100% + 22px); }
   .hero-wordmark--below .hero-latin { top: calc(100% + 18px); }
-  /* 屋号の下端を基準にし、英字の上端を写真の高さの64%（富士山の上の灰色の雲）にそろえる。写真は高さに合わせて伸縮するので、どの機種でも雲の帯に乗る */
-  .hero-wordmark--below { top: calc(64% - 18px); transform: translate(-50%, -100%); }
+  /* 屋号の下端を基準にし、英字の上端を写真の高さの66.5%（江ノ島とほぼ同じ高さ）にそろえる。写真は高さに合わせて伸縮するので、どの機種でも同じ位置に来る */
+  .hero-wordmark--below { top: calc(66.5% - 18px); transform: translate(-50%, -100%); }
   .hero-wordmark--diagonal .hero-latin { font-size: 8px; left: calc(100% + 8px); }
   .hero-photo-caption { right: 24px; bottom: 24px; font-size: 10px; letter-spacing: .08em; }
   .page-intro { padding: 56px 0 54px; }
