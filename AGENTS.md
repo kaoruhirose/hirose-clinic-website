@@ -227,8 +227,7 @@ npm run lint     # コードのチェック
 | `/access` | `access/page.tsx` | ご予約・アクセス（ヘッダーでは「アクセス」） |
 | `/news` | `news/page.tsx` | お知らせ |
 | `/privacy` | `privacy/page.tsx` | プライバシーポリシー（フッターから入る） |
-| `/design/wordmark` | `design/wordmark/page.tsx` | 内部用：屋号の配置比較。メニューに無く、検索にも出ない設定 |
-| `/preview` | `preview/page.tsx` | デザイン実験用の別ホーム案。メニューに無いが**一般公開中**（隠すか消すかは MAP.md の宿題） |
+| `/design/wordmark` | `design/wordmark/page.tsx` | 内部用：屋号の配置比較。手元の開発画面でだけ開ける（本番では「ページが見つかりません」） |
 
 共通部品は `src/components/`：
 

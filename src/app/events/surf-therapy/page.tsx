@@ -102,9 +102,9 @@ export default function SurfTherapy() {
             <section className="event-part">
               <h2>お申し込み・お問い合わせ</h2>
               <p>参加をご希望の方には、開催日時・集合場所を個別にご案内します。初めての方も、ご質問だけの方も、どうぞお気軽にお問い合わせください。</p>
-              <p>
+              <p className="apply-link">
                 <ReservationLink className="text-link">
-                  サーフセラピーのお申し込み・お問い合わせ方法<span aria-hidden="true">→</span>
+                  お申し込み・お問い合わせ<span aria-hidden="true">→</span>
                 </ReservationLink>
               </p>
               <p className="quiet-note">
