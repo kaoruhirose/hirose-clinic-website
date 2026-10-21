@@ -99,13 +99,17 @@ html { scroll-padding-top: var(--header-solid-height); }
 .text-size-toggle--menu button:first-of-type { font-size: 12px; }
 .text-size-toggle--menu button:last-child { font-size: 18px; }
 /* 表紙の写真の高さ。トップの見出しを写真の下端に置くのにも使う */
-:root { --home-hero-height: clamp(680px, 100svh, 1100px); }
-.home-hero { position: relative; height: var(--home-hero-height); color: #fff; isolation: isolate; overflow: hidden; }
+:root { --home-hero-height: clamp(620px, 100svh, 1100px); }
+/* 表紙の中の文字の大きさや位置は、画面幅の境目で切り替えず、表紙の幅（cqw）と高さ（cqh）に合わせて少しずつ変える */
+.home-hero { position: relative; height: var(--home-hero-height); color: #fff; isolation: isolate; overflow: hidden; container-type: size; }
 .hero-image, .hero-image img { position: absolute; inset: 0; width: 100%; height: 100%; }
 .hero-image { z-index: -2; }
-.hero-image img { object-fit: cover; object-position: center; }
+/* 写真（3024×2990）はどの画面でも同じ1枚。縦長の画面では左右を、横長の画面では上下を切る。
+   上下は上から79%の位置で切ると、横長の画面でも富士山と江ノ島が収まる。写真全体のトーンを少し下げて白い字を読みやすくする */
+.hero-image img { object-fit: cover; object-position: 43% 79%; filter: brightness(.86); }
 .home-hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, #14201ea6, #14201e40 150px, transparent 275px), linear-gradient(180deg, #13221b24, transparent 32%, #13221b0a 58%, #13221b4a); z-index: -1; pointer-events: none; }
-.hero-wordmark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content; animation: hero-wordmark-reveal 4.2s ease-in-out .35s both; }
+/* 屋号は、スマホの29px・字の間隔0.27em（小さな字が詰まって見えないよう広め）から、大きな画面の46px・0.22emへ少しずつ変える */
+.hero-wordmark { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: max-content; font-size: clamp(29px, 21px + 1.85cqw, 46px); --hero-latin-gap: clamp(18px, 16.4px + .4cqw, 22px); animation: hero-wordmark-reveal 4.2s ease-in-out .35s both; }
 @keyframes hero-wordmark-reveal {
   from { opacity: 0; }
   to { opacity: 1; }
@@ -120,13 +124,17 @@ html { scroll-padding-top: var(--header-solid-height); }
   from { opacity: 0; translate: 0 8px; }
   to { opacity: 1; translate: 0 0; }
 }
-.hero-wordmark :is(h1, h2) { writing-mode: vertical-rl; width: 1.25em; font-family: "Hiragino Mincho ProN", "Yu Mincho", var(--font-clinic-serif), serif; font-size: clamp(31px, 3.4vw, 46px); font-weight: 400; letter-spacing: .22em; line-height: 1.25; margin: 0; text-shadow: 0 1px 20px #17261d40; }
-.hero-latin { position: absolute; white-space: nowrap; font: 10px Georgia, serif; letter-spacing: .29em; margin: 0; text-shadow: 0 1px 12px #15271d50; }
+.hero-wordmark :is(h1, h2) { writing-mode: vertical-rl; width: 1.25em; font-family: "Hiragino Mincho ProN", "Yu Mincho", var(--font-clinic-serif), serif; font-size: 1em; font-weight: 400; letter-spacing: clamp(7.8px, 6.9px + .22cqw, 10px); line-height: 1.25; margin: 0; text-shadow: 0 0 1px #17261d66, 0 1px 12px #14231b99; }
+.hero-latin { position: absolute; white-space: nowrap; font: clamp(9px, 7.9px + .17cqw, 10px) Georgia, serif; letter-spacing: .29em; margin: 0; text-shadow: 0 0 1px #17261d80, 0 1px 8px #14231bb3; }
 .hero-wordmark--side .hero-latin { right: calc(100% + 18px); top: 7px; writing-mode: vertical-rl; }
 .hero-wordmark--above .hero-latin { left: 50%; bottom: calc(100% + 26px); transform: translateX(-50%); }
-.hero-wordmark--below .hero-latin { left: 50%; top: calc(100% + 22px); transform: translateX(-50%); }
+/* 屋号の下端を基準にし、英字の上端を写真の江ノ島の高さ（写真の上から66.5%）に貼りつける。写真と一緒に動くので、窓の大きさを変えても写真との位置関係が保たれる。
+   写真の表示上の高さ = max(表紙の高さ, 表紙の幅 × 2990/3024)。江ノ島の高さ = 66.5% × 写真の高さ − 79% × (写真の高さ − 表紙の高さ)。
+   横長で背の低い窓では、上部のメニュー（高さ110px）に重ならないよう下へずらす */
+.hero-wordmark--below { top: max(79cqh - .125 * max(100cqh, 98.88cqw) - var(--hero-latin-gap), 130px + 6.4em); transform: translate(-50%, -100%); }
+.hero-wordmark--below .hero-latin { left: 50%; top: calc(100% + var(--hero-latin-gap)); transform: translateX(-50%); }
 .hero-wordmark--diagonal .hero-latin { left: calc(100% + 12px); top: calc(100% - 18px); }
-.hero-photo-caption { position: absolute; right: 6.3%; bottom: 32px; margin: 0; font-size: 11px; line-height: 1.8; letter-spacing: .12em; color: #ffffffe0; text-shadow: 0 1px 8px #17251bcc; pointer-events: none; }
+.hero-photo-caption { position: absolute; right: max(24px, 6.3cqw); bottom: clamp(24px, 18.4px + 1.1cqw, 32px); margin: 0; font-size: clamp(10px, 7.2px + .47cqw, 12px); line-height: 1.8; letter-spacing: .1em; color: #ffffffe0; text-shadow: 0 1px 8px #17251bcc; pointer-events: none; }
 /* 画面下の中央に、下へ光が流れる細い縦線。線の左右22pxも押せる範囲にする。 */
 .hero-bottom { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); }
 .hero-bottom a { display: block; padding: 0 22px; filter: drop-shadow(0 1px 4px #17251b66); transition: opacity .2s; }
@@ -347,7 +355,7 @@ html { scroll-padding-top: var(--header-solid-height); }
   .desktop-nav { font-size: 13px; }
   /* B5 小さすぎる文字を12px以上に */
   .eyebrow, .home-link-list small, .news-preview time, .article-meta,
-  .editorial-photo figcaption, .line-qr figcaption, .hero-photo-caption { font-size: 12px; }
+  .editorial-photo figcaption, .line-qr figcaption { font-size: 12px; }
   /* B2 本文：16px、幅36字ちょうど、両端そろえ */
   .prose { font-size: 16px; line-height: 2.05; letter-spacing: .05em; }
   .editorial-body.prose > * { max-width: 37.8em; }
@@ -407,33 +415,18 @@ html { scroll-padding-top: var(--header-solid-height); }
   .clinic-philosophy-title { font-size: 22px; }
   .footer-main nav { column-gap: 28px; }
 }
-/* 縦長のタブレットでは屋号と下部の案内にそれぞれ余白を確保する。 */
+/* 縦長のタブレットでは、背の高い画面でも表紙を画面いっぱいにする。 */
 @media (min-width: 701px) and (max-width: 1366px) and (orientation: portrait) {
-  :root { --home-hero-height: max(680px, 100svh); }
-  .hero-wordmark { top: 44%; }
-  .hero-wordmark :is(h1, h2) { font-size: clamp(34px, 4.2vw, 46px); }
-  .hero-latin { font-size: 11px; }
-}
-@media (max-width: 700px) and (max-height: 700px) {
-  .hero-wordmark { top: 44%; }
+  :root { --home-hero-height: max(620px, 100svh); }
 }
 @media (max-width: 700px) {
   .container { width: calc(100% - 48px); }
   .header-inner { height: 88px; padding-inline: 24px; }
   :root { --header-solid-height: 64px; }
   .header-brand { --brand-size: 19px; }
-  :root { --home-hero-height: clamp(620px, 100svh, 980px); }
-  /* 屋号の上半分が明るい雲の筋に重なるため、影を少し濃くし、写真全体のトーンを少し下げて白い字を読みやすくする。小さな字が詰まって見えないよう、字の間隔は広めにとる */
-  .hero-wordmark :is(h1, h2) { font-size: 29px; letter-spacing: .27em; text-shadow: 0 0 1px #17261d66, 0 1px 12px #14231b99; }
-  .hero-latin { font-size: 9px; text-shadow: 0 0 1px #17261d80, 0 1px 8px #14231bb3; }
-  .hero-image img { filter: brightness(.86); }
   .hero-wordmark--side .hero-latin { right: calc(100% + 14px); }
   .hero-wordmark--above .hero-latin { bottom: calc(100% + 22px); }
-  .hero-wordmark--below .hero-latin { top: calc(100% + 18px); }
-  /* 屋号の下端を基準にし、英字の上端を写真の高さの66.5%（江ノ島とほぼ同じ高さ）にそろえる。写真は高さに合わせて伸縮するので、どの機種でも同じ位置に来る */
-  .hero-wordmark--below { top: calc(66.5% - 18px); transform: translate(-50%, -100%); }
   .hero-wordmark--diagonal .hero-latin { font-size: 8px; left: calc(100% + 8px); }
-  .hero-photo-caption { right: 24px; bottom: 24px; font-size: 10px; letter-spacing: .08em; }
   .page-intro { padding: 56px 0 54px; }
   /* スマホの文字は画面幅に合わせて伸縮させる（375px幅で本文15px・見出しはその1.3〜1.6倍が目安）。 */
   .page-intro h1, .fieldwork-index .page-intro h1 { font-size: clamp(22px, 6.2vw, 26px); letter-spacing: .07em; }
