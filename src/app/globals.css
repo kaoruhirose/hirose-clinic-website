@@ -423,8 +423,10 @@ html { scroll-padding-top: var(--header-solid-height); }
   :root { --header-solid-height: 64px; }
   .header-brand { --brand-size: 19px; }
   :root { --home-hero-height: clamp(620px, 100svh, 980px); }
-  .hero-wordmark :is(h1, h2) { font-size: 32px; letter-spacing: .18em; }
-  .hero-latin { font-size: 9px; }
+  /* 屋号の上半分が明るい雲の筋に重なるため、影を少し濃くし、屋号の後ろだけ写真をほんのり暗くして白い字を読みやすくする */
+  .hero-wordmark :is(h1, h2) { font-size: 29px; letter-spacing: .18em; text-shadow: 0 0 1px #17261d66, 0 1px 12px #14231b99; }
+  .hero-latin { font-size: 9px; text-shadow: 0 0 1px #17261d80, 0 1px 8px #14231bb3; }
+  .hero-wordmark::before { content: ""; position: absolute; inset: -60px -96px -70px; background: radial-gradient(closest-side, #14201e5c, #14201e2e 55%, transparent); z-index: -1; pointer-events: none; }
   .hero-wordmark--side .hero-latin { right: calc(100% + 14px); }
   .hero-wordmark--above .hero-latin { bottom: calc(100% + 22px); }
   .hero-wordmark--below .hero-latin { top: calc(100% + 18px); }
