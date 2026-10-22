@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-<!-- BEGIN:kaoru-common-rules v9 -->
+<!-- BEGIN:kaoru-common-rules v10 -->
 # 共通ルール（全プロジェクト共通・廣瀬薫）
 
 > **このブロックは、AGENTS.md を読むすべてのAIコーディングツールで機能します。**
@@ -85,7 +85,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 
 **行き詰まったとき** — 同じやり方で3回目を試すのが一番高くつく。**2回失敗したら、より賢いAIへ上げる（上限は Opus。それでも解けなければ薫さんに相談）**。逆に、一度解けて手順が固まった仕事は、次から安いAIへ下げる。迷ったら安いほうから。
 
-**構想がぼんやりしているとき** — いきなり作らない。まず質問で目的と理由をはっきりさせ、A4半分〜1枚にまとめてから着手する。このとき解決案や技術の話はしない — **良い質問をするのが仕事で、良い答えを出すのは仕事ではない。**
+**構想がぼんやりしているとき** — いきなり作らない。まず質問で目的と理由をはっきりさせ、A4半分〜1枚にまとめてから着手する。このとき解決案や技術の話はしない — **良い質問をするのが仕事で、良い答えを出すのは仕事ではない。** Claude Code では、薫さんに「`/kabeuchi` で始めましょう」と勧める（薫さんが打ったときだけ動く道具）。
 
 **型を呼ばない作業** — 30分以内で終わり・取り返しがつき・お金と個人情報に触らない作業は、上の手順を省いてそのままやってよい。**ただし検収3点セットだけは、規模によらず必ず行う。**
 
@@ -109,6 +109,9 @@ This version has breaking changes — APIs, conventions, and file structure may 
 1. 公開する（GitHub へ送ると自動で公開される仕組みなら、送ることが公開になる）
 2. 本番のページを自分で開き、変更が出ていることをスマホ幅とPC幅で確かめる
 3. 確かめた結果も書き添えて、上の保存（1〜3）を行う
+
+細かい直しを終えて報告するときは、「ほかにも直すところがあれば、まとめて1回で公開できます」と添える
+（公開と確かめ直しが1回で済み、まわりへの影響もまとめて見られる。まとめるかどうかを決めるのは薫さん）。
 
 ## 環境の前提（迷子にならないための地図）
 
