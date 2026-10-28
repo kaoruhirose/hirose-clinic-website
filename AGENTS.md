@@ -233,7 +233,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 ~~公開予定ドメイン：`hiroseshinryojo.jp`~~
 → （2026-10-28 訂正）**公開済み**。https://www.hiroseshinryojo.jp/ （2026-08-29 に独自ドメインで公開。`hiroseshinryojo.jp` は `www` へ転送される）
 
-## いまの段階（2026-10-28 更新）
+## いまの段階（2026-10-29 更新）
 
 **公開して運用中。** 薫さんの指示で文章・写真・見た目の手直しを続けている。最後にサイトの中身を変えたのは 2026-10-22、日誌の最後は 10/23。
 詳しい現在地と宿題は `MAP.md` の冒頭。文章案（W01〜W31）と事実確認（F01〜F08）の一覧は `docs/review-2026-10-12/homework.md`。
@@ -246,9 +246,11 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - ドメインとメール：ドメインは**お名前.com**、メールは **Google Workspace**（Xserver ではない）。設定の控えは `HANDOFF.md`（7/29 時点。**触ってはいけない DNS の記録を含む**）。
 - 鍵の置き場所：**鍵（環境変数）は使っていない。** 日程は公開 Google フォームの質問データを読むだけで、API キーは不要（MAP 10/7）。`.env*` は `.gitignore` 済み。
 - イベント申込：Google フォーム。**日程の正本はフォームの「参加希望日」の選択肢**（`src/lib/events.ts` の `dates` は読み取れないときの予備）。
+- イベント申込の裏方（申込の自動メール・入金確認ページ）は、**非公開の別プロジェクト `~/Projects/active/event-admin`**（GitHub `kaoruhirose/event-admin`）で管理する（2026-10-29）。口座番号・参加者の情報を扱うため、**このリポジトリには入れない**。
 
 ## 決めたこと
 
+- イベントの管理の仕組みはサイトと分け、非公開の `event-admin` に置く（2026-10-29。理由は上の「運用の前提」）。
 - 表記：「**西洋医学と東洋医学**」（「西洋医学と漢方」ではなく）／「**救急科専門医**」／「**総合内科**」（旧：一般内科）／肩書きは「**代表**」（旧：院長）（MAP 10/11・10/12・7/2）。
 - 予約の入口は**公式 LINE**。サイト内の `/access#reservation` に QR コードと「友だち追加」を置く。連絡先・外部 URL は `src/lib/site.ts` に一元管理（MAP 10/10・7/2）。
 - 本文の大きさは**標準 15px のまま**、見る人が「標準／大」を切り替える方式（MAP 10/13）。
