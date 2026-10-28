@@ -4,7 +4,7 @@
 This version has breaking changes — APIs, conventions, and file structure may all differ from your training data. Read the relevant guide in `node_modules/next/dist/docs/` before writing any code. Heed deprecation notices.
 <!-- END:nextjs-agent-rules -->
 
-<!-- BEGIN:kaoru-common-rules v12 -->
+<!-- BEGIN:kaoru-common-rules v13 -->
 # 共通ルール（全プロジェクト共通・廣瀬薫）
 
 > **このブロックは、AGENTS.md を読むすべてのAIコーディングツールで機能します。**
@@ -67,6 +67,7 @@ This version has breaking changes — APIs, conventions, and file structure may 
 - **外部のサービスを使う作業は、作り始める前に前提がそろっているかを確かめる。**
   APIキー（外部サービスを使うための合言葉）・ログイン・ファイルを読む許可など、足りないものは最初に薫さんへ伝える。
   鍵は「設定されているか」だけを確かめ、値そのものは画面に出さない。
+- **「現在地の図を作って」と言われたら**、`MAP.md`・`AGENTS.md`・コードから、全体像と処理の流れを1枚のHTMLの図にする（文字は少なく・細部はクリックで開く・自動＝青／AI＝紫／薫さんの判断＝オレンジ・完了／作業中／未着手が見て分かる）。置き場所はプロジェクト直下の `genzaichi.html`、**GitHub には送らない**（`.gitignore` に足す）。Claude Code では `/genzaichi`（手順の本体は `~/.claude/skills/genzaichi/SKILL.md`）。
 
 ## 🎼 作業の進め方（判断の型）
 
