@@ -1,3 +1,17 @@
+# 廣瀬診療所のホームページ
+
+神奈川県逗子市桜山にある、完全予約制の個人クリニック「廣瀬診療所」の公式サイトです。
+
+- 公開先：https://www.hiroseshinryojo.jp/ （Vercel から配信。`main` に送ると自動で本番に反映）
+- 技術：Next.js（App Router）・React・TypeScript・Tailwind CSS
+- 手元で動かす：`npm run dev` → http://localhost:3000
+- ルールと現在地：AI は最初に `AGENTS.md` と `MAP.md` を読む。ページ構成・デザインの決まりごとは `AGENTS.md`
+- このリポジトリは**一般公開**です。鍵・パスワード・患者情報は置かない
+
+（2026-10-28 追記）下は、このプロジェクトを作ったときに自動で入った Next.js の既定の説明のままです。
+
+## 以下は Next.js の既定の説明
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
 ## Getting Started
